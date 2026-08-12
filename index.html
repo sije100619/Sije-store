@@ -1,22 +1,884 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store Sije — Worker Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Store Sije — Worker Portal</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080b10;
+    color:#f5f5f5;
+}
+
+/* HEADER */
+
+header{
+    padding:45px 20px;
+    text-align:center;
+    background:linear-gradient(145deg,#101722,#080b10);
+    border-bottom:1px solid #202833;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.subtitle{
+    margin-top:8px;
+    color:#8f9aa8;
+    letter-spacing:3px;
+    font-size:13px;
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,11,16,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #202833;
+}
+
+.nav-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    padding:10px 15px;
+}
+
+nav a{
+    color:#aab4c0;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:10px;
+    white-space:nowrap;
+    font-size:13px;
+}
+
+nav a:hover{
+    background:#171e28;
+    color:white;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 16px 70px;
+}
+
+/* HERO */
+
+.hero{
+    padding:35px 25px;
+    border:1px solid #242d38;
+    border-radius:20px;
+    background:linear-gradient(145deg,#111923,#0c1118);
+    margin-bottom:25px;
+}
+
+.hero h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#9da8b5;
+    max-width:700px;
+}
+
+/* QUICK MENU */
+
+.quick{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+    margin-bottom:35px;
+}
+
+.quick a{
+    text-decoration:none;
+    color:white;
+    background:#111820;
+    border:1px solid #242d38;
+    padding:20px;
+    border-radius:15px;
+    transition:.2s;
+}
+
+.quick a:hover{
+    transform:translateY(-3px);
+    background:#171f29;
+}
+
+.quick-title{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.quick-desc{
+    color:#7f8b99;
+    font-size:12px;
+}
+
+/* SECTION */
+
+section{
+    margin-bottom:25px;
+    padding:28px;
+    background:#0f151c;
+    border:1px solid #232d38;
+    border-radius:18px;
+    scroll-margin-top:80px;
+}
+
+section h2{
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+section h3{
+    margin:18px 0 8px;
+}
+
+section p{
+    color:#aab4c0;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin:8px 0;
+    color:#b9c2cc;
+}
+
+/* PRICE */
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.price-card{
+    padding:22px;
+    background:#151c25;
+    border:1px solid #293440;
+    border-radius:15px;
+}
+
+.price-card h3{
+    margin:0 0 12px;
+}
+
+.amount{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.small{
+    color:#7f8b99;
+    font-size:13px;
+    margin-top:7px;
+}
+
+/* TEAM */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.team{
+    padding:20px;
+    background:#151c25;
+    border:1px solid #293440;
+    border-radius:15px;
+}
+
+/* BONUS */
+
+.bonus{
+    padding:20px;
+    margin-top:15px;
+    background:#151c25;
+    border:1px solid #293440;
+    border-radius:15px;
+}
+
+/* FAQ */
+
+.faq{
+    border-bottom:1px solid #252e38;
+    padding:16px 0;
+}
+
+.faq:last-child{
+    border-bottom:none;
+}
+
+.question{
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+/* NOTICE */
+
+.notice{
+    margin-top:18px;
+    padding:15px;
+    border-radius:12px;
+    background:#151c25;
+    color:#aeb8c4;
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px 15px;
+    color:#687482;
+    border-top:1px solid #202833;
+    font-size:13px;
+}
+
+/* TOP BUTTON */
+
+#top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#202a35;
+    color:white;
+    font-size:20px;
+    display:none;
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:29px;
+    }
+
+    .hero h2{
+        font-size:23px;
+    }
+
+    section{
+        padding:21px;
+    }
+
+}
+
+</style>
 </head>
+
+
 <body>
-  <h1>STORE SIJE</h1>
-  <h2>WORKER PORTAL</h2>
 
-  <p>Selamat datang di Portal Worker Store Sije.</p>
+<header>
 
-  <h3>📋 SOP & Peraturan</h3>
-  <h3>💰 Sistem Pembagian Hasil</h3>
-  <h3>👥 Struktur Tim</h3>
-  <h3>🎯 Sistem Bonus</h3>
-  <h3>📊 Target & Performa</h3>
-  <h3>🔐 Aturan Keamanan Akun</h3>
-  <h3>❓ FAQ</h3>
+<div class="logo">
+STORE SIJE
+</div>
+
+<div class="subtitle">
+WORKER PORTAL
+</div>
+
+</header>
+
+
+<nav>
+
+<div class="nav-container">
+
+<a href="#home">🏠 Home</a>
+<a href="#sop">📋 SOP</a>
+<a href="#pembagian">💰 Pembagian</a>
+<a href="#tim">👥 Tim</a>
+<a href="#bonus">🎯 Bonus</a>
+<a href="#performa">📊 Performa</a>
+<a href="#keamanan">🔐 Keamanan</a>
+<a href="#faq">❓ FAQ</a>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="hero">
+
+<h2>Selamat Datang, Worker 👋</h2>
+
+<p>
+Selamat datang di Portal Worker Store Sije.
+Semua informasi mengenai SOP, sistem pembagian hasil,
+struktur tim, bonus, target, dan keamanan akun tersedia
+di halaman ini.
+</p>
+
+</div>
+
+
+<div class="quick">
+
+<a href="#sop">
+
+<div class="quick-title">
+📋 SOP & Peraturan
+</div>
+
+<div class="quick-desc">
+Aturan kerja dan ketentuan worker.
+</div>
+
+</a>
+
+
+<a href="#pembagian">
+
+<div class="quick-title">
+💰 Pembagian Hasil
+</div>
+
+<div class="quick-desc">
+Informasi harga dan pembagian worker.
+</div>
+
+</a>
+
+
+<a href="#tim">
+
+<div class="quick-title">
+👥 Struktur Tim
+</div>
+
+<div class="quick-desc">
+Pembagian worker berdasarkan tim.
+</div>
+
+</a>
+
+
+<a href="#bonus">
+
+<div class="quick-title">
+🎯 Sistem Bonus
+</div>
+
+<div class="quick-desc">
+Sistem bonus berdasarkan performa.
+</div>
+
+</a>
+
+
+<a href="#performa">
+
+<div class="quick-title">
+📊 Target & Performa
+</div>
+
+<div class="quick-desc">
+Evaluasi dan target worker.
+</div>
+
+</a>
+
+
+<a href="#keamanan">
+
+<div class="quick-title">
+🔐 Keamanan
+</div>
+
+<div class="quick-desc">
+Peraturan keamanan akun.
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- SOP -->
+
+<section id="sop">
+
+<h2>📋 SOP & Peraturan</h2>
+
+<h3>Ketentuan Umum</h3>
+
+<ul>
+
+<li>Worker wajib mengikuti SOP yang berlaku di Store Sije.</li>
+
+<li>Setiap pekerjaan wajib dikerjakan dengan teliti dan bertanggung jawab.</li>
+
+<li>Worker wajib menjaga komunikasi dengan mandor atau pihak yang bertanggung jawab.</li>
+
+<li>Dilarang melakukan tindakan yang dapat merugikan store maupun customer.</li>
+
+<li>Setiap kendala selama pekerjaan wajib segera dilaporkan.</li>
+
+</ul>
+
+
+<h3>Kedisiplinan</h3>
+
+<ul>
+
+<li>Worker wajib menyelesaikan pekerjaan sesuai target.</li>
+
+<li>Jika terdapat kendala, segera informasikan kepada mandor.</li>
+
+<li>Jangan mengambil keputusan yang dapat merugikan store tanpa koordinasi.</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- PEMBAGIAN -->
+
+<section id="pembagian">
+
+<h2>💰 Sistem Pembagian Hasil</h2>
+
+<p>
+Worker dapat melihat pembagian hasil langsung melalui portal
+tanpa perlu mencari informasi lama di grup WhatsApp.
+</p>
+
+<br>
+
+<div class="price-grid">
+
+
+<div class="price-card">
+
+<h3>Mandor</h3>
+
+<div class="amount">
+Rp4K / M
+</div>
+
+<div class="small">
+Per orang / M
+</div>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Value</h3>
+
+<div class="amount">
+Rp5K / M
+</div>
+
+<div class="small">
++ Login Rp3K
+</div>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Koin</h3>
+
+<div class="amount">
+Rp6K / M
+</div>
+
+<div class="small">
++ Login Rp4K
+</div>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>AYCL</h3>
+
+<div class="amount">
+Sesuai Order
+</div>
+
+<div class="small">
+Pembagian menyesuaikan order.
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+⚠️ Pembagian dapat diperbarui apabila terdapat perubahan
+harga, sistem, atau kondisi operasional Store Sije.
+
+</div>
+
+</section>
+
+
+
+<!-- TIM -->
+
+<section id="tim">
+
+<h2>👥 Struktur Tim</h2>
+
+<p>
+Struktur tim digunakan untuk mempermudah koordinasi,
+pembagian pekerjaan, dan evaluasi performa.
+</p>
+
+<br>
+
+
+<div class="team-grid">
+
+
+<div class="team">
+
+<h3>TIM 1</h3>
+
+<ul>
+
+<li>Worker A</li>
+<li>Worker B</li>
+<li>Worker C</li>
+
+</ul>
+
+</div>
+
+
+<div class="team">
+
+<h3>TIM 2</h3>
+
+<ul>
+
+<li>Worker D</li>
+<li>Worker E</li>
+<li>Worker F</li>
+
+</ul>
+
+</div>
+
+
+<div class="team">
+
+<h3>TIM 3</h3>
+
+<ul>
+
+<li>Worker G</li>
+<li>Worker H</li>
+<li>Worker I</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+👥 Nama worker dapat diperbarui sewaktu-waktu sesuai
+struktur tim terbaru.
+
+</div>
+
+</section>
+
+
+
+<!-- BONUS -->
+
+<section id="bonus">
+
+<h2>🎯 Sistem Bonus</h2>
+
+<div class="bonus">
+
+<h3>Bonus Berdasarkan Performa</h3>
+
+<p>
+
+Bonus worker diberikan berdasarkan performa serta
+kondisi pendapatan Store Sije pada setiap bulan.
+
+</p>
+
+</div>
+
+
+<div class="bonus">
+
+<h3>Faktor Penilaian</h3>
+
+<ul>
+
+<li>Produktivitas worker.</li>
+
+<li>Kualitas hasil pekerjaan.</li>
+
+<li>Kedisiplinan.</li>
+
+<li>Jumlah pekerjaan yang diselesaikan.</li>
+
+<li>Kerja sama dengan tim.</li>
+
+<li>Kondisi pendapatan store.</li>
+
+</ul>
+
+</div>
+
+
+<div class="bonus">
+
+<h3>Ranking Worker / Tim</h3>
+
+<p>
+
+Ke depannya sistem dapat dikembangkan menjadi
+ranking worker atau tim agar performa lebih transparan.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- PERFORMA -->
+
+<section id="performa">
+
+<h2>📊 Target & Performa</h2>
+
+<h3>Target Worker</h3>
+
+<ul>
+
+<li>Menyelesaikan pekerjaan sesuai target.</li>
+
+<li>Menjaga kualitas pekerjaan.</li>
+
+<li>Menjaga komunikasi dengan tim.</li>
+
+<li>Menghindari kesalahan yang dapat merugikan store.</li>
+
+</ul>
+
+
+<h3>Evaluasi</h3>
+
+<p>
+
+Performa worker dapat digunakan sebagai dasar evaluasi,
+pembagian bonus, serta pengembangan struktur tim.
+
+</p>
+
+</section>
+
+
+
+<!-- KEAMANAN -->
+
+<section id="keamanan">
+
+<h2>🔐 Aturan Keamanan Akun</h2>
+
+<ul>
+
+<li>Jangan membagikan informasi akun customer kepada pihak luar.</li>
+
+<li>Jangan menyimpan password secara sembarangan.</li>
+
+<li>Jangan mengganti informasi akun tanpa izin.</li>
+
+<li>Jangan menggunakan akun customer untuk kepentingan pribadi.</li>
+
+<li>Segera laporkan aktivitas mencurigakan.</li>
+
+<li>Jaga seluruh data customer dan informasi internal store.</li>
+
+</ul>
+
+
+<div class="notice">
+
+🔒 Keamanan akun dan data customer merupakan tanggung jawab bersama.
+
+</div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<h2>❓ FAQ</h2>
+
+
+<div class="faq">
+
+<div class="question">
+Bagaimana cara mengetahui pembagian hasil?
+</div>
+
+<p>
+Lihat bagian Sistem Pembagian Hasil pada portal ini.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<div class="question">
+Apakah pembagian hasil dapat berubah?
+</div>
+
+<p>
+Bisa. Perubahan sistem akan diperbarui melalui portal.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<div class="question">
+Bagaimana cara mendapatkan bonus?
+</div>
+
+<p>
+Bonus mempertimbangkan performa worker dan kondisi
+pendapatan Store Sije.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<div class="question">
+Bagaimana jika ada masalah saat mengerjakan order?
+</div>
+
+<p>
+Segera hubungi mandor atau pihak yang bertanggung jawab.
+</p>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Store Sije — Worker Portal
+
+<br><br>
+
+Semua informasi dapat diperbarui sesuai kebijakan store.
+
+</footer>
+
+
+<button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+window.addEventListener("scroll",function(){
+
+const button=document.getElementById("top");
+
+if(window.scrollY>300){
+
+button.style.display="block";
+
+}else{
+
+button.style.display="none";
+
+}
+
+});
+
+</script>
+
+
 </body>
 </html>
