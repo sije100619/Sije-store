@@ -1082,6 +1082,89 @@ Joki • Loot • Value • Koin • AYCL
 </footer>
 
 </div>
+<style>
+.order-btn{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    padding:11px 14px;
+    border:1px solid rgba(177,138,69,.35);
+    border-radius:12px;
+    background:#191816;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.3px;
+    transition:.3s ease;
+}
 
+.order-btn:hover{
+    transform:translateY(-3px);
+    background:#b18a45;
+    box-shadow:0 8px 20px rgba(177,138,69,.20);
+}
+
+.order-btn:active{
+    transform:scale(.97);
+}
+</style>
+
+<script>
+
+const STORE_WA = "6285397377197";
+
+document.querySelectorAll(".package").forEach(function(packageBox){
+
+    const packageName =
+        packageBox.querySelector(".package-left strong")?.innerText || "";
+
+    const packageType =
+        packageBox.closest(".service-card")
+        ?.querySelector("h3")?.innerText || "";
+
+    const price =
+        packageBox.querySelector(".price")?.innerText || "";
+
+    const bonus =
+        packageBox.querySelector(".bonus")?.innerText || "";
+
+    const button = document.createElement("a");
+
+    button.className = "order-btn";
+    button.href = "#";
+    button.innerHTML = "ORDER SEKARANG →";
+
+    button.onclick = function(e){
+
+        e.preventDefault();
+
+        const message =
+`Halo Store Sije 👋
+
+Saya mau order:
+
+📦 Paket: ${packageType}
+💰 Jumlah: ${packageName}
+💵 Harga: ${price}
+🎁 Bonus: ${bonus}
+
+Mohon dibantu untuk proses ordernya ya.`;
+
+        const url =
+            "https://wa.me/" +
+            STORE_WA +
+            "?text=" +
+            encodeURIComponent(message);
+
+        window.open(url, "_blank");
+    };
+
+    packageBox.appendChild(button);
+
+});
+
+</script>
 </body>
 </html>
