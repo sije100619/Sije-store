@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIJE Store — Worker System</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+  --bg:#050609;
+  --bg2:#090b10;
+  --card:rgba(255,255,255,.055);
+  --card2:rgba(255,255,255,.035);
+  --line:rgba(255,255,255,.09);
+  --text:#f5f5f7;
+  --muted:#9297a5;
+  --gold:#e8bd70;
+  --gold2:#ffd994;
+  --danger:#ff7373;
+  --green:#77d6a2;
+  --shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% -10%,rgba(232,189,112,.13),transparent 35%),
+    radial-gradient(circle at 0% 45%,rgba(112,130,255,.05),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:linear-gradient(to bottom,black,transparent 70%);
+}
+
+a{
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+  min-height:82vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  left:50%;
+  top:35%;
+  transform:translate(-50%,-50%);
+  background:rgba(232,189,112,.08);
+  filter:blur(100px);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:70px 0;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border:1px solid rgba(232,189,112,.25);
+  background:rgba(232,189,112,.06);
+  border-radius:999px;
+  color:var(--gold2);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+
+.dot{
+  width:6px;
+  height:6px;
+  background:var(--gold);
+  border-radius:50%;
+  box-shadow:0 0 15px var(--gold);
+}
+
+.logo{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(55px,13vw,115px);
+  line-height:.9;
+  letter-spacing:-5px;
+  margin-bottom:18px;
+  background:linear-gradient(
+    135deg,
+    #fff 15%,
+    var(--gold2) 48%,
+    #a77b39 90%
+  );
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero h2{
+  font-size:clamp(19px,4vw,31px);
+  font-weight:600;
+  letter-spacing:-.5px;
+  margin-bottom:16px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.hero-line{
+  width:90px;
+  height:1px;
+  margin:30px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.hero-note{
+  font-size:11px!important;
+  color:#6f7480!important;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* ================= NAV ================= */
+
+.nav-wrap{
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid var(--line);
+  background:rgba(5,6,9,.78);
+  backdrop-filter:blur(22px);
+}
+
+.nav{
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  padding:11px 0;
+  scrollbar-width:none;
+}
+
+.nav::-webkit-scrollbar{
+  display:none;
+}
+
+.nav a{
+  text-decoration:none;
+  white-space:nowrap;
+  color:#888e9b;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+  padding:9px 13px;
+  border-radius:9px;
+  transition:.25s;
+}
+
+.nav a:hover{
+  color:var(--gold2);
+  background:rgba(232,189,112,.08);
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+  padding:90px 0;
+}
+
+.section-head{
+  margin-bottom:34px;
+}
+
+.section-number{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.section-head h2{
+  margin-top:7px;
+  font-size:clamp(27px,6vw,44px);
+  letter-spacing:-1.5px;
+}
+
+.section-head p{
+  margin-top:8px;
+  max-width:650px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= GLASS ================= */
+
+.glass{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.025)
+    );
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+}
+
+/* ================= ORDER FLOW ================= */
+
+.order-box{
+  padding:30px;
+}
+
+.take-format{
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  background:#030407;
+  border:1px solid rgba(255,255,255,.07);
+  font-family:monospace;
+  color:#d8dce4;
+  font-size:13px;
+  line-height:1.9;
+}
+
+.flow{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.step{
+  padding:23px 15px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--card2);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.step::before{
+  content:"";
+  position:absolute;
+  width:80px;
+  height:80px;
+  background:rgba(232,189,112,.07);
+  filter:blur(25px);
+  top:-35px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.step-num{
+  position:relative;
+  z-index:2;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#15110a;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:0 0 25px rgba(232,189,112,.18);
+}
+
+.step strong{
+  display:block;
+  font-size:12px;
+}
+
+.step small{
+  display:block;
+  margin-top:6px;
+  color:#777e8b;
+  font-size:10px;
+}
+
+/* ================= FULL TEAM ================= */
+
+.team-box{
+  padding:55px 25px;
+  text-align:center;
+  overflow:hidden;
+  position:relative;
+}
+
+.team-box::before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(232,189,112,.07);
+  filter:blur(100px);
+}
+
+.team-content{
+  position:relative;
+  z-index:2;
+}
+
+.team-title{
+  font-size:clamp(38px,10vw,78px);
+  font-weight:800;
+  line-height:.95;
+  letter-spacing:-4px;
+}
+
+.team-title span{
+  display:block;
+  background:linear-gradient(135deg,#fff,var(--gold2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.team-sub{
+  color:var(--muted);
+  margin-top:20px;
+  font-size:13px;
+}
+
+.team-pills{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.pill{
+  padding:9px 15px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.pill.no{
+  background:rgba(255,80,80,.06);
+  color:#ff9999;
+  border:1px solid rgba(255,80,80,.15);
+}
+
+.pill.yes{
+  background:rgba(119,214,162,.07);
+  color:var(--green);
+  border:1px solid rgba(119,214,162,.16);
+}
+
+/* ================= PRICE ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.price-card{
+  padding:27px;
+  position:relative;
+  overflow:hidden;
+}
+
+.price-card::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-70px;
+  top:-70px;
+  border-radius:50%;
+  background:rgba(232,189,112,.06);
+  filter:blur(20px);
+}
+
+.card-tag{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:7px;
+  background:rgba(232,189,112,.08);
+  color:var(--gold2);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.price-card h3{
+  font-size:21px;
+  margin-top:15px;
+}
+
+.price{
+  margin:7px 0 14px;
+  color:var(--gold2);
+  font-size:29px;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+.description{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.divider{
+  height:1px;
+  background:var(--line);
+  margin:20px 0;
+}
+
+.margin-label{
+  color:#777e8b;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.margin{
+  margin-top:4px;
+  font-weight:800;
+  color:#f2f3f5;
+  font-size:16px;
+}
+
+/* ================= AYCL ================= */
+
+.aycl-card{
+  padding:30px;
+  position:relative;
+}
+
+.aycl-card.pro{
+  border-color:rgba(232,189,112,.28);
+  box-shadow:
+    0 25px 90px rgba(0,0,0,.5),
+    0 0 50px rgba(232,189,112,.05);
+}
+
+.aycl-card.premium{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(232,189,112,.09),
+      rgba(255,255,255,.025)
+    );
+}
+
+.aycl-name{
+  font-size:22px;
+  font-weight:700;
+  margin-top:15px;
+}
+
+.aycl-benefits{
+  list-style:none;
+  margin-top:17px;
+}
+
+.aycl-benefits li{
+  padding:8px 0;
+  color:#aeb4c0;
+  font-size:12px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.aycl-benefits li:last-child{
+  border-bottom:none;
+}
+
+.dynamic{
+  margin-top:18px;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.7px;
+}
+
+/* ================= RULES ================= */
+
+.rules{
+  overflow:hidden;
+}
+
+.rule{
+  display:flex;
+  gap:17px;
+  padding:19px 22px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  align-items:flex-start;
+}
+
+.rule:last-child{
+  border-bottom:none;
+}
+
+.rule-num{
+  flex:none;
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(232,189,112,.08);
+  color:var(--gold2);
+  font-size:10px;
+  font-weight:800;
+}
+
+.rule-text{
+  font-size:12px;
+  color:#b2b7c1;
+}
+
+.rule-text strong{
+  color:#f1f2f4;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+  text-align:center;
+  padding:70px 25px;
+}
+
+.summary h2{
+  font-size:clamp(28px,7vw,48px);
+  letter-spacing:-2px;
+}
+
+.summary-line{
+  width:100px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:22px auto;
+}
+
+.summary p{
+  max-width:700px;
+  margin:auto;
+  color:#969daa;
+  font-size:13px;
+}
+
+.summary strong{
+  color:var(--gold2);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  padding:45px 0;
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+
+.footer-logo{
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  color:var(--gold2);
+}
+
+footer p{
+  margin-top:7px;
+  color:#5e6470;
+  font-size:10px;
+  letter-spacing:.8px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:76vh;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .flow{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .step{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    text-align:left;
+    align-items:center;
+    gap:10px;
+    padding:16px;
+  }
+
+  .step-num{
+    margin:0;
+    grid-row:span 2;
+  }
+
+  .step small{
+    margin-top:1px;
+  }
+}
+
+@media(max-width:520px){
+
+  .container{
+    width:90%;
+  }
+
+  .hero-content{
+    padding:55px 0;
+  }
+
+  .logo{
+    letter-spacing:-3px;
+  }
+
+  .order-box,
+  .price-card,
+  .aycl-card{
+    padding:22px;
+  }
+
+  .team-box{
+    padding:45px 18px;
+  }
+
+  .team-title{
+    letter-spacing:-2.5px;
+  }
+
+  .summary{
+    padding:55px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Internal Worker System
+    </div>
+
+    <div class="logo">
+      SIJE
+    </div>
+
+    <h2>
+      Store Work System & Updated Pricing
+    </h2>
+
+    <div class="hero-line"></div>
+
+    <p>
+      Panduan internal mengenai pengambilan order,
+      sistem pengerjaan full team, serta pembagian margin
+      untuk seluruh worker SIJE.
+    </p>
+
+    <p class="hero-note" style="margin-top:25px;">
+      Satu sistem • Satu standar • Satu tim
+    </p>
+
+  </div>
+
+</header>
+
+
+<!-- ================= NAV ================= -->
+
+<div class="nav-wrap">
+
+  <div class="container nav">
+
+    <a href="#order">ORDER</a>
+    <a href="#team">FULL TEAM</a>
+    <a href="#mandor">MANDOR</a>
+    <a href="#value">VALUE</a>
+    <a href="#koin">KOIN</a>
+    <a href="#aycl">AYCL</a>
+    <a href="#rules">KETENTUAN</a>
+
+  </div>
+
+</div>
+
+
+<main>
+
+
+<!-- ================= ORDER ================= -->
+
+<section id="order">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        01 — ORDER SYSTEM
+      </div>
+
+      <h2>
+        Pengambilan Order
+      </h2>
+
+      <p>
+        Setiap order menjadi kesempatan bagi worker/tim
+        yang sedang tidak memegang order.
+      </p>
+
+    </div>
+
+
+    <div class="glass order-box">
+
+      <h3>
+        📦 Wajib Koordinasi di Grup
+      </h3>
+
+      <p style="margin-top:8px;color:var(--muted);font-size:13px;">
+        Sebelum mengambil order, worker wajib menginformasikan
+        order tersebut terlebih dahulu di grup.
+      </p>
+
+      <div class="take-format">
+TAKE ORDER
+Order: #XXX
+Paket: XXX
+Ada yang bisa take?
+      </div>
+
+    </div>
+
+
+    <div class="flow">
+
+      <div class="step">
+
+        <div class="step-num">01</div>
+
+        <strong>ORDER MASUK</strong>
+
+        <small>
+          Order tersedia untuk worker/tim yang belum take.
+        </small>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-num">02</div>
+
+        <strong>POST KE GRUP</strong>
+
+        <small>
+          Worker wajib melakukan koordinasi.
+        </small>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-num">03</div>
+
+        <strong>5 MENIT</strong>
+
+        <small>
+          Berikan kesempatan worker lain merespons.
+        </small>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-num">04</div>
+
+        <strong>FIRST CONFIRMED</strong>
+
+        <small>
+          Yang pertama menyatakan siap mendapatkan order.
+        </small>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-num">05</div>
+
+        <strong>TIDAK ADA?</strong>
+
+        <small>
+          Pengaju pertama berhak mengambil order.
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FULL TEAM ================= -->
+
+<section id="team">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        02 — WORK STANDARD
+      </div>
+
+      <h2>
+        Standar Pengerjaan
+      </h2>
+
+      <p>
+        Semua order wajib mengikuti sistem pengerjaan
+        full team yang telah ditentukan.
+      </p>
+
+    </div>
+
+
+    <div class="glass team-box">
+
+      <div class="team-content">
+
+        <div class="team-title">
+          <span>NO SOLO</span>
+          <span>NO DUO</span>
+          <span>FULL TEAM</span>
+        </div>
+
+        <p class="team-sub">
+          Sistem ini diterapkan untuk menjaga
+          kualitas dan kecepatan pengerjaan order.
+        </p>
+
+        <div class="team-pills">
+
+          <div class="pill no">
+            ❌ SOLO
+          </div>
+
+          <div class="pill no">
+            ❌ DUO
+          </div>
+
+          <div class="pill yes">
+            ✓ FULL TEAM
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MANDOR ================= -->
+
+<section id="mandor">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        03 — MARGIN
+      </div>
+
+      <h2>
+        Mandor
+      </h2>
+
+      <p>
+        Pembagian margin untuk tim yang mengerjakan
+        paket Mandor.
+      </p>
+
+    </div>
+
+
+    <div class="glass price-card">
+
+      <span class="card-tag">
+        MARGIN TIM
+      </span>
+
+      <h3>
+        Mandor
+      </h3>
+
+      <div class="price">
+        Rp14.000
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="margin-label">
+        Margin
+      </div>
+
+      <div class="margin">
+        Rp14.000 / tim
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= VALUE ================= -->
+
+<section id="value">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        04 — MARGIN
+      </div>
+
+      <h2>
+        Value
+      </h2>
+
+      <p>
+        Paket Value dikerjakan oleh 4 orang.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <div class="glass price-card">
+
+        <span class="card-tag">
+          WORKER UTAMA
+        </span>
+
+        <h3>
+          Worker #1
+        </h3>
+
+        <div class="price">
+          Rp5.000
+        </div>
+
+      </div>
+
+
+      <div class="glass price-card">
+
+        <span class="card-tag">
+          WORKER UTAMA
+        </span>
+
+        <h3>
+          Worker #2
+        </h3>
+
+        <div class="price">
+          Rp5.000
+        </div>
+
+      </div>
+
+
+      <div class="glass price-card">
+
+        <span class="card-tag">
+          WORKER UTAMA
+        </span>
+
+        <h3>
+          Worker #3
+        </h3>
+
+        <div class="price">
+          Rp5.000
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="glass price-card" style="margin-top:16px;">
+
+      <span class="card-tag">
+        PEMEGANG AKUN
+      </span>
+
+      <h3>
+        Account Holder
+      </h3>
+
+      <div class="price">
+        Rp3.000
+      </div>
+
+      <p class="description">
+        Pemegang akun mendapatkan bagian karena menyediakan
+        akun dan tidak memiliki risiko kehilangan gear seperti
+        worker utama.
+      </p>
+
+    </div>
+
+
+    <div class="glass price-card" style="margin-top:16px;">
+
+      <span class="card-tag">
+        TOTAL
+      </span>
+
+      <h3>
+        Total Margin Value
+      </h3>
+
+      <div class="price">
+        Rp18.000
+      </div>
+
+      <p class="description">
+        3 worker utama × Rp5.000 + pemegang akun Rp3.000.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= KOIN ================= -->
+
+<section id="koin">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        05 — MARGIN
+      </div>
+
+      <h2>
+        Koin
+      </h2>
+
+      <p>
+        Pembagian margin berdasarkan role worker
+        dan pemegang akun.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <div class="glass price-card">
+
+        <span class="card-tag">
+          WORKER
+        </span>
+
+        <h3>
+          Worker
+        </h3>
+
+        <div class="price">
+          Rp6.000
+        </div>
+
+        <p class="description">
+          Margin untuk setiap worker yang mengerjakan order.
+        </p>
+
+      </div>
+
+
+      <div class="glass price-card">
+
+        <span class="card-tag">
+          ACCOUNT HOLDER
+        </span>
+
+        <h3>
+          Pemegang Akun
+        </h3>
+
+        <div class="price">
+          Rp4.000
+        </div>
+
+        <p class="description">
+          Menyediakan akun dan bertanggung jawab menjual
+          seluruh hasil lootingan.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= AYCL ================= -->
+
+<section id="aycl">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        06 — UPDATED PRICING
+      </div>
+
+      <h2>
+        AYCL
+      </h2>
+
+      <p>
+        Harga terbaru dan pembagian margin Store
+        untuk setiap paket AYCL.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <!-- IRIT -->
+
+      <div class="glass aycl-card">
+
+        <span class="card-tag">
+          IRIT / NORMAL
+        </span>
+
+        <div class="aycl-name">
+          AYCL Irit
+        </div>
+
+        <div class="price">
+          Rp35.000
+        </div>
+
+        <ul class="aycl-benefits">
+
+          <li>
+            ✓ Paket AYCL Normal
+          </li>
+
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="margin-label">
+          Margin Store
+        </div>
+
+        <div class="margin">
+          Rp5.000
+        </div>
+
+      </div>
+
+
+      <!-- PRO -->
+
+      <div class="glass aycl-card pro">
+
+        <span class="card-tag">
+          PRO
+        </span>
+
+        <div class="aycl-name">
+          AYCL Pro
+        </div>
+
+        <div class="price">
+          Rp90.000
+        </div>
+
+        <ul class="aycl-benefits">
+
+          <li>
+            🔥 Forbidden
+          </li>
+
+          <li>
+            🛡️ Jaminan Thermal
+          </li>
+
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="margin-label">
+          Margin Store
+        </div>
+
+        <div class="margin">
+          Rp20.000
+        </div>
+
+      </div>
+
+
+      <!-- PREMIUM -->
+
+      <div class="glass aycl-card premium">
+
+        <span class="card-tag">
+          PREMIUM
+        </span>
+
+        <div class="aycl-name">
+          AYCL Premium
+        </div>
+
+        <div class="price">
+          Mulai Rp100.000
+        </div>
+
+        <ul class="aycl-benefits">
+
+          <li>
+            👑 Event Premium
+          </li>
+
+          <li>
+            💎 4 Gold
+          </li>
+
+          <li>
+            🔥 Benefit sesuai event
+          </li>
+
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="margin-label">
+          Margin Store
+        </div>
+
+        <div class="margin">
+          Rp20.000
+        </div>
+
+        <div class="dynamic">
+          Harga menyesuaikan popularitas event.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RULES ================= -->
+
+<section id="rules">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        07 — IMPORTANT
+      </div>
+
+      <h2>
+        Ketentuan Wajib
+      </h2>
+
+      <p>
+        Seluruh worker wajib memahami dan mengikuti
+        sistem kerja SIJE.
+      </p>
+
+    </div>
+
+
+    <div class="glass rules">
+
+
+      <div class="rule">
+
+        <div class="rule-num">01</div>
+
+        <div class="rule-text">
+          <strong>Koordinasi terlebih dahulu.</strong>
+          Order wajib diinformasikan di grup sebelum diambil.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">02</div>
+
+        <div class="rule-text">
+          <strong>Window koordinasi 5 menit.</strong>
+          Berikan kesempatan worker lain untuk merespons.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">03</div>
+
+        <div class="rule-text">
+          <strong>First Confirmed.</strong>
+          Worker yang pertama menyatakan siap mendapatkan order.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">04</div>
+
+        <div class="rule-text">
+          <strong>Tidak ada yang take?</strong>
+          Setelah 5 menit, pengaju pertama berhak mengambil order.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">05</div>
+
+        <div class="rule-text">
+          <strong>Full Team Only.</strong>
+          Semua order wajib dikerjakan dengan full team.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">06</div>
+
+        <div class="rule-text">
+          <strong>No Solo / No Duo.</strong>
+          Tidak diperbolehkan mengerjakan order secara solo atau duo.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">07</div>
+
+        <div class="rule-text">
+          <strong>Update status.</strong>
+          Setelah order diambil, informasikan statusnya di grup.
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">08</div>
+
+        <div class="rule-text">
+          <strong>Margin sesuai paket.</strong>
+          Pembagian margin mengikuti ketentuan masing-masing paket.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SUMMARY ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="glass summary">
+
+      <h2>
+        INTI SISTEM SIJE
+      </h2>
+
+      <div class="summary-line"></div>
+
+      <p>
+
+        <strong>KOORDINASI DULU</strong>
+        →
+        <strong>TAKE ORDER</strong>
+        →
+        <strong>FULL TEAM</strong>
+        →
+        <strong>KERJA CEPAT & BERKUALITAS</strong>
+        →
+        <strong>SELESAIKAN ORDER</strong>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-logo">
+      SIJE
+    </div>
+
+    <p>
+      INTERNAL WORKER SYSTEM • 2026
+    </p>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
