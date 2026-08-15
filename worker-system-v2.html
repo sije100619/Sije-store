@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SIJE Store — Worker System</title>
+<title>SIJE Store — Worker System V3</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --bg:#070707;
   --card:rgba(20,20,20,.78);
@@ -124,7 +125,10 @@ section{
   );
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:82vh;
@@ -227,7 +231,10 @@ section{
   letter-spacing:2px;
 }
 
-/* NAV */
+
+/* =========================
+   NAV
+========================= */
 
 .nav-wrap{
   position:sticky;
@@ -267,7 +274,10 @@ section{
   background:rgba(213,168,91,.07);
 }
 
-/* PRICE */
+
+/* =========================
+   HARGA
+========================= */
 
 .price-grid{
   display:grid;
@@ -280,14 +290,9 @@ section{
   transition:.25s;
 }
 
-.price-card:hover,
-.bonus-card:hover{
+.price-card:hover{
   transform:translateY(-4px);
   border-color:rgba(213,168,91,.25);
-}
-
-.price-card.featured{
-  border-color:rgba(213,168,91,.27);
 }
 
 .package-type{
@@ -328,7 +333,10 @@ section{
   line-height:1.8;
 }
 
-/* AYCL */
+
+/* =========================
+   AYCL
+========================= */
 
 .aycl-grid{
   display:grid;
@@ -389,7 +397,10 @@ section{
   font-size:12px;
 }
 
-/* PAYOUT */
+
+/* =========================
+   PEMBAGIAN
+========================= */
 
 .payout-section{
   display:grid;
@@ -463,7 +474,10 @@ section{
   font-size:13px;
 }
 
-/* ORDER */
+
+/* =========================
+   ORDER
+========================= */
 
 .order-grid{
   display:grid;
@@ -524,6 +538,21 @@ section{
   letter-spacing:2px;
 }
 
+.coordination-note{
+  margin-top:15px;
+  padding:18px;
+  border:1px solid rgba(213,168,91,.14);
+  border-radius:15px;
+  background:rgba(213,168,91,.035);
+  color:#77746e;
+  font-size:10px;
+  line-height:1.8;
+}
+
+.coordination-note strong{
+  color:var(--gold2);
+}
+
 .flow{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -565,7 +594,10 @@ section{
   font-size:8px;
 }
 
-/* TEAM */
+
+/* =========================
+   TEAM
+========================= */
 
 .team-card{
   padding:65px 25px;
@@ -622,7 +654,10 @@ section{
   background:rgba(114,214,157,.045);
 }
 
-/* RULES */
+
+/* =========================
+   RULES
+========================= */
 
 .rules{
   display:grid;
@@ -664,7 +699,70 @@ section{
   line-height:1.75;
 }
 
-/* BONUS */
+
+/* =========================
+   BONUS SOURCE
+========================= */
+
+.bonus-source{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-bottom:15px;
+  padding:25px;
+  border-color:rgba(213,168,91,.24);
+  background:
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(213,168,91,.09),
+      transparent 45%
+    ),
+    rgba(255,255,255,.018);
+}
+
+.bonus-source-icon{
+  width:50px;
+  height:50px;
+  flex:0 0 50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  border:1px solid rgba(213,168,91,.25);
+  background:rgba(213,168,91,.055);
+  color:var(--gold2);
+  font-size:19px;
+}
+
+.bonus-source-content h3{
+  margin-top:7px;
+  color:var(--gold2);
+  font-size:20px;
+  font-weight:800;
+}
+
+.bonus-source-content p{
+  margin-top:7px;
+  color:#99968f;
+  font-size:10px;
+  line-height:1.8;
+}
+
+.bonus-source-content p strong{
+  color:#ddd8ce;
+}
+
+.bonus-source-note{
+  margin-top:8px;
+  color:#5f5c56;
+  font-size:9px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   BONUS HERO
+========================= */
 
 .bonus-hero{
   position:relative;
@@ -775,6 +873,11 @@ section{
   line-height:1.7;
 }
 
+
+/* =========================
+   BONUS GRID
+========================= */
+
 .bonus-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -785,6 +888,11 @@ section{
 .bonus-card{
   padding:24px;
   transition:.25s;
+}
+
+.bonus-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(213,168,91,.25);
 }
 
 .bonus-number{
@@ -858,7 +966,14 @@ section{
   line-height:1.75;
 }
 
-/* CUSTOMER */
+.bonus-warning strong{
+  color:#aaa69e;
+}
+
+
+/* =========================
+   CUSTOMER
+========================= */
 
 .customer-card{
   padding:50px 25px;
@@ -919,7 +1034,10 @@ section{
   font-size:8px;
 }
 
-/* PRINCIPLE */
+
+/* =========================
+   PRINCIPLE
+========================= */
 
 .principle{
   padding:45px 25px;
@@ -959,7 +1077,10 @@ section{
   letter-spacing:1.2px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:48px 0;
@@ -981,7 +1102,10 @@ footer p{
   letter-spacing:1.5px;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:850px){
 
@@ -1073,13 +1197,28 @@ footer p{
   .bonus-rule{
     align-items:flex-start;
   }
+
+  .bonus-source{
+    align-items:flex-start;
+    padding:21px;
+  }
+
+  .bonus-source-content h3{
+    font-size:18px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
@@ -1113,7 +1252,9 @@ footer p{
 </header>
 
 
-<!-- NAV -->
+<!-- =========================
+     NAV
+========================= -->
 
 <div class="nav-wrap">
 
@@ -1135,7 +1276,10 @@ footer p{
 
 <main>
 
-<!-- HARGA -->
+
+<!-- =========================
+     01 HARGA
+========================= -->
 
 <section id="harga">
 
@@ -1153,17 +1297,25 @@ footer p{
 
     </div>
 
+
     <div class="price-grid">
+
 
       <div class="card price-card">
 
-        <span class="package-type">MANDOR</span>
+        <span class="package-type">
+          MANDOR
+        </span>
 
         <h3>Mandor</h3>
 
-        <div class="price">Rp20K</div>
+        <div class="price">
+          Rp20K
+        </div>
 
-        <div class="unit">/ 1M</div>
+        <div class="unit">
+          / 1M
+        </div>
 
         <p class="price-desc">
           Paket Mandor sesuai ketentuan terbaru Store.
@@ -1171,15 +1323,22 @@ footer p{
 
       </div>
 
+
       <div class="card price-card">
 
-        <span class="package-type">JOKI</span>
+        <span class="package-type">
+          JOKI
+        </span>
 
         <h3>Value</h3>
 
-        <div class="price">Rp25K</div>
+        <div class="price">
+          Rp25K
+        </div>
 
-        <div class="unit">/ 1M</div>
+        <div class="unit">
+          / 1M
+        </div>
 
         <p class="price-desc">
           Dikerjakan oleh 4 worker dengan pembagian
@@ -1188,15 +1347,22 @@ footer p{
 
       </div>
 
+
       <div class="card price-card">
 
-        <span class="package-type">JOKI</span>
+        <span class="package-type">
+          JOKI
+        </span>
 
         <h3>Koin</h3>
 
-        <div class="price">Rp30K</div>
+        <div class="price">
+          Rp30K
+        </div>
 
-        <div class="unit">/ 1M</div>
+        <div class="unit">
+          / 1M
+        </div>
 
         <p class="price-desc">
           Dikerjakan oleh 4 worker dengan tanggung jawab
@@ -1205,74 +1371,131 @@ footer p{
 
       </div>
 
+
     </div>
+
 
     <div style="height:15px"></div>
 
+
     <div class="aycl-grid">
+
 
       <div class="card aycl-card">
 
-        <span class="package-type">AYCL HEMAT</span>
+        <span class="package-type">
+          AYCL HEMAT
+        </span>
 
         <h3>AYCL Hemat</h3>
 
-        <div class="aycl-price">Rp35K</div>
+        <div class="aycl-price">
+          Rp35K
+        </div>
 
         <ul class="feature-list">
-          <li>✓ Rp35.000 / match</li>
-          <li>✓ Paket AYCL Hemat</li>
+
+          <li>
+            ✓ Rp35.000 / match
+          </li>
+
+          <li>
+            ✓ Paket AYCL Hemat
+          </li>
+
         </ul>
 
         <div class="store-note">
           Bagian Store<br>
-          <strong>Rp5.000 / match</strong>
+          <strong>
+            Rp5.000 / match
+          </strong>
         </div>
 
       </div>
+
 
       <div class="card aycl-card pro">
 
-        <span class="package-type">AYCL PRO</span>
+        <span class="package-type">
+          AYCL PRO
+        </span>
 
         <h3>AYCL Pro</h3>
 
-        <div class="aycl-price">Rp90K</div>
+        <div class="aycl-price">
+          Rp90K
+        </div>
 
         <ul class="feature-list">
-          <li>✓ Jaminan Thermal</li>
-          <li>✓ Map Forbidden</li>
-          <li>✓ Rp90.000 / match</li>
+
+          <li>
+            ✓ Jaminan Thermal
+          </li>
+
+          <li>
+            ✓ Map Forbidden
+          </li>
+
+          <li>
+            ✓ Rp90.000 / match
+          </li>
+
         </ul>
 
         <div class="store-note">
           Bagian Store<br>
-          <strong>Rp20.000 / match</strong>
+          <strong>
+            Rp20.000 / match
+          </strong>
         </div>
 
       </div>
+
 
       <div class="card aycl-card premium">
 
-        <span class="package-type">AYCL PREMIUM</span>
+        <span class="package-type">
+          AYCL PREMIUM
+        </span>
 
         <h3>AYCL Premium</h3>
 
-        <div class="aycl-price">Rp100K</div>
+        <div class="aycl-price">
+          Rp100K
+        </div>
 
         <ul class="feature-list">
-          <li>✓ Event 4 Gold</li>
-          <li>✓ Rp100.000 / match</li>
-          <li>✓ Premium Event</li>
+
+          <li>
+            ✓ Event 4 Gold
+          </li>
+
+          <li>
+            ✓ Rp100.000 / match
+          </li>
+
+          <li>
+            ✓ Premium Event
+          </li>
+
         </ul>
 
         <div class="store-note">
           Bagian Store<br>
-          <strong>Rp20.000 / match</strong><br><br>
-          Harga dapat menyesuaikan popularitas event.
+
+          <strong>
+            Rp20.000 / match
+          </strong>
+
+          <br><br>
+
+          Harga dapat menyesuaikan
+          popularitas event.
         </div>
 
       </div>
+
 
     </div>
 
@@ -1281,7 +1504,9 @@ footer p{
 </section>
 
 
-<!-- PEMBAGIAN -->
+<!-- =========================
+     02 PEMBAGIAN
+========================= -->
 
 <section id="pembagian">
 
@@ -1289,9 +1514,13 @@ footer p{
 
     <div class="section-head">
 
-      <div class="label">02 — WORKER PAYOUT</div>
+      <div class="label">
+        02 — WORKER PAYOUT
+      </div>
 
-      <h2>Pembagian Hasil Worker</h2>
+      <h2>
+        Pembagian Hasil Worker
+      </h2>
 
       <p>
         Pembagian hasil mengikuti posisi dan tanggung jawab
@@ -1300,15 +1529,26 @@ footer p{
 
     </div>
 
+
     <div class="payout-section">
+
+
+      <!-- MANDOR -->
 
       <div class="card payout-card">
 
         <div class="payout-head">
 
           <div>
-            <div class="label">MANDOR</div>
-            <h3>Mandor</h3>
+
+            <div class="label">
+              MANDOR
+            </div>
+
+            <h3>
+              Mandor
+            </h3>
+
           </div>
 
           <div class="payout-price">
@@ -1317,11 +1557,19 @@ footer p{
 
         </div>
 
+
         <div class="payout-table">
 
           <div class="payout-row total-row">
-            <span>Pembagian Tim</span>
-            <span>Rp14.000 / 1M</span>
+
+            <span>
+              Pembagian Tim
+            </span>
+
+            <span>
+              Rp14.000 / 1M
+            </span>
+
           </div>
 
         </div>
@@ -1329,13 +1577,22 @@ footer p{
       </div>
 
 
+      <!-- VALUE -->
+
       <div class="card payout-card">
 
         <div class="payout-head">
 
           <div>
-            <div class="label">JOKI VALUE</div>
-            <h3>Value</h3>
+
+            <div class="label">
+              JOKI VALUE
+            </div>
+
+            <h3>
+              Value
+            </h3>
+
           </div>
 
           <div class="payout-price">
@@ -1344,34 +1601,77 @@ footer p{
 
         </div>
 
+
         <div class="payout-table">
 
-          <div class="payout-row">
-            <span>Worker Utama 1</span>
-            <span>Rp5.000</span>
-          </div>
 
           <div class="payout-row">
-            <span>Worker Utama 2</span>
-            <span>Rp5.000</span>
+
+            <span>
+              Worker Utama 1
+            </span>
+
+            <span>
+              Rp5.000
+            </span>
+
           </div>
 
-          <div class="payout-row">
-            <span>Worker Utama 3</span>
-            <span>Rp5.000</span>
-          </div>
 
           <div class="payout-row">
-            <span>Pemegang Akun</span>
-            <span>Rp3.000</span>
+
+            <span>
+              Worker Utama 2
+            </span>
+
+            <span>
+              Rp5.000
+            </span>
+
           </div>
+
+
+          <div class="payout-row">
+
+            <span>
+              Worker Utama 3
+            </span>
+
+            <span>
+              Rp5.000
+            </span>
+
+          </div>
+
+
+          <div class="payout-row">
+
+            <span>
+              Pemegang Akun
+            </span>
+
+            <span>
+              Rp3.000
+            </span>
+
+          </div>
+
 
           <div class="payout-row total-row">
-            <span>Total Pembagian Worker</span>
-            <span>Rp18.000</span>
+
+            <span>
+              Total Pembagian Worker
+            </span>
+
+            <span>
+              Rp18.000
+            </span>
+
           </div>
 
+
         </div>
+
 
         <p class="price-desc">
           Tiga worker utama mendapatkan bagian lebih besar
@@ -1383,13 +1683,22 @@ footer p{
       </div>
 
 
+      <!-- KOIN -->
+
       <div class="card payout-card">
 
         <div class="payout-head">
 
           <div>
-            <div class="label">JOKI KOIN</div>
-            <h3>Koin</h3>
+
+            <div class="label">
+              JOKI KOIN
+            </div>
+
+            <h3>
+              Koin
+            </h3>
+
           </div>
 
           <div class="payout-price">
@@ -1398,34 +1707,77 @@ footer p{
 
         </div>
 
+
         <div class="payout-table">
 
-          <div class="payout-row">
-            <span>Worker Utama 1</span>
-            <span>Rp6.000</span>
-          </div>
 
           <div class="payout-row">
-            <span>Worker Utama 2</span>
-            <span>Rp6.000</span>
+
+            <span>
+              Worker Utama 1
+            </span>
+
+            <span>
+              Rp6.000
+            </span>
+
           </div>
 
-          <div class="payout-row">
-            <span>Worker Utama 3</span>
-            <span>Rp6.000</span>
-          </div>
 
           <div class="payout-row">
-            <span>Pemegang Akun</span>
-            <span>Rp4.000</span>
+
+            <span>
+              Worker Utama 2
+            </span>
+
+            <span>
+              Rp6.000
+            </span>
+
           </div>
+
+
+          <div class="payout-row">
+
+            <span>
+              Worker Utama 3
+            </span>
+
+            <span>
+              Rp6.000
+            </span>
+
+          </div>
+
+
+          <div class="payout-row">
+
+            <span>
+              Pemegang Akun
+            </span>
+
+            <span>
+              Rp4.000
+            </span>
+
+          </div>
+
 
           <div class="payout-row total-row">
-            <span>Total Pembagian Worker</span>
-            <span>Rp22.000</span>
+
+            <span>
+              Total Pembagian Worker
+            </span>
+
+            <span>
+              Rp22.000
+            </span>
+
           </div>
 
+
         </div>
+
 
         <p class="price-desc">
           Pemegang akun bertanggung jawab terhadap akun
@@ -1434,6 +1786,7 @@ footer p{
 
       </div>
 
+
     </div>
 
   </div>
@@ -1441,7 +1794,9 @@ footer p{
 </section>
 
 
-<!-- ORDER -->
+<!-- =========================
+     03 ORDER
+========================= -->
 
 <section id="order">
 
@@ -1449,9 +1804,13 @@ footer p{
 
     <div class="section-head">
 
-      <div class="label">03 — ORDER SYSTEM</div>
+      <div class="label">
+        03 — ORDER SYSTEM
+      </div>
 
-      <h2>Sistem Pengambilan Order</h2>
+      <h2>
+        Sistem Pengambilan Order
+      </h2>
 
       <p>
         Setiap order wajib melalui proses koordinasi
@@ -1460,13 +1819,19 @@ footer p{
 
     </div>
 
+
     <div class="order-grid">
+
 
       <div class="card order-main">
 
-        <div class="label">WAJIB KOORDINASI</div>
+        <div class="label">
+          WAJIB KOORDINASI
+        </div>
 
-        <h3>Tanyakan Order di Grup</h3>
+        <h3>
+          Tanyakan Order di Grup
+        </h3>
 
         <p>
           Sebelum mengambil order, informasikan terlebih
@@ -1474,58 +1839,143 @@ footer p{
           mendapatkan kesempatan.
         </p>
 
+
         <div class="order-example">
+
 TAKE ORDER
+
 Order : #XXX
 Paket : XXX
+
 Ada yang bisa take?
+
+        </div>
+
+
+        <div class="coordination-note">
+
+          <strong>
+            SISTEM KOORDINASI
+          </strong>
+
+          <br>
+
+          Jika ada tim lain yang bersedia mengambil order,
+          prioritaskan koordinasi dengan tim tersebut.
+
+          <br><br>
+
+          Jika tim lain belum bersedia, maka pihak yang
+          pertama menanyakan order berhak mengambilnya.
+
         </div>
 
       </div>
+
 
       <div class="card time-card">
 
-        <div class="time">5</div>
+        <div class="time">
+          TEAM
+        </div>
 
         <div class="time-label">
-          MENIT KOORDINASI
+          COORDINATION FIRST
         </div>
 
       </div>
 
+
     </div>
+
 
     <div class="flow">
 
-      <div class="flow-item">
-        <div class="flow-num">01</div>
-        <strong>ORDER MASUK</strong>
-        <small>Order tersedia.</small>
-      </div>
 
       <div class="flow-item">
-        <div class="flow-num">02</div>
-        <strong>POST GRUP</strong>
-        <small>Informasikan order.</small>
+
+        <div class="flow-num">
+          01
+        </div>
+
+        <strong>
+          ORDER MASUK
+        </strong>
+
+        <small>
+          Order tersedia.
+        </small>
+
       </div>
 
-      <div class="flow-item">
-        <div class="flow-num">03</div>
-        <strong>TUNGGU 5 MENIT</strong>
-        <small>Beri kesempatan.</small>
-      </div>
 
       <div class="flow-item">
-        <div class="flow-num">04</div>
-        <strong>SIAP TAKE</strong>
-        <small>Koordinasikan.</small>
+
+        <div class="flow-num">
+          02
+        </div>
+
+        <strong>
+          POST GRUP
+        </strong>
+
+        <small>
+          Informasikan order.
+        </small>
+
       </div>
 
+
       <div class="flow-item">
-        <div class="flow-num">05</div>
-        <strong>TIDAK ADA?</strong>
-        <small>Penanya berhak take.</small>
+
+        <div class="flow-num">
+          03
+        </div>
+
+        <strong>
+          TUNGGU RESPON
+        </strong>
+
+        <small>
+          Beri kesempatan.
+        </small>
+
       </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-num">
+          04
+        </div>
+
+        <strong>
+          ADA YANG TAKE?
+        </strong>
+
+        <small>
+          Koordinasikan.
+        </small>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-num">
+          05
+        </div>
+
+        <strong>
+          TIDAK ADA?
+        </strong>
+
+        <small>
+          Penanya berhak take.
+        </small>
+
+      </div>
+
 
     </div>
 
@@ -1534,7 +1984,9 @@ Ada yang bisa take?
 </section>
 
 
-<!-- TEAM -->
+<!-- =========================
+     04 TEAM
+========================= -->
 
 <section id="team">
 
@@ -1542,9 +1994,13 @@ Ada yang bisa take?
 
     <div class="section-head">
 
-      <div class="label">04 — WORK STANDARD</div>
+      <div class="label">
+        04 — WORK STANDARD
+      </div>
 
-      <h2>Standar Pengerjaan</h2>
+      <h2>
+        Standar Pengerjaan
+      </h2>
 
       <p>
         Sistem full team diterapkan untuk menjaga kualitas,
@@ -1553,13 +2009,25 @@ Ada yang bisa take?
 
     </div>
 
+
     <div class="card team-card">
 
       <div class="team-title">
-        <span>NO SOLO</span>
-        <span>NO DUO</span>
-        <span>FULL TEAM</span>
+
+        <span>
+          NO SOLO
+        </span>
+
+        <span>
+          NO DUO
+        </span>
+
+        <span>
+          FULL TEAM
+        </span>
+
       </div>
+
 
       <p class="team-text">
         Semua order wajib dikerjakan dengan full team.
@@ -1567,10 +2035,21 @@ Ada yang bisa take?
         maupun duo.
       </p>
 
+
       <div class="team-pills">
-        <div class="pill red">✕ SOLO</div>
-        <div class="pill red">✕ DUO</div>
-        <div class="pill green">✓ FULL TEAM</div>
+
+        <div class="pill red">
+          ✕ SOLO
+        </div>
+
+        <div class="pill red">
+          ✕ DUO
+        </div>
+
+        <div class="pill green">
+          ✓ FULL TEAM
+        </div>
+
       </div>
 
     </div>
@@ -1580,7 +2059,9 @@ Ada yang bisa take?
 </section>
 
 
-<!-- RULES -->
+<!-- =========================
+     05 RULES
+========================= -->
 
 <section id="rules">
 
@@ -1588,9 +2069,13 @@ Ada yang bisa take?
 
     <div class="section-head">
 
-      <div class="label">05 — MANDATORY RULES</div>
+      <div class="label">
+        05 — MANDATORY RULES
+      </div>
 
-      <h2>Peraturan Wajib Store</h2>
+      <h2>
+        Peraturan Wajib Store
+      </h2>
 
       <p>
         Seluruh worker wajib mengikuti peraturan berikut
@@ -1599,98 +2084,186 @@ Ada yang bisa take?
 
     </div>
 
+
     <div class="card rules">
 
+
       <div class="rule">
-        <div class="rule-num">01</div>
+
+        <div class="rule-num">
+          01
+        </div>
+
         <div>
-          <h4>WAJIB KOORDINASI ORDER</h4>
+
+          <h4>
+            WAJIB KOORDINASI ORDER
+          </h4>
+
           <p>
             Setiap order yang masuk wajib ditanyakan terlebih
             dahulu di grup Store sebelum diambil.
           </p>
+
         </div>
+
       </div>
 
+
       <div class="rule">
-        <div class="rule-num">02</div>
+
+        <div class="rule-num">
+          02
+        </div>
+
         <div>
-          <h4>SISTEM 5 MENIT</h4>
+
+          <h4>
+            BERIKAN KESEMPATAN KE TIM LAIN
+          </h4>
+
           <p>
-            Berikan kesempatan kepada worker/tim lain.
-            Jika tidak ada yang bersedia setelah 5 menit,
+            Worker atau tim lain harus diberikan kesempatan
+            untuk menyatakan kesediaan mengambil order.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="rule">
+
+        <div class="rule-num">
+          03
+        </div>
+
+        <div>
+
+          <h4>
+            PENANYA BERHAK TAKE
+          </h4>
+
+          <p>
+            Jika tim lain belum bersedia mengambil order,
             pihak yang pertama menanyakan order berhak
-            mengambil order tersebut.
+            mengambilnya.
           </p>
+
         </div>
+
       </div>
 
-      <div class="rule">
-        <div class="rule-num">03</div>
-        <div>
-          <h4>SUDAH TAKE = BERTANGGUNG JAWAB</h4>
-          <p>
-            Worker/tim yang menyatakan siap take berarti
-            sudah menyatakan kesanggupan mengerjakan order.
-          </p>
-        </div>
-      </div>
 
       <div class="rule">
-        <div class="rule-num">04</div>
+
+        <div class="rule-num">
+          04
+        </div>
+
         <div>
-          <h4>DILARANG REBUT ORDER</h4>
+
+          <h4>
+            DILARANG REBUT ORDER
+          </h4>
+
           <p>
             Order yang sudah diambil tim lain tidak boleh
-            diambil atau dikerjakan tanpa koordinasi terlebih
-            dahulu.
+            diambil atau dikerjakan tanpa koordinasi.
           </p>
+
         </div>
+
       </div>
 
+
       <div class="rule">
-        <div class="rule-num">05</div>
+
+        <div class="rule-num">
+          05
+        </div>
+
         <div>
-          <h4>WAJIB FULL TEAM</h4>
+
+          <h4>
+            WAJIB FULL TEAM
+          </h4>
+
           <p>
             Semua order wajib dikerjakan dengan full team.
             No Solo dan No Duo.
           </p>
+
         </div>
+
       </div>
 
+
       <div class="rule">
-        <div class="rule-num">06</div>
+
+        <div class="rule-num">
+          06
+        </div>
+
         <div>
-          <h4>WAJIB UPDATE STATUS</h4>
+
+          <h4>
+            WAJIB UPDATE STATUS
+          </h4>
+
           <p>
             Setelah order diambil, status wajib diinformasikan
             di grup agar tidak terjadi double take.
           </p>
+
         </div>
+
       </div>
 
+
       <div class="rule">
-        <div class="rule-num">07</div>
+
+        <div class="rule-num">
+          07
+        </div>
+
         <div>
-          <h4>WAJIB KOMUNIKASIKAN KENDALA</h4>
+
+          <h4>
+            WAJIB KOMUNIKASIKAN KENDALA
+          </h4>
+
           <p>
             Setiap kendala selama pengerjaan wajib segera
             dikomunikasikan di grup.
           </p>
+
         </div>
+
       </div>
 
+
       <div class="rule">
-        <div class="rule-num">08</div>
+
+        <div class="rule-num">
+          08
+        </div>
+
         <div>
-          <h4>JAGA PROFESIONALITAS</h4>
+
+          <h4>
+            JAGA PROFESIONALITAS
+          </h4>
+
           <p>
             Jaga komunikasi, sikap, kualitas pekerjaan,
             dan kepercayaan customer terhadap SIJE Store.
           </p>
+
         </div>
+
       </div>
+
 
     </div>
 
@@ -1699,7 +2272,9 @@ Ada yang bisa take?
 </section>
 
 
-<!-- BONUS -->
+<!-- =========================
+     06 BONUS
+========================= -->
 
 <section id="bonus">
 
@@ -1707,9 +2282,13 @@ Ada yang bisa take?
 
     <div class="section-head">
 
-      <div class="label">06 — WORKER REWARD</div>
+      <div class="label">
+        06 — WORKER REWARD
+      </div>
 
-      <h2>Worker Bonus System</h2>
+      <h2>
+        Worker Bonus System
+      </h2>
 
       <p>
         Sistem apresiasi bulanan untuk memberikan penghargaan
@@ -1719,35 +2298,92 @@ Ada yang bisa take?
     </div>
 
 
+    <!-- BONUS SOURCE -->
+
+    <div class="card bonus-source">
+
+      <div class="bonus-source-icon">
+        ✦
+      </div>
+
+      <div class="bonus-source-content">
+
+        <div class="label">
+          BONUS FUND
+        </div>
+
+        <h3>
+          Rp1.000 / 1M Mandor
+        </h3>
+
+        <p>
+          Dari setiap <strong>1M Paket Mandor</strong>,
+          sebesar <strong>Rp1.000</strong> dialokasikan
+          khusus ke Dana Bonus Worker Bulanan.
+        </p>
+
+        <div class="bonus-source-note">
+          Dana ini dikumpulkan secara berkala dan digunakan
+          sebagai apresiasi tambahan untuk Top 3 Team.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BONUS HERO -->
+
     <div class="card bonus-hero">
 
       <div class="bonus-glow"></div>
 
       <div class="bonus-content">
 
-        <div class="bonus-icon">✦</div>
+        <div class="bonus-icon">
+          🏆
+        </div>
 
-        <div class="label">MONTHLY TEAM REWARD</div>
+        <div class="label">
+          MONTHLY TEAM REWARD
+        </div>
 
         <h3>
+
           TOP 3
-          <span>TEAM</span>
+
+          <span>
+            TEAM
+          </span>
+
         </h3>
 
         <p>
           Setiap bulan, SIJE Store akan melakukan evaluasi
-          performa tim untuk menentukan 3 tim terbaik.
+          performa untuk menentukan tiga tim dengan performa
+          terbaik.
         </p>
 
+
         <div class="bonus-max">
-          <small>BONUS TERTINGGI DAPAT MENCAPAI</small>
-          <strong>Rp1.000.000</strong>
+
+          <small>
+            BONUS TERTINGGI DAPAT MENCAPAI
+          </small>
+
+          <strong>
+            Rp1.000.000
+          </strong>
+
         </div>
 
+
         <div class="bonus-note">
-          Nominal bonus tidak diumumkan secara tetap di awal
-          dan dapat berbeda setiap periode sesuai dana bonus
-          serta hasil evaluasi.
+
+          Nominal pembagian bonus tidak diumumkan secara
+          tetap di awal periode. Besarnya bonus mengikuti
+          dana bonus yang tersedia dan hasil evaluasi.
+
         </div>
 
       </div>
@@ -1755,80 +2391,147 @@ Ada yang bisa take?
     </div>
 
 
+    <!-- BONUS CRITERIA -->
+
     <div class="bonus-grid">
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">01</div>
-        <h4>KONSISTENSI</h4>
+
+        <div class="bonus-number">
+          01
+        </div>
+
+        <h4>
+          KONSISTENSI
+        </h4>
+
         <p>
           Konsistensi tim dalam menjalankan dan menyelesaikan
           order.
         </p>
+
       </div>
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">02</div>
-        <h4>KUALITAS</h4>
+
+        <div class="bonus-number">
+          02
+        </div>
+
+        <h4>
+          KUALITAS
+        </h4>
+
         <p>
           Kualitas pengerjaan dan kemampuan menjaga standar
           Store.
         </p>
+
       </div>
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">03</div>
-        <h4>KECEPATAN</h4>
+
+        <div class="bonus-number">
+          03
+        </div>
+
+        <h4>
+          KECEPATAN
+        </h4>
+
         <p>
           Kemampuan menyelesaikan order secara efisien
           tanpa mengorbankan kualitas.
         </p>
+
       </div>
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">04</div>
-        <h4>TEAMWORK</h4>
+
+        <div class="bonus-number">
+          04
+        </div>
+
+        <h4>
+          TEAMWORK
+        </h4>
+
         <p>
           Kerja sama antar anggota tim dan kemampuan
           melakukan koordinasi dengan baik.
         </p>
+
       </div>
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">05</div>
-        <h4>KEDISIPLINAN</h4>
+
+        <div class="bonus-number">
+          05
+        </div>
+
+        <h4>
+          KEDISIPLINAN
+        </h4>
+
         <p>
           Kepatuhan terhadap sistem, aturan, dan prosedur
           kerja Store.
         </p>
+
       </div>
 
+
       <div class="card bonus-card">
-        <div class="bonus-number">06</div>
-        <h4>CUSTOMER EXPERIENCE</h4>
+
+        <div class="bonus-number">
+          06
+        </div>
+
+        <h4>
+          CUSTOMER EXPERIENCE
+        </h4>
+
         <p>
           Kemampuan memberikan pelayanan yang nyaman,
           profesional, dan menjaga kepercayaan customer.
         </p>
+
       </div>
+
 
     </div>
 
 
+    <!-- TOP 3 -->
+
     <div class="card bonus-rule">
 
-      <div class="bonus-rule-icon">🏆</div>
+      <div class="bonus-rule-icon">
+        🏆
+      </div>
 
       <div>
-        <h4>TOP 3 TEAM</h4>
+
+        <h4>
+          TOP 3 TEAM
+        </h4>
 
         <p>
           Tiga tim dengan performa terbaik pada periode
           evaluasi akan mendapatkan bonus bulanan.
         </p>
+
       </div>
 
     </div>
 
+
+    <!-- INTERNAL -->
 
     <div class="card bonus-warning">
 
@@ -1837,10 +2540,14 @@ Ada yang bisa take?
       </div>
 
       <p>
-        Bonus merupakan apresiasi tambahan dari Store dan
+        Dana bonus berasal dari alokasi
+        <strong>
+          Rp1.000 setiap 1M Paket Mandor
+        </strong>.
+        Dana tersebut merupakan apresiasi tambahan dan
         bukan bagian dari pembagian hasil order reguler.
-        Nominal pembagian bonus tidak ditentukan secara tetap
-        di awal periode.
+        Nominal pembagian bonus tidak ditentukan secara
+        tetap di awal periode.
       </p>
 
     </div>
@@ -1850,7 +2557,9 @@ Ada yang bisa take?
 </section>
 
 
-<!-- CUSTOMER -->
+<!-- =========================
+     07 CUSTOMER
+========================= -->
 
 <section id="customer">
 
@@ -1858,9 +2567,13 @@ Ada yang bisa take?
 
     <div class="card customer-card">
 
-      <div class="customer-icon">✦</div>
+      <div class="customer-icon">
+        ✦
+      </div>
 
-      <h2>CUSTOMER COMFORT FIRST</h2>
+      <h2>
+        CUSTOMER COMFORT FIRST
+      </h2>
 
       <p>
         Setiap worker bukan hanya bertanggung jawab terhadap
@@ -1869,32 +2582,64 @@ Ada yang bisa take?
         customer selama menggunakan SIJE Store.
       </p>
 
+
       <div class="priority">
 
+
         <div class="priority-item">
+
           <b>01</b>
-          <span>Kenyamanan Customer</span>
+
+          <span>
+            Kenyamanan Customer
+          </span>
+
         </div>
 
+
         <div class="priority-item">
+
           <b>02</b>
-          <span>Kualitas Pengerjaan</span>
+
+          <span>
+            Kualitas Pengerjaan
+          </span>
+
         </div>
 
+
         <div class="priority-item">
+
           <b>03</b>
-          <span>Kecepatan & Ketepatan</span>
+
+          <span>
+            Kecepatan & Ketepatan
+          </span>
+
         </div>
 
+
         <div class="priority-item">
+
           <b>04</b>
-          <span>Kerja Sama Tim</span>
+
+          <span>
+            Kerja Sama Tim
+          </span>
+
         </div>
 
+
         <div class="priority-item">
+
           <b>05</b>
-          <span>Profesionalitas</span>
+
+          <span>
+            Profesionalitas
+          </span>
+
         </div>
+
 
       </div>
 
@@ -1905,7 +2650,9 @@ Ada yang bisa take?
 </section>
 
 
-<!-- PRINCIPLE -->
+<!-- =========================
+     08 PRINCIPLE
+========================= -->
 
 <section id="principle">
 
@@ -1913,7 +2660,9 @@ Ada yang bisa take?
 
     <div class="card principle">
 
-      <div class="label">SIJE STANDARD</div>
+      <div class="label">
+        SIJE STANDARD
+      </div>
 
       <h2 class="principle-title">
         Prinsip Utama
@@ -1921,23 +2670,48 @@ Ada yang bisa take?
 
       <div class="principle-line"></div>
 
+
       <div class="principle-list">
 
-        <div>CUSTOMER COMFORT FIRST</div>
+        <div>
+          CUSTOMER COMFORT FIRST
+        </div>
 
-        <div>KOORDINASI SEBELUM TAKE</div>
+        <div>
+          KOORDINASI SEBELUM TAKE
+        </div>
 
-        <div>FULL TEAM</div>
+        <div>
+          BERIKAN KESEMPATAN KE TIM LAIN
+        </div>
 
-        <div>NO SOLO</div>
+        <div>
+          PENANYA BERHAK TAKE JIKA TIDAK ADA YANG BERSEDIA
+        </div>
 
-        <div>NO DUO</div>
+        <div>
+          FULL TEAM
+        </div>
 
-        <div>SUDAH TAKE = BERTANGGUNG JAWAB</div>
+        <div>
+          NO SOLO
+        </div>
 
-        <div>JAGA KUALITAS & KECEPATAN</div>
+        <div>
+          NO DUO
+        </div>
 
-        <div>JAGA KOMUNIKASI & PROFESIONALITAS</div>
+        <div>
+          SUDAH TAKE = BERTANGGUNG JAWAB
+        </div>
+
+        <div>
+          JAGA KUALITAS & KECEPATAN
+        </div>
+
+        <div>
+          JAGA KOMUNIKASI & PROFESIONALITAS
+        </div>
 
       </div>
 
@@ -1947,16 +2721,21 @@ Ada yang bisa take?
 
 </section>
 
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
   <div class="container">
 
-    <div class="footer-logo">SIJE</div>
+    <div class="footer-logo">
+      SIJE
+    </div>
 
     <p>
       INTERNAL WORKER SYSTEM • SIJE STORE
@@ -1965,6 +2744,7 @@ Ada yang bisa take?
   </div>
 
 </footer>
+
 
 </body>
 </html>
