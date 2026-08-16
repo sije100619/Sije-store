@@ -7,7 +7,6 @@
 <title>Store Sije — Price List</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
@@ -42,7 +41,7 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 nav{
     position:sticky;
@@ -79,7 +78,7 @@ nav{
     color:#fff;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     max-width:1000px;
@@ -101,22 +100,15 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-
-    background:
-        linear-gradient(145deg,#191816,#3a3429);
-
+    background:linear-gradient(145deg,#191816,#3a3429);
     color:var(--gold-light);
-
     border:1px solid rgba(177,138,69,.5);
-
     font-family:'Playfair Display',serif;
     font-size:31px;
     font-weight:700;
-
     box-shadow:
         0 10px 40px rgba(0,0,0,.12),
         inset 0 0 20px rgba(255,255,255,.03);
-
     animation:
         logoFloat 4s ease-in-out infinite,
         fadeUp 1s ease;
@@ -168,7 +160,7 @@ nav{
     background:#2d2923;
 }
 
-/* ================= CONTENT ================= */
+/* CONTENT */
 
 .container{
     max-width:1050px;
@@ -205,7 +197,7 @@ nav{
     margin-top:8px;
 }
 
-/* ================= PRICE CARDS ================= */
+/* PRICE CARDS */
 
 .price-grid{
     display:grid;
@@ -218,15 +210,12 @@ nav{
     border:1px solid var(--border);
     border-radius:20px;
     padding:24px;
-
     position:relative;
     overflow:hidden;
-
     transition:
         transform .4s ease,
         box-shadow .4s ease,
         border-color .4s ease;
-
     box-shadow:0 10px 30px rgba(50,40,20,.04);
 }
 
@@ -264,7 +253,7 @@ nav{
     font-weight:700;
 }
 
-/* ================= PACKAGE ================= */
+/* PACKAGE */
 
 .package-list{
     margin-top:18px;
@@ -278,11 +267,9 @@ nav{
     border:1px solid rgba(177,138,69,.08);
     border-radius:12px;
     padding:12px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     transition:.3s;
 }
 
@@ -319,7 +306,7 @@ nav{
     font-weight:700;
 }
 
-/* ================= BADGE ================= */
+/* BADGE */
 
 .badge{
     position:absolute;
@@ -337,27 +324,61 @@ nav{
     background:var(--gold);
 }
 
-/* ================= FEATURE ================= */
+/* ORDER BUTTON */
+
+.order-btn,
+.aycl-btn{
+    display:inline-flex;
+    width:auto;
+    max-width:max-content;
+    flex:none;
+    margin-top:12px;
+    padding:9px 15px;
+    border:1px solid rgba(177,138,69,.35);
+    border-radius:10px;
+    background:#191816;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.3px;
+    line-height:1.4;
+    transition:.3s ease;
+    white-space:nowrap;
+}
+
+.order-btn{
+    margin-left:auto;
+}
+
+.order-btn:hover,
+.aycl-btn:hover{
+    transform:translateY(-3px);
+    background:#b18a45;
+    box-shadow:0 8px 20px rgba(177,138,69,.20);
+}
+
+.order-btn:active,
+.aycl-btn:active{
+    transform:scale(.97);
+}
+
+/* FEATURE */
 
 .feature{
     margin-top:45px;
-
     background:
         linear-gradient(
             135deg,
             #191816,
             #29251f
         );
-
     color:#fff;
-
     border-radius:25px;
     padding:38px 30px;
-
     text-align:center;
-
     box-shadow:0 20px 50px rgba(0,0,0,.12);
-
     position:relative;
     overflow:hidden;
 }
@@ -423,7 +444,7 @@ nav{
     margin-top:4px;
 }
 
-/* ================= AYCL ================= */
+/* AYCL */
 
 .aycl{
     display:grid;
@@ -462,7 +483,7 @@ nav{
     margin-top:10px;
 }
 
-/* ================= NOTE ================= */
+/* NOTE */
 
 .note{
     margin-top:35px;
@@ -479,7 +500,7 @@ nav{
     color:var(--text);
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     text-align:center;
@@ -494,7 +515,7 @@ footer strong{
     color:var(--gold);
 }
 
-/* ================= ANIMATION ================= */
+/* ANIMATION */
 
 @keyframes fadeUp{
     from{
@@ -518,7 +539,7 @@ footer strong{
     }
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:760px){
 
@@ -560,7 +581,6 @@ footer strong{
         padding:10px 9px;
     }
 }
-
 </style>
 </head>
 
@@ -623,6 +643,9 @@ Lihat Price List →
 
 <div class="price-grid">
 
+
+<!-- MANDOR CARD -->
+
 <div class="service-card">
 
 <div class="service-icon">🔵</div>
@@ -646,7 +669,6 @@ Rp20.000 / 1M
 </div>
 </div>
 
-
 <div class="package">
 <div class="package-left">
 <strong>5M</strong>
@@ -657,7 +679,6 @@ Rp20.000 / 1M
 <div class="bonus">+1M Loot</div>
 </div>
 </div>
-
 
 <div class="package">
 <div class="package-left">
@@ -670,7 +691,6 @@ Rp20.000 / 1M
 </div>
 </div>
 
-
 <div class="package">
 <div class="package-left">
 <strong>15M</strong>
@@ -681,7 +701,6 @@ Rp20.000 / 1M
 <div class="bonus">+3M Loot</div>
 </div>
 </div>
-
 
 <div class="package">
 <div class="package-left">
@@ -694,7 +713,6 @@ Rp20.000 / 1M
 </div>
 </div>
 
-
 <div class="package">
 <div class="package-left">
 <strong>30M 👑</strong>
@@ -705,7 +723,6 @@ Rp20.000 / 1M
 <div class="bonus">+8M Loot</div>
 </div>
 </div>
-
 
 <div class="package">
 <div class="package-left">
@@ -722,7 +739,7 @@ Rp20.000 / 1M
 </div>
 
 
-<!-- VALUE -->
+<!-- VALUE CARD -->
 
 <div class="service-card" id="value">
 
@@ -821,7 +838,7 @@ Rp25.000 / 1M
 </div>
 
 
-<!-- KOIN -->
+<!-- KOIN CARD -->
 
 <div class="service-card" id="koin">
 
@@ -924,7 +941,7 @@ Rp30.000 / 1M
 </section>
 
 
-<!-- BONUS FEATURE -->
+<!-- BONUS -->
 
 <section class="feature" id="bonus">
 
@@ -993,7 +1010,8 @@ SPECIAL PACKAGE
 <h2>All You Can Loot</h2>
 
 <p>
-Paket khusus untuk customer yang ingin mengejar loot.
+Pilih paket AYCL sesuai map, jaminan,
+dan target lootingan.
 </p>
 
 </div>
@@ -1001,50 +1019,89 @@ Paket khusus untuk customer yang ingin mengejar loot.
 
 <div class="aycl">
 
+
+<!-- AYCL NORMAL -->
+
 <div class="aycl-card">
 
-<h3>🥉 Starter</h3>
+<h3>🥉 Normal</h3>
 
 <div class="aycl-price">
-Mulai Rp100K
+Rp35K / match
 </div>
 
 <p>
-Cocok untuk mencoba paket AYCL
-dengan 3 worker utama.
+<strong>Map:</strong> Forbidden TV Armory<br>
+<strong>Jaminan Lootingan:</strong> 1,5M
 </p>
+
+<a
+href="#"
+class="aycl-btn"
+data-aycl="AYCL Normal"
+data-price="Rp35K / match"
+data-detail="Map: Forbidden TV Armory | Jaminan Lootingan: 1,5M"
+>
+ORDER OTOMATIS →
+</a>
 
 </div>
 
+
+<!-- AYCL PRO -->
 
 <div class="aycl-card">
 
 <h3>🥈 Pro</h3>
 
 <div class="aycl-price">
-Mulai Rp200K
+Rp90K / match
 </div>
 
 <p>
-Untuk customer yang ingin mengejar
-hasil loot lebih banyak.
+<strong>Map:</strong> Farmland<br>
+<strong>Jaminan:</strong> Thermal<br>
+<strong>Jaminan Lootingan:</strong> 3M
 </p>
+
+<a
+href="#"
+class="aycl-btn"
+data-aycl="AYCL Pro"
+data-price="Rp90K / match"
+data-detail="Map: Farmland | Jaminan Thermal | Jaminan Lootingan: 3M"
+>
+ORDER OTOMATIS →
+</a>
 
 </div>
 
+
+<!-- AYCL PREMIUM -->
 
 <div class="aycl-card">
 
-<h3>👑 Custom</h3>
+<h3>👑 Premium</h3>
 
 <div class="aycl-price">
-Sesuai Order
+Rp100K / match
 </div>
 
 <p>
-Paket dapat disesuaikan dengan kebutuhan
-dan kesepakatan sebelum pengerjaan.
+<strong>Map:</strong> Event seperti 4 Gold
+atau event seru lainnya<br>
+<strong>Jaminan Lootingan:</strong> 4M
 </p>
+
+<a
+href="#"
+class="aycl-btn"
+data-aycl="AYCL Premium"
+data-price="Rp100K / match"
+data-detail="Map: Event seperti 4 Gold atau event seru lainnya | Jaminan Lootingan: 4M"
+>
+ORDER OTOMATIS →
+</a>
 
 </div>
 
@@ -1063,15 +1120,21 @@ Bonus loot mengikuti ketentuan paket yang dipilih.
 Bonus tidak menjamin item tertentu dan hasil aktual
 dapat menyesuaikan hasil pengerjaan.
 
+<br><br>
+
 Harga dan ketentuan dapat diperbarui oleh
 <strong>Store Sije</strong> sewaktu-waktu.
 
 </div>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-<strong>STORE SIJE</strong><br><br>
+<strong>STORE SIJE</strong>
+
+<br><br>
 
 Joki • Loot • Value • Koin • AYCL
 
@@ -1082,50 +1145,14 @@ Joki • Loot • Value • Koin • AYCL
 </footer>
 
 </div>
-<style>
-.order-btn{
-    display:inline-flex !important;
-width:fit-content !important;
-max-width:max-content !important;
-    margin-top:12px;
-    padding:9px 15px;
-    border:1px solid rgba(177,138,69,.35);
-    border-radius:10px;
-    background:#191816;
-    color:#fff;
-    text-align:center;
-    text-decoration:none;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.3px;
-    line-height:1.4;
-    transition:.3s ease;
-}
 
-.order-btn:hover{
-    transform:translateY(-3px);
-    background:#b18a45;
-    box-shadow:0 8px 20px rgba(177,138,69,.20);
-}
 
-.order-btn:active{
-    transform:scale(.97);
-}
-</style>
-<style>
-.order-btn{
-  display:inline-flex !important;
-  width:auto !important;
-  max-width:max-content !important;
-  flex:none !important;
-  padding:9px 15px !important;
-  margin-left:auto !important;
-  white-space:nowrap !important;
-}
-</style>
 <script>
 
 const STORE_WA = "6285397377197";
+
+
+/* ORDER OTOMATIS PAKET MANDOR / VALUE / KOIN */
 
 document.querySelectorAll(".package").forEach(function(packageBox){
 
@@ -1142,15 +1169,20 @@ document.querySelectorAll(".package").forEach(function(packageBox){
     const bonus =
         packageBox.querySelector(".bonus")?.innerText || "";
 
+
     const button = document.createElement("a");
 
     button.className = "order-btn";
+
     button.href = "#";
+
     button.innerHTML = "ORDER SEKARANG →";
+
 
     button.onclick = function(e){
 
         e.preventDefault();
+
 
         const message =
 `Halo Store Sije 👋
@@ -1164,19 +1196,58 @@ Saya mau order:
 
 Mohon dibantu untuk proses ordernya ya.`;
 
+
         const url =
             "https://wa.me/" +
             STORE_WA +
             "?text=" +
             encodeURIComponent(message);
 
+
         window.open(url, "_blank");
+
     };
 
     packageBox.appendChild(button);
 
 });
 
+
+/* ORDER OTOMATIS AYCL */
+
+document.querySelectorAll(".aycl-btn").forEach(function(button){
+
+    button.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+
+        const message =
+`Halo Store Sije 👋
+
+Saya mau order AYCL:
+
+📦 Paket: ${button.dataset.aycl}
+💵 Harga: ${button.dataset.price}
+📍 ${button.dataset.detail}
+
+Mohon dibantu untuk proses ordernya ya.`;
+
+
+        const url =
+            "https://wa.me/" +
+            STORE_WA +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(url, "_blank");
+
+    });
+
+});
+
 </script>
+
 </body>
 </html>
