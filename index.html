@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Store Sije — Price List</title>
+<title>Store Sije — Creator & Price List</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -41,7 +41,7 @@ body{
     overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* ================= NAV ================= */
 
 nav{
     position:sticky;
@@ -78,18 +78,18 @@ nav{
     color:#fff;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     max-width:1000px;
     margin:auto;
-    min-height:470px;
+    min-height:390px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:70px 20px 60px;
+    padding:55px 20px 45px;
     animation:fadeUp 1s ease;
 }
 
@@ -100,15 +100,22 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(145deg,#191816,#3a3429);
+
+    background:
+        linear-gradient(145deg,#191816,#3a3429);
+
     color:var(--gold-light);
+
     border:1px solid rgba(177,138,69,.5);
+
     font-family:'Playfair Display',serif;
     font-size:31px;
     font-weight:700;
+
     box-shadow:
         0 10px 40px rgba(0,0,0,.12),
         inset 0 0 20px rgba(255,255,255,.03);
+
     animation:
         logoFloat 4s ease-in-out infinite,
         fadeUp 1s ease;
@@ -160,7 +167,7 @@ nav{
     background:#2d2923;
 }
 
-/* CONTENT */
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1050px;
@@ -197,7 +204,204 @@ nav{
     margin-top:8px;
 }
 
-/* PRICE CARDS */
+/* ================= CREATOR ================= */
+
+.creator-section{
+    margin-top:10px;
+    animation:fadeUp .8s ease both;
+}
+
+.creator-card{
+    background:
+        linear-gradient(135deg,#191816,#29251f);
+
+    color:#fff;
+
+    border-radius:25px;
+    padding:30px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.creator-card::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(177,138,69,.10);
+    right:-130px;
+    top:-170px;
+}
+
+.creator-head{
+    position:relative;
+    text-align:center;
+}
+
+.creator-label{
+    color:var(--gold-light);
+    font-size:10px;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.creator-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+    margin-top:8px;
+}
+
+.creator-head p{
+    color:#c8c3ba;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:8px;
+}
+
+.creator-code-box{
+    position:relative;
+    text-align:center;
+    margin:25px auto 0;
+    padding:24px 20px;
+    max-width:520px;
+    border:1px solid rgba(213,183,123,.25);
+    border-radius:18px;
+    background:rgba(255,255,255,.04);
+}
+
+.creator-code{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    font-weight:700;
+    letter-spacing:5px;
+    margin-top:6px;
+    color:#fff;
+}
+
+.copy-code{
+    margin-top:15px;
+    border:1px solid rgba(213,183,123,.35);
+    background:var(--gold);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.copy-code:hover{
+    transform:translateY(-3px);
+    background:#c29b55;
+    box-shadow:0 8px 20px rgba(177,138,69,.25);
+}
+
+#copy-status{
+    min-height:15px;
+    margin-top:7px;
+    color:var(--gold-light);
+    font-size:10px;
+}
+
+.creator-actions{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+}
+
+.creator-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(213,183,123,.28);
+    padding:11px 16px;
+    border-radius:11px;
+    font-size:10px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.creator-btn.primary{
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+.creator-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(177,138,69,.18);
+}
+
+.creator-steps{
+    position:relative;
+    margin-top:25px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.creator-step{
+    padding:16px 13px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    background:rgba(255,255,255,.04);
+}
+
+.step-number{
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(177,138,69,.16);
+    border:1px solid rgba(213,183,123,.25);
+    color:var(--gold-light);
+    font-size:9px;
+    font-weight:700;
+}
+
+.creator-step strong{
+    display:block;
+    font-size:12px;
+    margin-top:10px;
+}
+
+.creator-step p{
+    color:#bdb8ae;
+    font-size:10px;
+    line-height:1.6;
+    margin-top:4px;
+}
+
+.creator-note{
+    position:relative;
+    margin-top:18px;
+    padding:13px 15px;
+    border-radius:13px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(213,183,123,.15);
+    color:#bdb8ae;
+    font-size:10px;
+    line-height:1.7;
+    text-align:center;
+}
+
+.creator-note strong{
+    color:#fff;
+}
+
+/* ================= PRICE CARDS ================= */
 
 .price-grid{
     display:grid;
@@ -210,12 +414,15 @@ nav{
     border:1px solid var(--border);
     border-radius:20px;
     padding:24px;
+
     position:relative;
     overflow:hidden;
+
     transition:
         transform .4s ease,
         box-shadow .4s ease,
         border-color .4s ease;
+
     box-shadow:0 10px 30px rgba(50,40,20,.04);
 }
 
@@ -253,8 +460,6 @@ nav{
     font-weight:700;
 }
 
-/* PACKAGE */
-
 .package-list{
     margin-top:18px;
     display:flex;
@@ -267,9 +472,11 @@ nav{
     border:1px solid rgba(177,138,69,.08);
     border-radius:12px;
     padding:12px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     transition:.3s;
 }
 
@@ -306,7 +513,51 @@ nav{
     font-weight:700;
 }
 
-/* BADGE */
+/* ================= ORDER BUTTON ================= */
+
+.order-btn,
+.aycl-btn{
+    display:inline-flex !important;
+    width:auto !important;
+    max-width:max-content !important;
+    flex:none !important;
+
+    margin-top:12px;
+
+    padding:9px 15px;
+
+    border:1px solid rgba(177,138,69,.35);
+    border-radius:10px;
+
+    background:#191816;
+    color:#fff;
+
+    text-align:center;
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.3px;
+    line-height:1.4;
+
+    transition:.3s ease;
+
+    white-space:nowrap;
+}
+
+.order-btn{
+    margin-left:auto;
+}
+
+.order-btn:hover,
+.aycl-btn:hover{
+    transform:translateY(-3px);
+    background:#b18a45;
+    box-shadow:0 8px 20px rgba(177,138,69,.20);
+}
+
+/* ================= BADGE ================= */
 
 .badge{
     position:absolute;
@@ -324,61 +575,27 @@ nav{
     background:var(--gold);
 }
 
-/* ORDER BUTTON */
-
-.order-btn,
-.aycl-btn{
-    display:inline-flex;
-    width:auto;
-    max-width:max-content;
-    flex:none;
-    margin-top:12px;
-    padding:9px 15px;
-    border:1px solid rgba(177,138,69,.35);
-    border-radius:10px;
-    background:#191816;
-    color:#fff;
-    text-align:center;
-    text-decoration:none;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.3px;
-    line-height:1.4;
-    transition:.3s ease;
-    white-space:nowrap;
-}
-
-.order-btn{
-    margin-left:auto;
-}
-
-.order-btn:hover,
-.aycl-btn:hover{
-    transform:translateY(-3px);
-    background:#b18a45;
-    box-shadow:0 8px 20px rgba(177,138,69,.20);
-}
-
-.order-btn:active,
-.aycl-btn:active{
-    transform:scale(.97);
-}
-
-/* FEATURE */
+/* ================= FEATURE ================= */
 
 .feature{
     margin-top:45px;
+
     background:
         linear-gradient(
             135deg,
             #191816,
             #29251f
         );
+
     color:#fff;
+
     border-radius:25px;
     padding:38px 30px;
+
     text-align:center;
+
     box-shadow:0 20px 50px rgba(0,0,0,.12);
+
     position:relative;
     overflow:hidden;
 }
@@ -444,7 +661,7 @@ nav{
     margin-top:4px;
 }
 
-/* AYCL */
+/* ================= AYCL ================= */
 
 .aycl{
     display:grid;
@@ -483,7 +700,7 @@ nav{
     margin-top:10px;
 }
 
-/* NOTE */
+/* ================= NOTE ================= */
 
 .note{
     margin-top:35px;
@@ -500,7 +717,7 @@ nav{
     color:var(--text);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
@@ -515,7 +732,7 @@ footer strong{
     color:var(--gold);
 }
 
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 
 @keyframes fadeUp{
     from{
@@ -539,13 +756,13 @@ footer strong{
     }
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:760px){
 
     .hero{
-        min-height:420px;
-        padding-top:55px;
+        min-height:360px;
+        padding-top:50px;
     }
 
     .hero h1{
@@ -580,48 +797,95 @@ footer strong{
         min-width:74px;
         padding:10px 9px;
     }
+
+    .creator-card{
+        padding:23px 17px;
+    }
+
+    .creator-head h2{
+        font-size:28px;
+    }
+
+    .creator-steps{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:430px){
+
+    .creator-steps{
+        grid-template-columns:1fr;
+    }
+
+    .creator-code{
+        font-size:38px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
+
 <div class="nav-container">
-<a href="#mandor">Mandor</a>
-<a href="#value">Value</a>
-<a href="#koin">Koin</a>
-<a href="#aycl">AYCL</a>
-<a href="#bonus">Bonus</a>
+
+<a href="#creator">
+Creator
+</a>
+
+<a href="#mandor">
+Mandor
+</a>
+
+<a href="#value">
+Value
+</a>
+
+<a href="#koin">
+Koin
+</a>
+
+<a href="#aycl">
+AYCL
+</a>
+
+<a href="#bonus">
+Bonus
+</a>
+
 </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
-<div class="logo">S</div>
+<div class="logo">
+S
+</div>
 
 <div class="mini">
 STORE SIJE
 </div>
 
 <h1>
-JOKI <span>&</span><br>
-BONUS LOOT
+CREATOR <span>&</span><br>
+JOKI STORE
 </h1>
 
 <p>
-Main santai, progres jalan, dan setiap paket
-memiliki bonus loot yang semakin besar.
-Pilih paket yang paling sesuai dengan kebutuhanmu.
+Top up Arena Breakout dengan Creator Code
+<strong>sije</strong>, lalu pilih layanan joki
+yang sesuai kebutuhanmu.
 </p>
 
-<a href="#mandor" class="hero-button">
-Lihat Price List →
+<a href="#creator" class="hero-button">
+Cara Top Up Creator →
 </a>
 
 </header>
@@ -630,132 +894,370 @@ Lihat Price List →
 <div class="container">
 
 
-<!-- MANDOR -->
+<!-- =====================================================
+     ARENA BREAKOUT CREATOR
+     PALING ATAS SEBELUM PRICE LIST
+====================================================== -->
 
-<section class="section" id="mandor">
+<section class="creator-section" id="creator">
+
+<div class="creator-card">
+
+<div class="creator-head">
+
+<div class="creator-label">
+ARENA BREAKOUT × CREATOR
+</div>
+
+<h2>
+Support Creator SIJE
+</h2>
+
+<p>
+Gunakan Creator Code
+<strong>sije</strong>
+saat melakukan pembelian Bonds.
+</p>
+
+</div>
+
+
+<!-- CREATOR CODE -->
+
+<div class="creator-code-box">
+
+<div class="creator-label">
+CREATOR CODE
+</div>
+
+<div class="creator-code">
+sije
+</div>
+
+<button
+class="copy-code"
+onclick="copyCreatorCode()">
+
+SALIN CODE
+
+</button>
+
+<div id="copy-status"></div>
+
+</div>
+
+
+<!-- BUTTON -->
+
+<div class="creator-actions">
+
+<a
+class="creator-btn primary"
+href="https://www.midasbuy.com/midasbuy/id/login"
+target="_blank"
+rel="noopener noreferrer">
+
+🛒 TOP UP VIA MIDASBUY →
+
+</a>
+
+
+<a
+class="creator-btn"
+href="https://arenabreakout.com/"
+target="_blank"
+rel="noopener noreferrer">
+
+🎮 ARENA BREAKOUT →
+
+</a>
+
+</div>
+
+
+<!-- PANDUAN -->
+
+<div class="creator-steps">
+
+
+<div class="creator-step">
+
+<div class="step-number">
+01
+</div>
+
+<strong>
+Login
+</strong>
+
+<p>
+Login ke akun Arena Breakout
+melalui platform resmi.
+</p>
+
+</div>
+
+
+<div class="creator-step">
+
+<div class="step-number">
+02
+</div>
+
+<strong>
+Hubungkan Code
+</strong>
+
+<p>
+Masukkan Creator Code
+<strong>sije</strong>.
+</p>
+
+</div>
+
+
+<div class="creator-step">
+
+<div class="step-number">
+03
+</div>
+
+<strong>
+Pilih Bonds
+</strong>
+
+<p>
+Pilih jumlah Bonds yang
+ingin dibeli.
+</p>
+
+</div>
+
+
+<div class="creator-step">
+
+<div class="step-number">
+04
+</div>
+
+<strong>
+Selesaikan Pembayaran
+</strong>
+
+<p>
+Lanjutkan pembayaran sesuai
+metode yang tersedia.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="creator-note">
+
+<strong>⏱️ Catatan:</strong>
+
+Creator Code
+<strong>sije</strong>
+berlaku selama
+<strong>14 hari</strong>
+setelah berhasil dihubungkan
+dan dapat dihubungkan kembali
+setelah masa berlaku berakhir.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MANDOR / VALUE / KOIN
+====================================================== -->
+
+<section
+class="section"
+id="mandor">
 
 <div class="section-title">
-<div class="label">PACKAGE 01</div>
-<h2>Mandor</h2>
-<p>Rp20K / 1M</p>
+
+<div class="label">
+PACKAGE 01
+</div>
+
+<h2>
+Mandor
+</h2>
+
+<p>
+Rp20K / 1M
+</p>
+
 </div>
 
 
 <div class="price-grid">
 
 
-<!-- MANDOR CARD -->
+<!-- MANDOR -->
 
 <div class="service-card">
 
-<div class="service-icon">🔵</div>
+<div class="service-icon">
+🔵
+</div>
 
-<h3>Mandor</h3>
+<h3>
+Mandor
+</h3>
 
 <div class="rate">
 Rp20.000 / 1M
 </div>
 
+
 <div class="package-list">
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>3M</strong>
 <span>Paket Starter</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp60K</div>
 <div class="bonus">+500K Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>5M</strong>
 <span>Paket Hemat</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp100K</div>
 <div class="bonus">+1M Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>10M ⭐</strong>
 <span>Paling Populer</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp200K</div>
 <div class="bonus">+2M Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>15M</strong>
 <span>Paket Besar</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp300K</div>
 <div class="bonus">+3M Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>20M 🔥</strong>
 <span>Best Deal</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp400K</div>
 <div class="bonus">+5M Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>30M 👑</strong>
 <span>Paket Sultan</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp600K</div>
 <div class="bonus">+8M Loot</div>
 </div>
+
 </div>
 
+
 <div class="package">
+
 <div class="package-left">
 <strong>50M 💎</strong>
 <span>Paket Premium</span>
 </div>
+
 <div class="package-right">
 <div class="price">Rp1JT</div>
 <div class="bonus">+12M Loot</div>
 </div>
-</div>
 
 </div>
+
+
+</div>
 </div>
 
 
-<!-- VALUE CARD -->
 
-<div class="service-card" id="value">
+<!-- VALUE -->
+
+<div
+class="service-card"
+id="value">
 
 <div class="badge">
 POPULAR
 </div>
 
-<div class="service-icon">🟢</div>
+<div class="service-icon">
+🟢
+</div>
 
-<h3>Value</h3>
+<h3>
+Value
+</h3>
 
 <div class="rate">
 Rp25.000 / 1M
 </div>
 
+
 <div class="package-list">
+
 
 <div class="package">
 <div class="package-left">
@@ -768,6 +1270,7 @@ Rp25.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>5M</strong>
@@ -778,6 +1281,7 @@ Rp25.000 / 1M
 <div class="bonus">+1M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -790,6 +1294,7 @@ Rp25.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>15M</strong>
@@ -800,6 +1305,7 @@ Rp25.000 / 1M
 <div class="bonus">+3M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -812,6 +1318,7 @@ Rp25.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>30M 👑</strong>
@@ -822,6 +1329,7 @@ Rp25.000 / 1M
 <div class="bonus">+8M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -834,27 +1342,37 @@ Rp25.000 / 1M
 </div>
 </div>
 
+
 </div>
 </div>
 
 
-<!-- KOIN CARD -->
 
-<div class="service-card" id="koin">
+<!-- KOIN -->
+
+<div
+class="service-card"
+id="koin">
 
 <div class="badge gold">
 PREMIUM
 </div>
 
-<div class="service-icon">🟡</div>
+<div class="service-icon">
+🟡
+</div>
 
-<h3>Koin</h3>
+<h3>
+Koin
+</h3>
 
 <div class="rate">
 Rp30.000 / 1M
 </div>
 
+
 <div class="package-list">
+
 
 <div class="package">
 <div class="package-left">
@@ -867,6 +1385,7 @@ Rp30.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>5M</strong>
@@ -877,6 +1396,7 @@ Rp30.000 / 1M
 <div class="bonus">+1M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -889,6 +1409,7 @@ Rp30.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>15M</strong>
@@ -899,6 +1420,7 @@ Rp30.000 / 1M
 <div class="bonus">+3M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -911,6 +1433,7 @@ Rp30.000 / 1M
 </div>
 </div>
 
+
 <div class="package">
 <div class="package-left">
 <strong>30M 👑</strong>
@@ -921,6 +1444,7 @@ Rp30.000 / 1M
 <div class="bonus">+8M Loot</div>
 </div>
 </div>
+
 
 <div class="package">
 <div class="package-left">
@@ -933,17 +1457,24 @@ Rp30.000 / 1M
 </div>
 </div>
 
+
 </div>
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- BONUS -->
 
-<section class="feature" id="bonus">
+<!-- =====================================================
+     BONUS
+====================================================== -->
+
+<section
+class="feature"
+id="bonus">
 
 <h2>
 Semakin Besar Order,<br>
@@ -954,6 +1485,7 @@ Semakin Besar Bonus
 Kami memberikan bonus loot bertingkat
 untuk membuat setiap paket memiliki nilai lebih.
 </p>
+
 
 <div class="bonus-flow">
 
@@ -997,9 +1529,14 @@ untuk membuat setiap paket memiliki nilai lebih.
 </section>
 
 
-<!-- AYCL -->
 
-<section class="section" id="aycl">
+<!-- =====================================================
+     AYCL
+====================================================== -->
+
+<section
+class="section"
+id="aycl">
 
 <div class="section-title">
 
@@ -1007,11 +1544,13 @@ untuk membuat setiap paket memiliki nilai lebih.
 SPECIAL PACKAGE
 </div>
 
-<h2>All You Can Loot</h2>
+<h2>
+All You Can Loot
+</h2>
 
 <p>
-Pilih paket AYCL sesuai map, jaminan,
-dan target lootingan.
+Pilih paket AYCL sesuai map,
+jaminan, dan target lootingan.
 </p>
 
 </div>
@@ -1020,19 +1559,28 @@ dan target lootingan.
 <div class="aycl">
 
 
-<!-- AYCL NORMAL -->
+<!-- NORMAL -->
 
 <div class="aycl-card">
 
-<h3>🥉 Normal</h3>
+<h3>
+🥉 Normal
+</h3>
 
 <div class="aycl-price">
 Rp35K / match
 </div>
 
 <p>
-<strong>Map:</strong> Forbidden TV Armory<br>
-<strong>Jaminan Lootingan:</strong> 1,5M
+
+<strong>Map:</strong>
+Forbidden TV Armory
+
+<br>
+
+<strong>Jaminan Lootingan:</strong>
+1,5M
+
 </p>
 
 <a
@@ -1040,28 +1588,43 @@ href="#"
 class="aycl-btn"
 data-aycl="AYCL Normal"
 data-price="Rp35K / match"
-data-detail="Map: Forbidden TV Armory | Jaminan Lootingan: 1,5M"
->
+data-detail="Map: Forbidden TV Armory | Jaminan Lootingan: 1,5M">
+
 ORDER OTOMATIS →
+
 </a>
 
 </div>
 
 
-<!-- AYCL PRO -->
+
+<!-- PRO -->
 
 <div class="aycl-card">
 
-<h3>🥈 Pro</h3>
+<h3>
+🥈 Pro
+</h3>
 
 <div class="aycl-price">
 Rp90K / match
 </div>
 
 <p>
-<strong>Map:</strong> Farmland<br>
-<strong>Jaminan:</strong> Thermal<br>
-<strong>Jaminan Lootingan:</strong> 3M
+
+<strong>Map:</strong>
+Farmland
+
+<br>
+
+<strong>Jaminan:</strong>
+Thermal
+
+<br>
+
+<strong>Jaminan Lootingan:</strong>
+3M
+
 </p>
 
 <a
@@ -1069,28 +1632,39 @@ href="#"
 class="aycl-btn"
 data-aycl="AYCL Pro"
 data-price="Rp90K / match"
-data-detail="Map: Farmland | Jaminan Thermal | Jaminan Lootingan: 3M"
->
+data-detail="Map: Farmland | Jaminan Thermal | Jaminan Lootingan: 3M">
+
 ORDER OTOMATIS →
+
 </a>
 
 </div>
 
 
-<!-- AYCL PREMIUM -->
+
+<!-- PREMIUM -->
 
 <div class="aycl-card">
 
-<h3>👑 Premium</h3>
+<h3>
+👑 Premium
+</h3>
 
 <div class="aycl-price">
 Rp100K / match
 </div>
 
 <p>
-<strong>Map:</strong> Event seperti 4 Gold
-atau event seru lainnya<br>
-<strong>Jaminan Lootingan:</strong> 4M
+
+<strong>Map:</strong>
+Event Map seperti 4 Gold
+atau event seru lainnya
+
+<br>
+
+<strong>Jaminan Lootingan:</strong>
+4M
+
 </p>
 
 <a
@@ -1098,23 +1672,27 @@ href="#"
 class="aycl-btn"
 data-aycl="AYCL Premium"
 data-price="Rp100K / match"
-data-detail="Map: Event seperti 4 Gold atau event seru lainnya | Jaminan Lootingan: 4M"
->
+data-detail="Map: Event seperti 4 Gold atau event seru lainnya | Jaminan Lootingan: 4M">
+
 ORDER OTOMATIS →
+
 </a>
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- NOTE -->
+
+<!-- ================= NOTE ================= -->
 
 <div class="note">
 
-<strong>Catatan:</strong><br>
+<strong>Catatan:</strong>
+<br>
 
 Bonus loot mengikuti ketentuan paket yang dipilih.
 Bonus tidak menjamin item tertentu dan hasil aktual
@@ -1128,11 +1706,14 @@ Harga dan ketentuan dapat diperbarui oleh
 </div>
 
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<strong>STORE SIJE</strong>
+<strong>
+STORE SIJE
+</strong>
 
 <br><br>
 
@@ -1147,44 +1728,129 @@ Joki • Loot • Value • Koin • AYCL
 </div>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
 <script>
 
 const STORE_WA = "6285397377197";
 
 
-/* ORDER OTOMATIS PAKET MANDOR / VALUE / KOIN */
+/* ================= COPY CREATOR CODE ================= */
 
-document.querySelectorAll(".package").forEach(function(packageBox){
+function copyCreatorCode(){
+
+    const code = "sije";
+
+    const status =
+        document.getElementById("copy-status");
+
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
+
+        navigator.clipboard
+        .writeText(code)
+        .then(function(){
+
+            status.innerText =
+                "✓ Creator Code sije berhasil disalin";
+
+        })
+        .catch(function(){
+
+            fallbackCopy(code,status);
+
+        });
+
+    }else{
+
+        fallbackCopy(code,status);
+
+    }
+
+}
+
+
+function fallbackCopy(code,status){
+
+    const temp =
+        document.createElement("input");
+
+    temp.value = code;
+
+    document.body.appendChild(temp);
+
+    temp.select();
+
+    temp.setSelectionRange(
+        0,
+        99999
+    );
+
+    document.execCommand("copy");
+
+    document.body.removeChild(temp);
+
+    status.innerText =
+        "✓ Creator Code sije berhasil disalin";
+
+}
+
+
+
+/* ================= ORDER PACKAGE ================= */
+
+document
+.querySelectorAll(".package")
+.forEach(function(packageBox){
 
     const packageName =
-        packageBox.querySelector(".package-left strong")?.innerText || "";
+        packageBox
+        .querySelector(".package-left strong")
+        ?.innerText || "";
 
     const packageType =
-        packageBox.closest(".service-card")
-        ?.querySelector("h3")?.innerText || "";
+        packageBox
+        .closest(".service-card")
+        ?.querySelector("h3")
+        ?.innerText || "";
 
     const price =
-        packageBox.querySelector(".price")?.innerText || "";
+        packageBox
+        .querySelector(".price")
+        ?.innerText || "";
 
     const bonus =
-        packageBox.querySelector(".bonus")?.innerText || "";
+        packageBox
+        .querySelector(".bonus")
+        ?.innerText || "";
 
 
-    const button = document.createElement("a");
-
-    button.className = "order-btn";
-
-    button.href = "#";
-
-    button.innerHTML = "ORDER SEKARANG →";
+    const button =
+        document.createElement("a");
 
 
-    button.onclick = function(e){
+    button.className =
+        "order-btn";
 
-        e.preventDefault();
+    button.href =
+        "#";
+
+    button.innerHTML =
+        "ORDER SEKARANG →";
 
 
-        const message =
+    button.onclick =
+        function(e){
+
+            e.preventDefault();
+
+
+            const message =
 `Halo Store Sije 👋
 
 Saya mau order:
@@ -1197,32 +1863,40 @@ Saya mau order:
 Mohon dibantu untuk proses ordernya ya.`;
 
 
-        const url =
-            "https://wa.me/" +
-            STORE_WA +
-            "?text=" +
-            encodeURIComponent(message);
+            window.open(
 
+                "https://wa.me/" +
+                STORE_WA +
+                "?text=" +
+                encodeURIComponent(message),
 
-        window.open(url, "_blank");
+                "_blank"
 
-    };
+            );
+
+        };
+
 
     packageBox.appendChild(button);
 
 });
 
 
-/* ORDER OTOMATIS AYCL */
 
-document.querySelectorAll(".aycl-btn").forEach(function(button){
+/* ================= ORDER AYCL ================= */
 
-    button.addEventListener("click", function(e){
+document
+.querySelectorAll(".aycl-btn")
+.forEach(function(button){
 
-        e.preventDefault();
+    button.addEventListener(
+        "click",
+        function(e){
+
+            e.preventDefault();
 
 
-        const message =
+            const message =
 `Halo Store Sije 👋
 
 Saya mau order AYCL:
@@ -1234,16 +1908,19 @@ Saya mau order AYCL:
 Mohon dibantu untuk proses ordernya ya.`;
 
 
-        const url =
-            "https://wa.me/" +
-            STORE_WA +
-            "?text=" +
-            encodeURIComponent(message);
+            window.open(
 
+                "https://wa.me/" +
+                STORE_WA +
+                "?text=" +
+                encodeURIComponent(message),
 
-        window.open(url, "_blank");
+                "_blank"
 
-    });
+            );
+
+        }
+    );
 
 });
 
