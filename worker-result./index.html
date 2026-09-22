@@ -1,1 +1,1666 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f4f0">
+<title>EGA Worker Result FINAL</title>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+
+:root{
+  --bg:#f6f4f0;
+  --surface:#fff;
+  --soft:#faf9f6;
+  --ink:#282620;
+  --muted:#77736b;
+  --light:#aaa49b;
+  --line:#e7e2d9;
+  --gold:#9a6b32;
+  --gold-soft:#f2e5d2;
+  --green:#39775a;
+  --green-soft:#eaf4ee;
+  --red:#b55348;
+  --red-soft:#faece9;
+  --blue:#55779b;
+  --shadow:0 14px 40px rgba(45,38,29,.065);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.app{
+  max-width:1180px;
+  margin:auto;
+  padding:18px;
+}
+
+/* HEADER */
+.header{
+  background:var(--ink);
+  color:#fff;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+.brand{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+}
+.brand h1{
+  margin:0;
+  font:800 25px Manrope,sans-serif;
+  letter-spacing:-.7px;
+}
+.brand p{
+  margin:6px 0 0;
+  color:#c8c3ba;
+  font-size:13px;
+}
+.badge{
+  padding:8px 11px;
+  border-radius:999px;
+  background:#3c3933;
+  color:#e9d4b2;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin:16px 0;
+  padding-bottom:2px;
+}
+.nav button{
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:12px;
+  padding:11px 15px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.nav button.active{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+/* GENERAL */
+.tab{display:none}
+.tab.active{display:block}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin:22px 0 12px;
+}
+.section-title h2{
+  margin:0;
+  font:800 19px Manrope,sans-serif;
+}
+.section-title p{
+  margin:3px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
+.grid{
+  display:grid;
+  gap:12px;
+}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.stat-label{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+}
+.stat-value{
+  margin-top:7px;
+  font:800 24px Manrope,sans-serif;
+  letter-spacing:-.6px;
+}
+.stat-sub{
+  margin-top:5px;
+  color:var(--light);
+  font-size:11px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.field label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+input,select,textarea{
+  width:100%;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink);
+  border-radius:11px;
+  padding:12px;
+  outline:none;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(154,107,50,.08);
+}
+textarea{min-height:90px;resize:vertical}
+
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.btn{
+  border:0;
+  border-radius:11px;
+  padding:11px 15px;
+  font-weight:800;
+}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-light{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.btn-red{background:var(--red-soft);color:var(--red)}
+.btn-green{background:var(--green-soft);color:var(--green)}
+
+.empty{
+  padding:35px 15px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* WORKER ROW */
+.worker-box{
+  margin-top:14px;
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+.worker-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr auto;
+  gap:8px;
+  margin-bottom:8px;
+  align-items:end;
+}
+.worker-row .remove{
+  height:43px;
+  width:43px;
+  border:0;
+  border-radius:10px;
+  background:var(--red-soft);
+  color:var(--red);
+  font-weight:900;
+}
+.worker-total{
+  margin-top:10px;
+  background:var(--soft);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* TABLE */
+.table-wrap{
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:800px;
+}
+th,td{
+  padding:12px 13px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  font-size:12px;
+}
+th{
+  background:var(--soft);
+  color:var(--muted);
+  font-weight:800;
+}
+tr:last-child td{border-bottom:0}
+
+.pill{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:999px;
+  background:var(--soft);
+  font-size:10px;
+  font-weight:800;
+}
+.pill.green{background:var(--green-soft);color:var(--green)}
+.pill.gold{background:var(--gold-soft);color:var(--gold)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+
+.money{
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.filter{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.filter select,.filter input{max-width:190px}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(20,18,15,.52);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  z-index:100;
+}
+.modal.show{display:flex}
+.modal-box{
+  background:#fff;
+  width:min(680px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:22px;
+  padding:20px;
+}
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+.modal-head h3{
+  margin:0;
+  font:800 19px Manrope,sans-serif;
+}
+.close{
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:var(--soft);
+  font-size:20px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:var(--ink);
+  color:#fff;
+  padding:12px 16px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:200;
+}
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+  .worker-row{
+    grid-template-columns:1fr 1fr;
+  }
+  .worker-row .name{grid-column:1/-1}
+  .worker-row .remove{
+    width:100%;
+  }
+}
+@media(max-width:520px){
+  .app{padding:10px}
+  .header{padding:19px;border-radius:19px}
+  .brand h1{font-size:21px}
+  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr}
+  .stat-value{font-size:19px}
+  .card{padding:14px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+  <div class="brand">
+    <div>
+      <h1>EGA WORKER RESULT</h1>
+      <p>Rekap hasil kerja • pembagian worker • gaji tim</p>
+    </div>
+    <div class="badge">FINAL</div>
+  </div>
+</header>
+
+<nav class="nav">
+  <button class="active" onclick="showTab('dashboard',this)">Dashboard</button>
+  <button onclick="showTab('input',this)">Input Order</button>
+  <button onclick="showTab('orders',this)">Order</button>
+  <button onclick="showTab('workers',this)">Worker</button>
+  <button onclick="showTab('teams',this)">Tim</button>
+  <button onclick="showTab('backup',this)">Backup</button>
+</nav>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="tab active">
+
+  <div class="section-title">
+    <div>
+      <h2>Dashboard</h2>
+      <p>Ringkasan seluruh hasil kerja</p>
+    </div>
+    <div class="filter">
+      <select id="dashMonth" onchange="renderAll()"></select>
+    </div>
+  </div>
+
+  <div class="grid grid-4">
+    <div class="card">
+      <div class="stat-label">TOTAL ORDER</div>
+      <div class="stat-value" id="dOrders">0</div>
+      <div class="stat-sub">order selesai</div>
+    </div>
+
+    <div class="card">
+      <div class="stat-label">TOTAL GAJI</div>
+      <div class="stat-value" id="dSalary">Rp0</div>
+      <div class="stat-sub">semua worker</div>
+    </div>
+
+    <div class="card">
+      <div class="stat-label">TOTAL MATCH / M</div>
+      <div class="stat-value" id="dVolume">0</div>
+      <div class="stat-sub">volume pekerjaan</div>
+    </div>
+
+    <div class="card">
+      <div class="stat-label">TIM AKTIF</div>
+      <div class="stat-value" id="dTeams">0</div>
+      <div class="stat-sub">tim terlibat</div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <div>
+      <h2>Per Paket</h2>
+      <p>Volume dan gaji worker</p>
+    </div>
+  </div>
+
+  <div class="grid grid-4" id="packageStats"></div>
+
+  <div class="section-title">
+    <div>
+      <h2>Worker Teratas</h2>
+      <p>Diurutkan berdasarkan total hasil kerja</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Worker</th>
+            <th>Order</th>
+            <th>Volume</th>
+            <th>Total Gaji</th>
+          </tr>
+        </thead>
+        <tbody id="dashWorkers"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- INPUT -->
+<section id="input" class="tab">
+
+  <div class="section-title">
+    <div>
+      <h2>Input Hasil Kerja</h2>
+      <p>Masukkan satu order dan pembagian worker</p>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label>Tanggal Order</label>
+        <input type="date" id="fDate">
+      </div>
+
+      <div class="field">
+        <label>ID Customer</label>
+        <input id="fCustomer" placeholder="Contoh: 3965679390">
+      </div>
+
+      <div class="field">
+        <label>Paket</label>
+        <select id="fPackage" onchange="packageChanged()">
+          <option value="Mandor">Mandor</option>
+          <option value="Value">Value</option>
+          <option value="Koin">Koin</option>
+          <option value="AYCL Hemat">AYCL Hemat</option>
+          <option value="AYCL Pro">AYCL Pro</option>
+          <option value="AYCL Premium">AYCL Premium</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Jumlah / Volume</label>
+        <input type="number" id="fVolume" min="0" step="0.01" placeholder="Contoh: 10">
+      </div>
+
+      <div class="field">
+        <label>Satuan</label>
+        <select id="fUnit">
+          <option value="M">M</option>
+          <option value="Match">Match</option>
+          <option value="Order">Order</option>
+          <option value="Unit">Unit</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tim</label>
+        <input id="fTeam" placeholder="Contoh: Team Raph">
+      </div>
+
+      <div class="field">
+        <label>Status</label>
+        <select id="fStatus">
+          <option value="Selesai">Selesai</option>
+          <option value="Proses">Proses</option>
+          <option value="Batal">Batal</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Catatan</label>
+        <input id="fNote" placeholder="Catatan tambahan">
+      </div>
+
+    </div>
+
+    <div class="worker-box">
+      <div class="section-title" style="margin:0 0 10px">
+        <div>
+          <h2 style="font-size:16px">Pembagian Worker</h2>
+          <p>Nominal setiap orang bisa diatur manual</p>
+        </div>
+        <button class="btn btn-light" onclick="addWorker()">+ Worker</button>
+      </div>
+
+      <div id="workerInputs"></div>
+
+      <div class="worker-total">
+        <span>Total Gaji Worker</span>
+        <span id="workerTotal">Rp0</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-dark" onclick="saveOrder()">Simpan Hasil Kerja</button>
+      <button class="btn btn-light" onclick="resetForm()">Reset</button>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <b style="font-size:13px">Catatan sistem</b>
+    <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:0">
+      ID Customer + tanggal digunakan sebagai identitas order.
+      Jika status/order yang sama di-update pada tanggal yang sama, gunakan tombol Edit
+      agar tidak membuat hitungan gaji ganda.
+    </p>
+  </div>
+
+</section>
+
+<!-- ORDERS -->
+<section id="orders" class="tab">
+
+  <div class="section-title">
+    <div>
+      <h2>Riwayat Order</h2>
+      <p>Semua hasil kerja yang sudah dicatat</p>
+    </div>
+    <div class="filter">
+      <input type="month" id="orderMonth" onchange="renderOrders()">
+      <select id="orderPackage" onchange="renderOrders()">
+        <option value="">Semua Paket</option>
+        <option>Mandor</option>
+        <option>Value</option>
+        <option>Koin</option>
+        <option>AYCL Hemat</option>
+        <option>AYCL Pro</option>
+        <option>AYCL Premium</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>ID Customer</th>
+            <th>Paket</th>
+            <th>Volume</th>
+            <th>Tim</th>
+            <th>Worker</th>
+            <th>Total Gaji</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- WORKERS -->
+<section id="workers" class="tab">
+
+  <div class="section-title">
+    <div>
+      <h2>Rekap Worker</h2>
+      <p>Total pekerjaan dan gaji setiap orang</p>
+    </div>
+    <div class="filter">
+      <input type="month" id="workerMonth" onchange="renderWorkers()">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Worker</th>
+            <th>Order</th>
+            <th>Volume</th>
+            <th>Mandor</th>
+            <th>Value</th>
+            <th>Koin</th>
+            <th>AYCL</th>
+            <th>Total Gaji</th>
+          </tr>
+        </thead>
+        <tbody id="workersTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <div>
+      <h2>Detail Worker</h2>
+      <p>Pilih worker untuk melihat seluruh pekerjaannya</p>
+    </div>
+    <select id="workerSelect" onchange="renderWorkerDetail()">
+      <option value="">Pilih worker</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>ID</th>
+            <th>Paket</th>
+            <th>Tim</th>
+            <th>Volume</th>
+            <th>Gaji</th>
+          </tr>
+        </thead>
+        <tbody id="workerDetail"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- TEAMS -->
+<section id="teams" class="tab">
+
+  <div class="section-title">
+    <div>
+      <h2>Rekap Tim</h2>
+      <p>Hasil kerja berdasarkan team</p>
+    </div>
+    <div class="filter">
+      <input type="month" id="teamMonth" onchange="renderTeams()">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tim</th>
+            <th>Order</th>
+            <th>Volume</th>
+            <th>Worker</th>
+            <th>Total Gaji</th>
+          </tr>
+        </thead>
+        <tbody id="teamsTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- BACKUP -->
+<section id="backup" class="tab">
+
+  <div class="section-title">
+    <div>
+      <h2>Backup Data</h2>
+      <p>Simpan dan pindahkan data hasil kerja</p>
+    </div>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h3 style="margin-top:0">Backup</h3>
+      <p style="font-size:12px;color:var(--muted)">
+        Download seluruh data sebagai file JSON.
+      </p>
+      <button class="btn btn-dark" onclick="backupData()">Download Backup</button>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Restore</h3>
+      <p style="font-size:12px;color:var(--muted)">
+        Masukkan kembali file backup JSON.
+      </p>
+      <input type="file" id="restoreFile" accept=".json">
+      <div class="actions">
+        <button class="btn btn-gold" onclick="restoreData()">Restore Data</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Export CSV</h3>
+      <p style="font-size:12px;color:var(--muted)">
+        Cocok untuk Excel atau Google Sheets.
+      </p>
+      <button class="btn btn-green" onclick="exportCSV()">Download CSV</button>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Data</h3>
+      <div class="stat-value" id="backupCount">0</div>
+      <div class="stat-sub">order tersimpan di perangkat ini</div>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <b style="font-size:13px">Penting</b>
+    <p style="font-size:12px;color:var(--muted);line-height:1.6">
+      Data versi ini tersimpan di browser/perangkat yang digunakan.
+      Kalau ganti perangkat atau browser, gunakan Backup lalu Restore.
+    </p>
+  </div>
+
+</section>
+
+</div>
+
+<div class="modal" id="editModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Edit Order</h3>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+    <div id="editContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   EGA WORKER RESULT FINAL
+   ========================================================= */
+
+const STORAGE_KEY = "ega_worker_result_final_v1";
+
+let orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+let editId = null;
+let workerCount = 0;
+
+const PACKAGES = [
+  "Mandor",
+  "Value",
+  "Koin",
+  "AYCL Hemat",
+  "AYCL Pro",
+  "AYCL Premium"
+];
+
+function saveStorage(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(orders));
+}
+
+function money(n){
+  n = Number(n) || 0;
+  return "Rp" + n.toLocaleString("id-ID");
+}
+
+function num(n){
+  return Number(n) || 0;
+}
+
+function esc(str){
+  return String(str ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+function today(){
+  return new Date().toISOString().slice(0,10);
+}
+
+function monthNow(){
+  return new Date().toISOString().slice(0,7);
+}
+
+function showToast(msg){
+  const t=document.getElementById("toast");
+  t.textContent=msg;
+  t.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.classList.remove("show"),2200);
+}
+
+function showTab(id,btn){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+
+  renderAll();
+}
+
+/* =========================================================
+   INPUT WORKER
+   ========================================================= */
+
+function addWorker(name="",role="",salary=""){
+  workerCount++;
+
+  const box=document.getElementById("workerInputs");
+
+  const row=document.createElement("div");
+  row.className="worker-row";
+  row.dataset.worker=workerCount;
+
+  row.innerHTML=`
+    <div class="field name">
+      <label>Nama Worker</label>
+      <input class="w-name" value="${esc(name)}" placeholder="Nama">
+    </div>
+
+    <div class="field">
+      <label>Peran</label>
+      <select class="w-role">
+        <option value="Worker Utama" ${role==="Worker Utama"?"selected":""}>Worker Utama</option>
+        <option value="Pemegang Akun" ${role==="Pemegang Akun"?"selected":""}>Pemegang Akun</option>
+        <option value="Support" ${role==="Support"?"selected":""}>Support</option>
+        <option value="Leader" ${role==="Leader"?"selected":""}>Leader</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Gaji</label>
+      <input class="w-salary" type="number" min="0" value="${salary}" placeholder="0" oninput="updateWorkerTotal()">
+    </div>
+
+    <button class="remove" onclick="this.parentElement.remove();updateWorkerTotal()">×</button>
+  `;
+
+  box.appendChild(row);
+  updateWorkerTotal();
+}
+
+function getInputWorkers(){
+  return [...document.querySelectorAll("#workerInputs .worker-row")]
+    .map(row=>({
+      name:row.querySelector(".w-name").value.trim(),
+      role:row.querySelector(".w-role").value,
+      salary:num(row.querySelector(".w-salary").value)
+    }))
+    .filter(x=>x.name);
+}
+
+function updateWorkerTotal(){
+  const total=getInputWorkers().reduce((a,b)=>a+b.salary,0);
+  document.getElementById("workerTotal").textContent=money(total);
+}
+
+/* =========================================================
+   AUTO TEMPLATE
+   ========================================================= */
+
+function packageChanged(){
+  const pkg=document.getElementById("fPackage").value;
+
+  /*
+    Nominal default hanya sebagai template.
+    Tetap bisa diedit manual sebelum disimpan.
+  */
+
+  document.getElementById("workerInputs").innerHTML="";
+  workerCount=0;
+
+  const volume=num(document.getElementById("fVolume").value);
+
+  if(pkg==="Value"){
+    addWorker("", "Worker Utama", volume*5000);
+    addWorker("", "Worker Utama", volume*5000);
+    addWorker("", "Worker Utama", volume*5000);
+    addWorker("", "Pemegang Akun", volume*3000);
+  }
+  else if(pkg==="Koin"){
+    addWorker("", "Worker Utama", volume*6000);
+    addWorker("", "Worker Utama", volume*6000);
+    addWorker("", "Worker Utama", volume*6000);
+    addWorker("", "Pemegang Akun", volume*4000);
+  }
+  else if(pkg==="AYCL Hemat"){
+    addWorker("", "Worker Utama", 5000);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Pemegang Akun", 0);
+  }
+  else if(pkg==="AYCL Pro"){
+    addWorker("", "Worker Utama", 20000);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Pemegang Akun", 0);
+  }
+  else if(pkg==="AYCL Premium"){
+    addWorker("", "Worker Utama", 20000);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Worker Utama", 0);
+    addWorker("", "Pemegang Akun", 0);
+  }
+  else{
+    addWorker("", "Worker Utama", volume*4000);
+    addWorker("", "Worker Utama", volume*4000);
+    addWorker("", "Worker Utama", volume*4000);
+    addWorker("", "Pemegang Akun", volume*4000);
+  }
+
+  updateWorkerTotal();
+}
+
+/* =========================================================
+   SAVE ORDER
+   ========================================================= */
+
+function saveOrder(){
+
+  const date=document.getElementById("fDate").value;
+  const customer=document.getElementById("fCustomer").value.trim();
+  const pkg=document.getElementById("fPackage").value;
+  const volume=num(document.getElementById("fVolume").value);
+  const unit=document.getElementById("fUnit").value;
+  const team=document.getElementById("fTeam").value.trim();
+  const status=document.getElementById("fStatus").value;
+  const note=document.getElementById("fNote").value.trim();
+  const workers=getInputWorkers();
+
+  if(!date){
+    showToast("Tanggal belum diisi");
+    return;
+  }
+
+  if(!customer){
+    showToast("ID Customer belum diisi");
+    return;
+  }
+
+  if(!pkg){
+    showToast("Paket belum dipilih");
+    return;
+  }
+
+  if(!team){
+    showToast("Nama tim belum diisi");
+    return;
+  }
+
+  if(!workers.length){
+    showToast("Minimal 1 worker");
+    return;
+  }
+
+  const duplicate=orders.find(o=>
+    o.customer===customer &&
+    o.date===date &&
+    o.id!==editId
+  );
+
+  if(duplicate){
+    showToast("ID + tanggal sudah ada. Gunakan Edit.");
+    return;
+  }
+
+  const obj={
+    id:editId || crypto.randomUUID(),
+    date,
+    customer,
+    package:pkg,
+    volume,
+    unit,
+    team,
+    status,
+    note,
+    workers,
+    createdAt:new Date().toISOString()
+  };
+
+  if(editId){
+    const idx=orders.findIndex(o=>o.id===editId);
+    if(idx>=0) orders[idx]=obj;
+    showToast("Order berhasil diperbarui");
+  }else{
+    orders.push(obj);
+    showToast("Hasil kerja berhasil disimpan");
+  }
+
+  saveStorage();
+  resetForm();
+  renderAll();
+  showTabById("orders");
+}
+
+function showTabById(id){
+  const btn=[...document.querySelectorAll(".nav button")]
+    .find(b=>b.getAttribute("onclick")?.includes("'"+id+"'"));
+  if(btn) showTab(id,btn);
+}
+
+function resetForm(){
+  editId=null;
+
+  document.getElementById("fDate").value=today();
+  document.getElementById("fCustomer").value="";
+  document.getElementById("fPackage").value="Mandor";
+  document.getElementById("fVolume").value="";
+  document.getElementById("fUnit").value="M";
+  document.getElementById("fTeam").value="";
+  document.getElementById("fStatus").value="Selesai";
+  document.getElementById("fNote").value="";
+
+  document.getElementById("workerInputs").innerHTML="";
+  workerCount=0;
+  addWorker();
+  addWorker();
+  addWorker();
+  addWorker();
+  updateWorkerTotal();
+}
+
+/* =========================================================
+   EDIT
+   ========================================================= */
+
+function editOrder(id){
+  const o=orders.find(x=>x.id===id);
+  if(!o)return;
+
+  editId=id;
+
+  document.getElementById("fDate").value=o.date;
+  document.getElementById("fCustomer").value=o.customer;
+  document.getElementById("fPackage").value=o.package;
+  document.getElementById("fVolume").value=o.volume;
+  document.getElementById("fUnit").value=o.unit;
+  document.getElementById("fTeam").value=o.team;
+  document.getElementById("fStatus").value=o.status;
+  document.getElementById("fNote").value=o.note || "";
+
+  document.getElementById("workerInputs").innerHTML="";
+  workerCount=0;
+
+  o.workers.forEach(w=>addWorker(w.name,w.role,w.salary));
+
+  const btn=[...document.querySelectorAll(".nav button")]
+    .find(b=>b.getAttribute("onclick")?.includes("'input'"));
+
+  if(btn)showTab("input",btn);
+
+  window.scrollTo({top:0,behavior:"smooth"});
+  showToast("Mode edit aktif");
+}
+
+function deleteOrder(id){
+  const o=orders.find(x=>x.id===id);
+  if(!o)return;
+
+  if(!confirm(`Hapus order ${o.customer} tanggal ${o.date}?`))return;
+
+  orders=orders.filter(x=>x.id!==id);
+  saveStorage();
+  renderAll();
+  showToast("Order dihapus");
+}
+
+function openDetail(id){
+  const o=orders.find(x=>x.id===id);
+  if(!o)return;
+
+  document.getElementById("editContent").innerHTML=`
+    <div class="grid grid-2">
+      <div><small>Tanggal</small><b>${esc(o.date)}</b></div>
+      <div><small>ID Customer</small><b>${esc(o.customer)}</b></div>
+      <div><small>Paket</small><b>${esc(o.package)}</b></div>
+      <div><small>Tim</small><b>${esc(o.team)}</b></div>
+      <div><small>Volume</small><b>${esc(o.volume)} ${esc(o.unit)}</b></div>
+      <div><small>Status</small><b>${esc(o.status)}</b></div>
+    </div>
+
+    <div class="section-title">
+      <div>
+        <h2 style="font-size:16px">Pembagian Worker</h2>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Worker</th>
+            <th>Peran</th>
+            <th>Gaji</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${o.workers.map(w=>`
+            <tr>
+              <td>${esc(w.name)}</td>
+              <td>${esc(w.role)}</td>
+              <td class="money">${money(w.salary)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="worker-total">
+      <span>Total Gaji</span>
+      <span>${money(orderSalary(o))}</span>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-dark" onclick="closeModal();editOrder('${o.id}')">Edit</button>
+      <button class="btn btn-red" onclick="closeModal();deleteOrder('${o.id}')">Hapus</button>
+    </div>
+  `;
+
+  document.getElementById("editModal").classList.add("show");
+}
+
+function closeModal(){
+  document.getElementById("editModal").classList.remove("show");
+}
+
+/* =========================================================
+   CALC
+   ========================================================= */
+
+function orderSalary(o){
+  return o.workers.reduce((a,b)=>a+num(b.salary),0);
+}
+
+function monthFilter(arr,month){
+  if(!month)return arr;
+  return arr.filter(o=>o.date.startsWith(month));
+}
+
+function volumeText(o){
+  return `${Number(o.volume).toLocaleString("id-ID")} ${o.unit}`;
+}
+
+function packageClass(pkg){
+  if(pkg.startsWith("AYCL"))return "gold";
+  if(pkg==="Koin")return "green";
+  if(pkg==="Value")return "gold";
+  return "";
+}
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+function setupMonths(){
+  const ids=["dashMonth","orderMonth","workerMonth","teamMonth"];
+
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+
+    const old=el.value;
+
+    el.innerHTML=`<option value="">Semua Bulan</option>`;
+
+    const months=[...new Set(orders.map(o=>o.date.slice(0,7)))]
+      .sort().reverse();
+
+    months.forEach(m=>{
+      const op=document.createElement("option");
+      op.value=m;
+      op.textContent=new Date(m+"-01").toLocaleDateString("id-ID",{
+        month:"long",
+        year:"numeric"
+      });
+      el.appendChild(op);
+    });
+
+    if(old)el.value=old;
+  });
+}
+
+function renderDashboard(){
+  const month=document.getElementById("dashMonth").value;
+  const data=monthFilter(orders,month);
+
+  document.getElementById("dOrders").textContent=data.length;
+  document.getElementById("dSalary").textContent=money(
+    data.reduce((a,o)=>a+orderSalary(o),0)
+  );
+  document.getElementById("dVolume").textContent=
+    data.reduce((a,o)=>a+num(o.volume),0).toLocaleString("id-ID");
+
+  document.getElementById("dTeams").textContent=
+    new Set(data.map(o=>o.team).filter(Boolean)).size;
+
+  const ps={};
+
+  PACKAGES.forEach(p=>{
+    ps[p]={orders:0,volume:0,salary:0};
+  });
+
+  data.forEach(o=>{
+    if(!ps[o.package])ps[o.package]={orders:0,volume:0,salary:0};
+    ps[o.package].orders++;
+    ps[o.package].volume+=num(o.volume);
+    ps[o.package].salary+=orderSalary(o);
+  });
+
+  document.getElementById("packageStats").innerHTML=PACKAGES.map(p=>`
+    <div class="card">
+      <div class="stat-label">${esc(p).toUpperCase()}</div>
+      <div class="stat-value">${ps[p].volume.toLocaleString("id-ID")}</div>
+      <div class="stat-sub">
+        ${ps[p].orders} order • ${money(ps[p].salary)}
+      </div>
+    </div>
+  `).join("");
+
+  const map={};
+
+  data.forEach(o=>{
+    o.workers.forEach(w=>{
+      if(!map[w.name]){
+        map[w.name]={orders:0,volume:0,salary:0};
+      }
+      map[w.name].orders++;
+      map[w.name].volume+=num(o.volume);
+      map[w.name].salary+=num(w.salary);
+    });
+  });
+
+  const rows=Object.entries(map)
+    .sort((a,b)=>b[1].salary-a[1].salary);
+
+  document.getElementById("dashWorkers").innerHTML=
+    rows.length ? rows.map(([name,x])=>`
+      <tr>
+        <td><b>${esc(name)}</b></td>
+        <td>${x.orders}</td>
+        <td>${x.volume.toLocaleString("id-ID")}</td>
+        <td class="money">${money(x.salary)}</td>
+      </tr>
+    `).join("") :
+    `<tr><td colspan="4"><div class="empty">Belum ada data.</div></td></tr>`;
+}
+
+/* =========================================================
+   ORDERS
+   ========================================================= */
+
+function renderOrders(){
+  const month=document.getElementById("orderMonth").value;
+  const pkg=document.getElementById("orderPackage").value;
+
+  let data=monthFilter(orders,month);
+
+  if(pkg)data=data.filter(o=>o.package===pkg);
+
+  data=[...data].sort((a,b)=>b.date.localeCompare(a.date));
+
+  document.getElementById("ordersTable").innerHTML=
+    data.length ? data.map(o=>`
+      <tr>
+        <td>${esc(o.date)}</td>
+        <td><b>${esc(o.customer)}</b></td>
+        <td><span class="pill ${packageClass(o.package)}">${esc(o.package)}</span></td>
+        <td>${volumeText(o)}</td>
+        <td>${esc(o.team)}</td>
+        <td>${o.workers.length}</td>
+        <td class="money">${money(orderSalary(o))}</td>
+        <td>
+          <span class="pill ${o.status==="Selesai"?"green":o.status==="Batal"?"red":""}">
+            ${esc(o.status)}
+          </span>
+        </td>
+        <td>
+          <div style="display:flex;gap:5px">
+            <button class="btn btn-light" onclick="openDetail('${o.id}')">Detail</button>
+          </div>
+        </td>
+      </tr>
+    `).join("") :
+    `<tr><td colspan="9"><div class="empty">Belum ada order.</div></td></tr>`;
+}
+
+/* =========================================================
+   WORKERS
+   ========================================================= */
+
+function getWorkerMap(data){
+  const map={};
+
+  data.forEach(o=>{
+    o.workers.forEach(w=>{
+      if(!map[w.name]){
+        map[w.name]={
+          orders:0,
+          volume:0,
+          salary:0,
+          Mandor:0,
+          Value:0,
+          Koin:0,
+          AYCL:0
+        };
+      }
+
+      map[w.name].orders++;
+      map[w.name].volume+=num(o.volume);
+      map[w.name].salary+=num(w.salary);
+
+      if(o.package==="Mandor")map[w.name].Mandor+=num(w.salary);
+      else if(o.package==="Value")map[w.name].Value+=num(w.salary);
+      else if(o.package==="Koin")map[w.name].Koin+=num(w.salary);
+      else if(o.package.startsWith("AYCL"))map[w.name].AYCL+=num(w.salary);
+    });
+  });
+
+  return map;
+}
+
+function renderWorkers(){
+  const month=document.getElementById("workerMonth").value;
+  const data=monthFilter(orders,month);
+  const map=getWorkerMap(data);
+
+  document.getElementById("workersTable").innerHTML=
+    Object.entries(map)
+      .sort((a,b)=>b[1].salary-a[1].salary)
+      .map(([name,x])=>`
+        <tr>
+          <td><b>${esc(name)}</b></td>
+          <td>${x.orders}</td>
+          <td>${x.volume.toLocaleString("id-ID")}</td>
+          <td class="money">${money(x.Mandor)}</td>
+          <td class="money">${money(x.Value)}</td>
+          <td class="money">${money(x.Koin)}</td>
+          <td class="money">${money(x.AYCL)}</td>
+          <td class="money">${money(x.salary)}</td>
+        </tr>
+      `).join("") ||
+    `<tr><td colspan="8"><div class="empty">Belum ada worker.</div></td></tr>`;
+
+  const names=Object.keys(map).sort();
+
+  const select=document.getElementById("workerSelect");
+  const old=select.value;
+
+  select.innerHTML=`<option value="">Pilih worker</option>`+
+    names.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("");
+
+  if(names.includes(old))select.value=old;
+
+  renderWorkerDetail();
+}
+
+function renderWorkerDetail(){
+  const name=document.getElementById("workerSelect").value;
+  const month=document.getElementById("workerMonth").value;
+
+  if(!name){
+    document.getElementById("workerDetail").innerHTML=
+      `<tr><td colspan="6"><div class="empty">Pilih worker.</div></td></tr>`;
+    return;
+  }
+
+  const data=monthFilter(orders,month)
+    .filter(o=>o.workers.some(w=>w.name===name))
+    .sort((a,b)=>b.date.localeCompare(a.date));
+
+  document.getElementById("workerDetail").innerHTML=
+    data.map(o=>{
+      const w=o.workers.find(x=>x.name===name);
+
+      return `
+        <tr>
+          <td>${esc(o.date)}</td>
+          <td>${esc(o.customer)}</td>
+          <td>${esc(o.package)}</td>
+          <td>${esc(o.team)}</td>
+          <td>${volumeText(o)}</td>
+          <td class="money">${money(w.salary)}</td>
+        </tr>
+      `;
+    }).join("") ||
+    `<tr><td colspan="6"><div class="empty">Tidak ada hasil kerja.</div></td></tr>`;
+}
+
+/* =========================================================
+   TEAMS
+   ========================================================= */
+
+function renderTeams(){
+  const month=document.getElementById("teamMonth").value;
+  const data=monthFilter(orders,month);
+
+  const map={};
+
+  data.forEach(o=>{
+    const t=o.team || "Tanpa Tim";
+
+    if(!map[t]){
+      map[t]={
+        orders:0,
+        volume:0,
+        salary:0,
+        workers:new Set()
+      };
+    }
+
+    map[t].orders++;
+    map[t].volume+=num(o.volume);
+    map[t].salary+=orderSalary(o);
+
+    o.workers.forEach(w=>map[t].workers.add(w.name));
+  });
+
+  document.getElementById("teamsTable").innerHTML=
+    Object.entries(map)
+      .sort((a,b)=>b[1].salary-a[1].salary)
+      .map(([name,x])=>`
+        <tr>
+          <td><b>${esc(name)}</b></td>
+          <td>${x.orders}</td>
+          <td>${x.volume.toLocaleString("id-ID")}</td>
+          <td>${x.workers.size}</td>
+          <td class="money">${money(x.salary)}</td>
+        </tr>
+      `).join("") ||
+    `<tr><td colspan="5"><div class="empty">Belum ada tim.</div></td></tr>`;
+}
+
+/* =========================================================
+   BACKUP
+   ========================================================= */
+
+function backupData(){
+  const payload={
+    app:"EGA Worker Result FINAL",
+    version:1,
+    exportedAt:new Date().toISOString(),
+    orders
+  };
+
+  const blob=new Blob(
+    [JSON.stringify(payload,null,2)],
+    {type:"application/json"}
+  );
+
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+
+  a.href=url;
+  a.download=
+    "EGA-Worker-Backup-"+new Date().toISOString().slice(0,10)+".json";
+
+  a.click();
+  URL.revokeObjectURL(url);
+
+  showToast("Backup berhasil dibuat");
+}
+
+function restoreData(){
+  const input=document.getElementById("restoreFile");
+  const file=input.files[0];
+
+  if(!file){
+    showToast("Pilih file backup dulu");
+    return;
+  }
+
+  const reader=new FileReader();
+
+  reader.onload=function(e){
+    try{
+      const data=JSON.parse(e.target.result);
+
+      if(!Array.isArray(data.orders)){
+        throw new Error("Format backup tidak valid");
+      }
+
+      if(!confirm(
+        "Restore akan mengganti data yang ada sekarang. Lanjut?"
+      ))return;
+
+      orders=data.orders;
+      saveStorage();
+      renderAll();
+
+      showToast("Data berhasil direstore");
+      input.value="";
+    }catch(err){
+      alert("File backup tidak valid.");
+    }
+  };
+
+  reader.readAsText(file);
+}
+
+function exportCSV(){
+
+  const rows=[
+    [
+      "Tanggal",
+      "ID Customer",
+      "Paket",
+      "Volume",
+      "Satuan",
+      "Tim",
+      "Worker",
+      "Peran",
+      "Gaji Worker",
+      "Status",
+      "Catatan"
+    ]
+  ];
+
+  orders.forEach(o=>{
+    o.workers.forEach(w=>{
+      rows.push([
+        o.date,
+        o.customer,
+        o.package,
+        o.volume,
+        o.unit,
+        o.team,
+        w.name,
+        w.role,
+        w.salary,
+        o.status,
+        o.note || ""
+      ]);
+    });
+  });
+
+  const csv=rows.map(row=>
+    row.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")
+  ).join("\n");
+
+  const blob=new Blob(["\ufeff"+csv],{
+    type:"text/csv;charset=utf-8"
+  });
+
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+
+  a.href=url;
+  a.download=
+    "EGA-Worker-Result-"+new Date().toISOString().slice(0,10)+".csv";
+
+  a.click();
+  URL.revokeObjectURL(url);
+
+  showToast("CSV berhasil dibuat");
+}
+
+/* =========================================================
+   RENDER ALL
+   ========================================================= */
+
+function renderAll(){
+  setupMonths();
+  renderDashboard();
+  renderOrders();
+  renderWorkers();
+  renderTeams();
+
+  document.getElementById("backupCount").textContent=orders.length;
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+
+document.getElementById("fDate").value=today();
+
+document.getElementById("fVolume").addEventListener("input",()=>{
+  const pkg=document.getElementById("fPackage").value;
+
+  /*
+    Update template Value/Koin berdasarkan volume.
+    Tidak mengubah nama worker yang sudah dimasukkan.
+  */
+  if(pkg!=="Value" && pkg!=="Koin")return;
+
+  const rows=[...document.querySelectorAll("#workerInputs .worker-row")];
+
+  if(rows.length<4)return;
+
+  const v=num(document.getElementById("fVolume").value);
+
+  const values=
+    pkg==="Value"
+    ? [v*5000,v*5000,v*5000,v*3000]
+    : [v*6000,v*6000,v*6000,v*4000];
+
+  rows.slice(0,4).forEach((row,i)=>{
+    row.querySelector(".w-salary").value=values[i];
+  });
+
+  updateWorkerTotal();
+});
+
+document.getElementById("editModal").addEventListener("click",e=>{
+  if(e.target.id==="editModal")closeModal();
+});
+
+resetForm();
+renderAll();
+
+</script>
+
+</body>
+</html>
