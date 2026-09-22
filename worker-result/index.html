@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f6f4f0">
-<title>EGA Worker Result FINAL</title>
+<title>SIJE Worker Result</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
@@ -24,27 +24,40 @@
   --red:#b55348;
   --red-soft:#faece9;
   --blue:#55779b;
+  --blue-soft:#edf3f8;
   --shadow:0 14px 40px rgba(45,38,29,.065);
   --radius:18px;
 }
 
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
   font-family:"DM Sans",sans-serif;
 }
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
 .app{
   max-width:1180px;
   margin:auto;
   padding:18px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 .header{
   background:var(--ink);
   color:#fff;
@@ -53,22 +66,26 @@ button{cursor:pointer}
   box-shadow:var(--shadow);
   margin-bottom:16px;
 }
+
 .brand{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
   gap:15px;
 }
+
 .brand h1{
   margin:0;
   font:800 25px Manrope,sans-serif;
   letter-spacing:-.7px;
 }
+
 .brand p{
   margin:6px 0 0;
   color:#c8c3ba;
   font-size:13px;
 }
+
 .badge{
   padding:8px 11px;
   border-radius:999px;
@@ -79,7 +96,10 @@ button{cursor:pointer}
   white-space:nowrap;
 }
 
-/* NAV */
+/* =========================
+   NAV
+========================= */
+
 .nav{
   display:flex;
   gap:7px;
@@ -87,6 +107,7 @@ button{cursor:pointer}
   margin:16px 0;
   padding-bottom:2px;
 }
+
 .nav button{
   border:1px solid var(--line);
   background:var(--surface);
@@ -96,15 +117,25 @@ button{cursor:pointer}
   font-weight:700;
   white-space:nowrap;
 }
+
 .nav button.active{
   background:var(--ink);
   color:#fff;
   border-color:var(--ink);
 }
 
-/* GENERAL */
-.tab{display:none}
-.tab.active{display:block}
+/* =========================
+   GENERAL
+========================= */
+
+.tab{
+  display:none;
+}
+
+.tab.active{
+  display:block;
+}
+
 .section-title{
   display:flex;
   justify-content:space-between;
@@ -112,22 +143,34 @@ button{cursor:pointer}
   gap:12px;
   margin:22px 0 12px;
 }
+
 .section-title h2{
   margin:0;
   font:800 19px Manrope,sans-serif;
 }
+
 .section-title p{
   margin:3px 0 0;
   color:var(--muted);
   font-size:12px;
 }
+
 .grid{
   display:grid;
   gap:12px;
 }
-.grid-4{grid-template-columns:repeat(4,1fr)}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
 
 .card{
   background:var(--surface);
@@ -136,16 +179,19 @@ button{cursor:pointer}
   padding:18px;
   box-shadow:var(--shadow);
 }
+
 .stat-label{
   color:var(--muted);
   font-size:12px;
   font-weight:600;
 }
+
 .stat-value{
   margin-top:7px;
   font:800 24px Manrope,sans-serif;
   letter-spacing:-.6px;
 }
+
 .stat-sub{
   margin-top:5px;
   color:var(--light);
@@ -157,12 +203,14 @@ button{cursor:pointer}
   grid-template-columns:repeat(2,1fr);
   gap:12px;
 }
+
 .field label{
   display:block;
   font-size:12px;
   font-weight:700;
   margin-bottom:6px;
 }
+
 input,select,textarea{
   width:100%;
   border:1px solid var(--line);
@@ -172,11 +220,18 @@ input,select,textarea{
   padding:12px;
   outline:none;
 }
-input:focus,select:focus,textarea:focus{
+
+input:focus,
+select:focus,
+textarea:focus{
   border-color:var(--gold);
   box-shadow:0 0 0 3px rgba(154,107,50,.08);
 }
-textarea{min-height:90px;resize:vertical}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
 
 .actions{
   display:flex;
@@ -184,17 +239,44 @@ textarea{min-height:90px;resize:vertical}
   flex-wrap:wrap;
   margin-top:14px;
 }
+
 .btn{
   border:0;
   border-radius:11px;
   padding:11px 15px;
   font-weight:800;
 }
-.btn-dark{background:var(--ink);color:#fff}
-.btn-gold{background:var(--gold);color:#fff}
-.btn-light{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
-.btn-red{background:var(--red-soft);color:var(--red)}
-.btn-green{background:var(--green-soft);color:var(--green)}
+
+.btn-dark{
+  background:var(--ink);
+  color:#fff;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#fff;
+}
+
+.btn-light{
+  background:var(--soft);
+  color:var(--ink);
+  border:1px solid var(--line);
+}
+
+.btn-red{
+  background:var(--red-soft);
+  color:var(--red);
+}
+
+.btn-green{
+  background:var(--green-soft);
+  color:var(--green);
+}
+
+.btn-blue{
+  background:var(--blue-soft);
+  color:var(--blue);
+}
 
 .empty{
   padding:35px 15px;
@@ -203,62 +285,96 @@ textarea{min-height:90px;resize:vertical}
   font-size:13px;
 }
 
-/* WORKER ROW */
-.worker-box{
-  margin-top:14px;
-  border-top:1px solid var(--line);
-  padding-top:14px;
-}
-.worker-row{
-  display:grid;
-  grid-template-columns:1.4fr 1fr 1fr auto;
-  gap:8px;
-  margin-bottom:8px;
-  align-items:end;
-}
-.worker-row .remove{
-  height:43px;
-  width:43px;
-  border:0;
-  border-radius:10px;
-  background:var(--red-soft);
-  color:var(--red);
-  font-weight:900;
-}
-.worker-total{
-  margin-top:10px;
+/* =========================
+   CALC BOX
+========================= */
+
+.calc-box{
+  margin-top:15px;
   background:var(--soft);
-  border-radius:12px;
-  padding:12px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+
+.calc-row{
   display:flex;
   justify-content:space-between;
+  gap:15px;
+  padding:7px 0;
   font-size:13px;
+}
+
+.calc-row + .calc-row{
+  border-top:1px dashed var(--line);
+}
+
+.calc-row strong{
   font-weight:800;
 }
 
-/* TABLE */
+.calc-main{
+  margin-top:8px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+
+.calc-main .money{
+  font:800 25px Manrope,sans-serif;
+  color:var(--gold);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info-box{
+  background:var(--gold-soft);
+  color:#68481f;
+  border:1px solid #ead7ba;
+  border-radius:15px;
+  padding:14px;
+  font-size:12px;
+  line-height:1.65;
+}
+
+.info-box b{
+  display:block;
+  margin-bottom:4px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
 .table-wrap{
   overflow:auto;
   border:1px solid var(--line);
   border-radius:15px;
 }
+
 table{
   width:100%;
   border-collapse:collapse;
-  min-width:800px;
+  min-width:850px;
 }
+
 th,td{
   padding:12px 13px;
   border-bottom:1px solid var(--line);
   text-align:left;
   font-size:12px;
 }
+
 th{
   background:var(--soft);
   color:var(--muted);
   font-weight:800;
 }
-tr:last-child td{border-bottom:0}
+
+tr:last-child td{
+  border-bottom:0;
+}
 
 .pill{
   display:inline-flex;
@@ -268,9 +384,26 @@ tr:last-child td{border-bottom:0}
   font-size:10px;
   font-weight:800;
 }
-.pill.green{background:var(--green-soft);color:var(--green)}
-.pill.gold{background:var(--gold-soft);color:var(--gold)}
-.pill.red{background:var(--red-soft);color:var(--red)}
+
+.pill.green{
+  background:var(--green-soft);
+  color:var(--green);
+}
+
+.pill.gold{
+  background:var(--gold-soft);
+  color:var(--gold);
+}
+
+.pill.red{
+  background:var(--red-soft);
+  color:var(--red);
+}
+
+.pill.blue{
+  background:var(--blue-soft);
+  color:var(--blue);
+}
 
 .money{
   font-weight:800;
@@ -282,9 +415,72 @@ tr:last-child td{border-bottom:0}
   gap:8px;
   flex-wrap:wrap;
 }
-.filter select,.filter input{max-width:190px}
 
-/* MODAL */
+.filter select,
+.filter input{
+  max-width:190px;
+}
+
+/* =========================
+   TEAM CARD
+========================= */
+
+.team-card{
+  position:relative;
+}
+
+.team-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.team-name{
+  font:800 18px Manrope,sans-serif;
+}
+
+.team-pj{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
+}
+
+.team-total{
+  font:800 22px Manrope,sans-serif;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+.team-mini{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:15px;
+}
+
+.team-mini div{
+  background:var(--soft);
+  border-radius:11px;
+  padding:10px;
+}
+
+.team-mini span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.team-mini b{
+  display:block;
+  margin-top:3px;
+  font-size:13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
 .modal{
   position:fixed;
   inset:0;
@@ -295,7 +491,11 @@ tr:last-child td{border-bottom:0}
   padding:15px;
   z-index:100;
 }
-.modal.show{display:flex}
+
+.modal.show{
+  display:flex;
+}
+
 .modal-box{
   background:#fff;
   width:min(680px,100%);
@@ -304,16 +504,19 @@ tr:last-child td{border-bottom:0}
   border-radius:22px;
   padding:20px;
 }
+
 .modal-head{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:15px;
 }
+
 .modal-head h3{
   margin:0;
   font:800 19px Manrope,sans-serif;
 }
+
 .close{
   width:38px;
   height:38px;
@@ -323,7 +526,10 @@ tr:last-child td{border-bottom:0}
   font-size:20px;
 }
 
-/* TOAST */
+/* =========================
+   TOAST
+========================= */
+
 .toast{
   position:fixed;
   bottom:20px;
@@ -339,32 +545,77 @@ tr:last-child td{border-bottom:0}
   pointer-events:none;
   transition:.25s;
   z-index:200;
+  white-space:nowrap;
 }
+
 .toast.show{
   opacity:1;
   transform:translate(-50%,0);
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:800px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .grid-3{grid-template-columns:1fr 1fr}
-  .form-grid{grid-template-columns:1fr}
-  .worker-row{
+
+  .grid-4{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid-3{
     grid-template-columns:1fr 1fr;
   }
-  .worker-row .name{grid-column:1/-1}
-  .worker-row .remove{
-    width:100%;
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .team-mini{
+    grid-template-columns:1fr 1fr 1fr;
   }
 }
+
 @media(max-width:520px){
-  .app{padding:10px}
-  .header{padding:19px;border-radius:19px}
-  .brand h1{font-size:21px}
-  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr}
-  .stat-value{font-size:19px}
-  .card{padding:14px}
+
+  .app{
+    padding:10px;
+  }
+
+  .header{
+    padding:19px;
+    border-radius:19px;
+  }
+
+  .brand h1{
+    font-size:21px;
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat-value{
+    font-size:19px;
+  }
+
+  .card{
+    padding:14px;
+  }
+
+  .team-head{
+    flex-direction:column;
+  }
+
+  .team-total{
+    font-size:20px;
+  }
+
+  .team-mini{
+    grid-template-columns:1fr 1fr 1fr;
+  }
 }
 </style>
 </head>
@@ -374,1291 +625,2680 @@ tr:last-child td{border-bottom:0}
 <div class="app">
 
 <header class="header">
+
   <div class="brand">
+
     <div>
-      <h1>EGA WORKER RESULT</h1>
-      <p>Rekap hasil kerja • pembagian worker • gaji tim</p>
+      <h1>SIJE WORKER RESULT</h1>
+      <p>Rekap hasil kerja • sistem tim • bagian tim</p>
     </div>
-    <div class="badge">FINAL</div>
+
+    <div class="badge">TEAM SYSTEM</div>
+
   </div>
+
 </header>
 
+
 <nav class="nav">
-  <button class="active" onclick="showTab('dashboard',this)">Dashboard</button>
-  <button onclick="showTab('input',this)">Input Order</button>
-  <button onclick="showTab('orders',this)">Order</button>
-  <button onclick="showTab('workers',this)">Worker</button>
-  <button onclick="showTab('teams',this)">Tim</button>
-  <button onclick="showTab('backup',this)">Backup</button>
+
+  <button class="active" onclick="showTab('dashboard',this)">
+    Dashboard
+  </button>
+
+  <button onclick="showTab('input',this)">
+    Input Hasil
+  </button>
+
+  <button onclick="showTab('history',this)">
+    Riwayat
+  </button>
+
+  <button onclick="showTab('teams',this)">
+    Rekap Tim
+  </button>
+
+  <button onclick="showTab('backup',this)">
+    Backup
+  </button>
+
 </nav>
 
-<!-- DASHBOARD -->
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
 <section id="dashboard" class="tab active">
 
   <div class="section-title">
+
     <div>
       <h2>Dashboard</h2>
-      <p>Ringkasan seluruh hasil kerja</p>
+      <p>Ringkasan hasil kerja tim</p>
     </div>
+
     <div class="filter">
       <select id="dashMonth" onchange="renderAll()"></select>
     </div>
+
   </div>
+
 
   <div class="grid grid-4">
-    <div class="card">
-      <div class="stat-label">TOTAL ORDER</div>
-      <div class="stat-value" id="dOrders">0</div>
-      <div class="stat-sub">order selesai</div>
-    </div>
 
     <div class="card">
-      <div class="stat-label">TOTAL GAJI</div>
-      <div class="stat-value" id="dSalary">Rp0</div>
-      <div class="stat-sub">semua worker</div>
+
+      <div class="stat-label">
+        TOTAL HASIL
+      </div>
+
+      <div class="stat-value" id="dEntries">
+        0
+      </div>
+
+      <div class="stat-sub">
+        input hasil kerja
+      </div>
+
     </div>
 
-    <div class="card">
-      <div class="stat-label">TOTAL MATCH / M</div>
-      <div class="stat-value" id="dVolume">0</div>
-      <div class="stat-sub">volume pekerjaan</div>
-    </div>
 
     <div class="card">
-      <div class="stat-label">TIM AKTIF</div>
-      <div class="stat-value" id="dTeams">0</div>
-      <div class="stat-sub">tim terlibat</div>
+
+      <div class="stat-label">
+        TOTAL CUSTOMER
+      </div>
+
+      <div class="stat-value" id="dCustomers">
+        0
+      </div>
+
+      <div class="stat-sub">
+        customer dikerjakan
+      </div>
+
     </div>
+
+
+    <div class="card">
+
+      <div class="stat-label">
+        TOTAL M
+      </div>
+
+      <div class="stat-value" id="dVolume">
+        0
+      </div>
+
+      <div class="stat-sub">
+        total hasil kerja
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="stat-label">
+        TOTAL BAGIAN
+      </div>
+
+      <div class="stat-value" id="dSalary">
+        Rp0
+      </div>
+
+      <div class="stat-sub">
+        seluruh tim
+      </div>
+
+    </div>
+
   </div>
+
 
   <div class="section-title">
+
     <div>
-      <h2>Per Paket</h2>
-      <p>Volume dan gaji worker</p>
+      <h2>Tim Aktif</h2>
+      <p>Ringkasan performa berdasarkan tim</p>
     </div>
+
   </div>
 
-  <div class="grid grid-4" id="packageStats"></div>
 
-  <div class="section-title">
-    <div>
-      <h2>Worker Teratas</h2>
-      <p>Diurutkan berdasarkan total hasil kerja</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Worker</th>
-            <th>Order</th>
-            <th>Volume</th>
-            <th>Total Gaji</th>
-          </tr>
-        </thead>
-        <tbody id="dashWorkers"></tbody>
-      </table>
-    </div>
-  </div>
+  <div class="grid grid-2" id="dashboardTeams"></div>
 
 </section>
 
-<!-- INPUT -->
+
+<!-- =========================
+     INPUT
+========================= -->
+
 <section id="input" class="tab">
 
   <div class="section-title">
+
     <div>
       <h2>Input Hasil Kerja</h2>
-      <p>Masukkan satu order dan pembagian worker</p>
+      <p>Satu input untuk satu hasil kerja tim</p>
     </div>
+
   </div>
+
 
   <div class="card">
 
-    <div class="form-grid">
+    <div class="info-box">
+
+      <b>💡 Sistem baru</b>
+
+      Lu tidak perlu memasukkan nama worker satu per satu.
+      Cukup masukkan <b>tim + PJ + jumlah customer + total M</b>.
+      Bagian tim otomatis dihitung dari total M × rate.
+
+    </div>
+
+
+    <div class="form-grid" style="margin-top:15px">
+
 
       <div class="field">
-        <label>Tanggal Order</label>
-        <input type="date" id="fDate">
+
+        <label>Tanggal</label>
+
+        <input
+          type="date"
+          id="fDate"
+        >
+
       </div>
 
-      <div class="field">
-        <label>ID Customer</label>
-        <input id="fCustomer" placeholder="Contoh: 3965679390">
-      </div>
 
       <div class="field">
-        <label>Paket</label>
-        <select id="fPackage" onchange="packageChanged()">
-          <option value="Mandor">Mandor</option>
-          <option value="Value">Value</option>
-          <option value="Koin">Koin</option>
-          <option value="AYCL Hemat">AYCL Hemat</option>
-          <option value="AYCL Pro">AYCL Pro</option>
-          <option value="AYCL Premium">AYCL Premium</option>
-        </select>
-      </div>
 
-      <div class="field">
-        <label>Jumlah / Volume</label>
-        <input type="number" id="fVolume" min="0" step="0.01" placeholder="Contoh: 10">
-      </div>
-
-      <div class="field">
-        <label>Satuan</label>
-        <select id="fUnit">
-          <option value="M">M</option>
-          <option value="Match">Match</option>
-          <option value="Order">Order</option>
-          <option value="Unit">Unit</option>
-        </select>
-      </div>
-
-      <div class="field">
         <label>Tim</label>
-        <input id="fTeam" placeholder="Contoh: Team Raph">
-      </div>
 
-      <div class="field">
-        <label>Status</label>
-        <select id="fStatus">
-          <option value="Selesai">Selesai</option>
-          <option value="Proses">Proses</option>
-          <option value="Batal">Batal</option>
+        <select id="fTeam" onchange="teamChanged()">
+
         </select>
+
       </div>
+
 
       <div class="field">
+
+        <label>Penanggung Jawab / PJ</label>
+
+        <input
+          id="fPJ"
+          placeholder="Contoh: Raph"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Jumlah Customer</label>
+
+        <input
+          type="number"
+          id="fCustomers"
+          min="0"
+          step="1"
+          placeholder="Contoh: 5"
+          oninput="updateCalculation()"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Total Hasil / M</label>
+
+        <input
+          type="number"
+          id="fVolume"
+          min="0"
+          step="0.01"
+          placeholder="Contoh: 20"
+          oninput="updateCalculation()"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Rate Bagian / M</label>
+
+        <input
+          type="number"
+          id="fRate"
+          min="0"
+          step="500"
+          value="14000"
+          oninput="updateCalculation()"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Status</label>
+
+        <select id="fStatus">
+
+          <option value="Selesai">
+            Selesai
+          </option>
+
+          <option value="Proses">
+            Proses
+          </option>
+
+          <option value="Batal">
+            Batal
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
         <label>Catatan</label>
-        <input id="fNote" placeholder="Catatan tambahan">
+
+        <input
+          id="fNote"
+          placeholder="Contoh: 5 cust selesai semua"
+        >
+
       </div>
 
     </div>
 
-    <div class="worker-box">
-      <div class="section-title" style="margin:0 0 10px">
-        <div>
-          <h2 style="font-size:16px">Pembagian Worker</h2>
-          <p>Nominal setiap orang bisa diatur manual</p>
-        </div>
-        <button class="btn btn-light" onclick="addWorker()">+ Worker</button>
+
+    <!-- CALCULATION -->
+
+    <div class="calc-box">
+
+      <div class="calc-row">
+
+        <span>Total Customer</span>
+
+        <strong id="calcCustomers">
+          0
+        </strong>
+
       </div>
 
-      <div id="workerInputs"></div>
 
-      <div class="worker-total">
-        <span>Total Gaji Worker</span>
-        <span id="workerTotal">Rp0</span>
+      <div class="calc-row">
+
+        <span>Total M</span>
+
+        <strong id="calcVolume">
+          0 M
+        </strong>
+
       </div>
+
+
+      <div class="calc-row">
+
+        <span>Rate Tim</span>
+
+        <strong id="calcRate">
+          Rp14.000 / M
+        </strong>
+
+      </div>
+
+
+      <div class="calc-row calc-main">
+
+        <span>
+          <b>TOTAL BAGIAN TIM</b>
+        </span>
+
+        <span class="money" id="calcTotal">
+          Rp0
+        </span>
+
+      </div>
+
     </div>
+
 
     <div class="actions">
-      <button class="btn btn-dark" onclick="saveOrder()">Simpan Hasil Kerja</button>
-      <button class="btn btn-light" onclick="resetForm()">Reset</button>
+
+      <button
+        class="btn btn-dark"
+        onclick="saveResult()"
+      >
+        Simpan Hasil
+      </button>
+
+
+      <button
+        class="btn btn-light"
+        onclick="resetForm()"
+      >
+        Reset
+      </button>
+
     </div>
 
   </div>
+
 
   <div class="card" style="margin-top:12px">
-    <b style="font-size:13px">Catatan sistem</b>
-    <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:0">
-      ID Customer + tanggal digunakan sebagai identitas order.
-      Jika status/order yang sama di-update pada tanggal yang sama, gunakan tombol Edit
-      agar tidak membuat hitungan gaji ganda.
+
+    <b style="font-size:13px">
+      Contoh
+    </b>
+
+    <p
+      style="
+        font-size:12px;
+        color:var(--muted);
+        line-height:1.7;
+        margin-bottom:0
+      "
+    >
+
+      Tim Raph mengerjakan 5 customer dengan total 20M.
+      Rate bagian Rp14.000/M.
+
+      <br>
+
+      <b>
+        20M × Rp14.000 = Rp280.000
+      </b>
+
+      <br>
+
+      Jadi lu cukup input satu kali dan sistem langsung memasukkan
+      Rp280.000 ke rekap Tim Raph.
+
     </p>
+
   </div>
 
 </section>
 
-<!-- ORDERS -->
-<section id="orders" class="tab">
+
+<!-- =========================
+     RIWAYAT
+========================= -->
+
+<section id="history" class="tab">
 
   <div class="section-title">
+
     <div>
-      <h2>Riwayat Order</h2>
+      <h2>Riwayat Hasil</h2>
       <p>Semua hasil kerja yang sudah dicatat</p>
     </div>
+
+
     <div class="filter">
-      <input type="month" id="orderMonth" onchange="renderOrders()">
-      <select id="orderPackage" onchange="renderOrders()">
-        <option value="">Semua Paket</option>
-        <option>Mandor</option>
-        <option>Value</option>
-        <option>Koin</option>
-        <option>AYCL Hemat</option>
-        <option>AYCL Pro</option>
-        <option>AYCL Premium</option>
+
+      <input
+        type="month"
+        id="historyMonth"
+        onchange="renderHistory()"
+      >
+
+      <select
+        id="historyTeam"
+        onchange="renderHistory()"
+      >
       </select>
+
     </div>
+
   </div>
 
+
   <div class="card">
+
     <div class="table-wrap">
+
       <table>
+
         <thead>
+
           <tr>
-            <th>Tanggal</th>
-            <th>ID Customer</th>
-            <th>Paket</th>
-            <th>Volume</th>
-            <th>Tim</th>
-            <th>Worker</th>
-            <th>Total Gaji</th>
-            <th>Status</th>
-            <th>Aksi</th>
+
+            <th>
+              Tanggal
+            </th>
+
+            <th>
+              Tim
+            </th>
+
+            <th>
+              PJ
+            </th>
+
+            <th>
+              Customer
+            </th>
+
+            <th>
+              Total M
+            </th>
+
+            <th>
+              Rate
+            </th>
+
+            <th>
+              Bagian
+            </th>
+
+            <th>
+              Status
+            </th>
+
+            <th>
+              Aksi
+            </th>
+
           </tr>
+
         </thead>
-        <tbody id="ordersTable"></tbody>
+
+        <tbody id="historyTable"></tbody>
+
       </table>
+
     </div>
+
   </div>
 
 </section>
 
-<!-- WORKERS -->
-<section id="workers" class="tab">
 
-  <div class="section-title">
-    <div>
-      <h2>Rekap Worker</h2>
-      <p>Total pekerjaan dan gaji setiap orang</p>
-    </div>
-    <div class="filter">
-      <input type="month" id="workerMonth" onchange="renderWorkers()">
-    </div>
-  </div>
+<!-- =========================
+     TEAMS
+========================= -->
 
-  <div class="card">
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Worker</th>
-            <th>Order</th>
-            <th>Volume</th>
-            <th>Mandor</th>
-            <th>Value</th>
-            <th>Koin</th>
-            <th>AYCL</th>
-            <th>Total Gaji</th>
-          </tr>
-        </thead>
-        <tbody id="workersTable"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <div>
-      <h2>Detail Worker</h2>
-      <p>Pilih worker untuk melihat seluruh pekerjaannya</p>
-    </div>
-    <select id="workerSelect" onchange="renderWorkerDetail()">
-      <option value="">Pilih worker</option>
-    </select>
-  </div>
-
-  <div class="card">
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>ID</th>
-            <th>Paket</th>
-            <th>Tim</th>
-            <th>Volume</th>
-            <th>Gaji</th>
-          </tr>
-        </thead>
-        <tbody id="workerDetail"></tbody>
-      </table>
-    </div>
-  </div>
-
-</section>
-
-<!-- TEAMS -->
 <section id="teams" class="tab">
 
   <div class="section-title">
+
     <div>
       <h2>Rekap Tim</h2>
-      <p>Hasil kerja berdasarkan team</p>
+      <p>Total hasil kerja dan bagian setiap tim</p>
     </div>
+
+
     <div class="filter">
-      <input type="month" id="teamMonth" onchange="renderTeams()">
+
+      <input
+        type="month"
+        id="teamMonth"
+        onchange="renderTeams()"
+      >
+
     </div>
+
   </div>
 
-  <div class="card">
+
+  <div
+    class="grid grid-2"
+    id="teamCards"
+  ></div>
+
+
+  <div
+    class="card"
+    style="margin-top:15px"
+  >
+
     <div class="table-wrap">
+
       <table>
+
         <thead>
+
           <tr>
-            <th>Tim</th>
-            <th>Order</th>
-            <th>Volume</th>
-            <th>Worker</th>
-            <th>Total Gaji</th>
+
+            <th>
+              Tim
+            </th>
+
+            <th>
+              PJ
+            </th>
+
+            <th>
+              Hasil
+            </th>
+
+            <th>
+              Customer
+            </th>
+
+            <th>
+              Total M
+            </th>
+
+            <th>
+              Total Bagian
+            </th>
+
           </tr>
+
         </thead>
+
         <tbody id="teamsTable"></tbody>
+
       </table>
+
     </div>
+
   </div>
 
 </section>
 
-<!-- BACKUP -->
+
+<!-- =========================
+     BACKUP
+========================= -->
+
 <section id="backup" class="tab">
 
   <div class="section-title">
+
     <div>
       <h2>Backup Data</h2>
-      <p>Simpan dan pindahkan data hasil kerja</p>
+      <p>Simpan data hasil kerja tim</p>
     </div>
+
   </div>
+
 
   <div class="grid grid-2">
 
-    <div class="card">
-      <h3 style="margin-top:0">Backup</h3>
-      <p style="font-size:12px;color:var(--muted)">
-        Download seluruh data sebagai file JSON.
-      </p>
-      <button class="btn btn-dark" onclick="backupData()">Download Backup</button>
-    </div>
 
     <div class="card">
-      <h3 style="margin-top:0">Restore</h3>
-      <p style="font-size:12px;color:var(--muted)">
+
+      <h3 style="margin-top:0">
+        Backup
+      </h3>
+
+      <p
+        style="
+          font-size:12px;
+          color:var(--muted)
+        "
+      >
+        Download semua data dalam format JSON.
+      </p>
+
+      <button
+        class="btn btn-dark"
+        onclick="backupData()"
+      >
+        Download Backup
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3 style="margin-top:0">
+        Restore
+      </h3>
+
+      <p
+        style="
+          font-size:12px;
+          color:var(--muted)
+        "
+      >
         Masukkan kembali file backup JSON.
       </p>
-      <input type="file" id="restoreFile" accept=".json">
+
+      <input
+        type="file"
+        id="restoreFile"
+        accept=".json"
+      >
+
       <div class="actions">
-        <button class="btn btn-gold" onclick="restoreData()">Restore Data</button>
+
+        <button
+          class="btn btn-gold"
+          onclick="restoreData()"
+        >
+          Restore Data
+        </button>
+
       </div>
+
     </div>
 
+
     <div class="card">
-      <h3 style="margin-top:0">Export CSV</h3>
-      <p style="font-size:12px;color:var(--muted)">
+
+      <h3 style="margin-top:0">
+        Export CSV
+      </h3>
+
+      <p
+        style="
+          font-size:12px;
+          color:var(--muted)
+        "
+      >
         Cocok untuk Excel atau Google Sheets.
       </p>
-      <button class="btn btn-green" onclick="exportCSV()">Download CSV</button>
+
+      <button
+        class="btn btn-green"
+        onclick="exportCSV()"
+      >
+        Download CSV
+      </button>
+
     </div>
 
+
     <div class="card">
-      <h3 style="margin-top:0">Data</h3>
-      <div class="stat-value" id="backupCount">0</div>
-      <div class="stat-sub">order tersimpan di perangkat ini</div>
+
+      <div class="stat-label">
+        DATA TERSIMPAN
+      </div>
+
+      <div
+        class="stat-value"
+        id="backupCount"
+      >
+        0
+      </div>
+
+      <div class="stat-sub">
+        hasil kerja
+      </div>
+
     </div>
 
   </div>
 
-  <div class="card" style="margin-top:12px">
-    <b style="font-size:13px">Penting</b>
-    <p style="font-size:12px;color:var(--muted);line-height:1.6">
-      Data versi ini tersimpan di browser/perangkat yang digunakan.
-      Kalau ganti perangkat atau browser, gunakan Backup lalu Restore.
+
+  <div
+    class="card"
+    style="margin-top:12px"
+  >
+
+    <b style="font-size:13px">
+      Penting
+    </b>
+
+    <p
+      style="
+        font-size:12px;
+        color:var(--muted);
+        line-height:1.6
+      "
+    >
+
+      Data tersimpan di browser/perangkat yang digunakan.
+      Kalau ganti perangkat atau browser, lakukan Backup lalu Restore.
+
     </p>
+
   </div>
 
 </section>
 
 </div>
 
-<div class="modal" id="editModal">
+
+<!-- =========================
+     DETAIL MODAL
+========================= -->
+
+<div
+  class="modal"
+  id="detailModal"
+>
+
   <div class="modal-box">
+
     <div class="modal-head">
-      <h3>Edit Order</h3>
-      <button class="close" onclick="closeModal()">×</button>
+
+      <h3>
+        Detail Hasil
+      </h3>
+
+      <button
+        class="close"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
     </div>
-    <div id="editContent"></div>
+
+    <div id="detailContent"></div>
+
   </div>
+
 </div>
 
-<div class="toast" id="toast"></div>
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+  class="toast"
+  id="toast"
+></div>
+
 
 <script>
+
 /* =========================================================
-   EGA WORKER RESULT FINAL
+   SIJE WORKER RESULT — TEAM SYSTEM
    ========================================================= */
 
-const STORAGE_KEY = "ega_worker_result_final_v1";
 
-let orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+/* =========================
+   STORAGE
+========================= */
+
+const STORAGE_KEY =
+  "sije_worker_result_team_v1";
+
+
+let results =
+  JSON.parse(
+    localStorage.getItem(STORAGE_KEY) || "[]"
+  );
+
+
 let editId = null;
-let workerCount = 0;
 
-const PACKAGES = [
-  "Mandor",
-  "Value",
-  "Koin",
-  "AYCL Hemat",
-  "AYCL Pro",
-  "AYCL Premium"
-];
+
+/* =========================
+   DEFAULT TEAMS
+========================= */
+
+let teams = JSON.parse(
+  localStorage.getItem("sije_worker_teams_v1") ||
+  "[]"
+);
+
+
+/*
+  Kalau belum ada tim,
+  otomatis tersedia contoh Raph.
+*/
+
+if(!teams.length){
+
+  teams = [
+    {
+      name:"Raph",
+      pj:"Raph",
+      rate:14000
+    }
+  ];
+
+  saveTeams();
+
+}
+
+
+/* =========================
+   BASIC FUNCTIONS
+========================= */
 
 function saveStorage(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(orders));
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(results)
+  );
+
 }
+
+
+function saveTeams(){
+
+  localStorage.setItem(
+    "sije_worker_teams_v1",
+    JSON.stringify(teams)
+  );
+
+}
+
 
 function money(n){
+
   n = Number(n) || 0;
-  return "Rp" + n.toLocaleString("id-ID");
+
+  return "Rp" +
+    n.toLocaleString("id-ID");
+
 }
+
 
 function num(n){
+
   return Number(n) || 0;
+
 }
+
 
 function esc(str){
+
   return String(str ?? "")
+
     .replace(/&/g,"&amp;")
+
     .replace(/</g,"&lt;")
+
     .replace(/>/g,"&gt;")
+
     .replace(/"/g,"&quot;")
+
     .replace(/'/g,"&#039;");
+
 }
+
 
 function today(){
-  return new Date().toISOString().slice(0,10);
+
+  return new Date()
+    .toISOString()
+    .slice(0,10);
+
 }
+
 
 function monthNow(){
-  return new Date().toISOString().slice(0,7);
+
+  return new Date()
+    .toISOString()
+    .slice(0,7);
+
 }
+
 
 function showToast(msg){
-  const t=document.getElementById("toast");
-  t.textContent=msg;
+
+  const t =
+    document.getElementById("toast");
+
+  t.textContent = msg;
+
   t.classList.add("show");
+
   clearTimeout(window.toastTimer);
-  window.toastTimer=setTimeout(()=>t.classList.remove("show"),2200);
+
+  window.toastTimer =
+    setTimeout(
+      () => t.classList.remove("show"),
+      2200
+    );
+
 }
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 function showTab(id,btn){
-  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
 
-  document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));
+  document
+    .querySelectorAll(".tab")
+    .forEach(x =>
+      x.classList.remove("active")
+    );
+
+
+  document
+    .getElementById(id)
+    .classList.add("active");
+
+
+  document
+    .querySelectorAll(".nav button")
+    .forEach(x =>
+      x.classList.remove("active")
+    );
+
+
   btn.classList.add("active");
 
+
   renderAll();
+
 }
 
-/* =========================================================
-   INPUT WORKER
-   ========================================================= */
 
-function addWorker(name="",role="",salary=""){
-  workerCount++;
+/* =========================
+   TEAM SELECT
+========================= */
 
-  const box=document.getElementById("workerInputs");
+function renderTeamSelects(){
 
-  const row=document.createElement("div");
-  row.className="worker-row";
-  row.dataset.worker=workerCount;
+  const input =
+    document.getElementById("fTeam");
 
-  row.innerHTML=`
-    <div class="field name">
-      <label>Nama Worker</label>
-      <input class="w-name" value="${esc(name)}" placeholder="Nama">
-    </div>
+  const history =
+    document.getElementById("historyTeam");
 
-    <div class="field">
-      <label>Peran</label>
-      <select class="w-role">
-        <option value="Worker Utama" ${role==="Worker Utama"?"selected":""}>Worker Utama</option>
-        <option value="Pemegang Akun" ${role==="Pemegang Akun"?"selected":""}>Pemegang Akun</option>
-        <option value="Support" ${role==="Support"?"selected":""}>Support</option>
-        <option value="Leader" ${role==="Leader"?"selected":""}>Leader</option>
-      </select>
-    </div>
 
-    <div class="field">
-      <label>Gaji</label>
-      <input class="w-salary" type="number" min="0" value="${salary}" placeholder="0" oninput="updateWorkerTotal()">
-    </div>
+  const currentInput =
+    input.value;
 
-    <button class="remove" onclick="this.parentElement.remove();updateWorkerTotal()">×</button>
-  `;
+  const currentHistory =
+    history.value;
 
-  box.appendChild(row);
-  updateWorkerTotal();
+
+  input.innerHTML =
+    `<option value="">
+      Pilih Tim
+    </option>` +
+
+    teams
+      .map(t =>
+        `<option value="${esc(t.name)}">
+          ${esc(t.name)}
+        </option>`
+      )
+      .join("");
+
+
+  history.innerHTML =
+    `<option value="">
+      Semua Tim
+    </option>` +
+
+    teams
+      .map(t =>
+        `<option value="${esc(t.name)}">
+          ${esc(t.name)}
+        </option>`
+      )
+      .join("");
+
+
+  if(
+    teams.some(
+      t => t.name === currentInput
+    )
+  ){
+
+    input.value =
+      currentInput;
+
+  }
+
+
+  if(
+    teams.some(
+      t => t.name === currentHistory
+    )
+  ){
+
+    history.value =
+      currentHistory;
+
+  }
+
 }
 
-function getInputWorkers(){
-  return [...document.querySelectorAll("#workerInputs .worker-row")]
-    .map(row=>({
-      name:row.querySelector(".w-name").value.trim(),
-      role:row.querySelector(".w-role").value,
-      salary:num(row.querySelector(".w-salary").value)
-    }))
-    .filter(x=>x.name);
+
+/* =========================
+   TEAM CHANGE
+========================= */
+
+function teamChanged(){
+
+  const team =
+    document.getElementById("fTeam")
+      .value;
+
+
+  const found =
+    teams.find(
+      t => t.name === team
+    );
+
+
+  if(found){
+
+    document.getElementById("fPJ")
+      .value = found.pj || found.name;
+
+
+    document.getElementById("fRate")
+      .value = num(found.rate) || 14000;
+
+  }
+
+
+  updateCalculation();
+
 }
 
-function updateWorkerTotal(){
-  const total=getInputWorkers().reduce((a,b)=>a+b.salary,0);
-  document.getElementById("workerTotal").textContent=money(total);
+
+/* =========================
+   CALCULATION
+========================= */
+
+function updateCalculation(){
+
+  const customers =
+    num(
+      document.getElementById("fCustomers")
+        .value
+    );
+
+
+  const volume =
+    num(
+      document.getElementById("fVolume")
+        .value
+    );
+
+
+  const rate =
+    num(
+      document.getElementById("fRate")
+        .value
+    );
+
+
+  const total =
+    volume * rate;
+
+
+  document.getElementById(
+    "calcCustomers"
+  ).textContent =
+    customers.toLocaleString("id-ID");
+
+
+  document.getElementById(
+    "calcVolume"
+  ).textContent =
+    volume.toLocaleString("id-ID") +
+    " M";
+
+
+  document.getElementById(
+    "calcRate"
+  ).textContent =
+    money(rate) +
+    " / M";
+
+
+  document.getElementById(
+    "calcTotal"
+  ).textContent =
+    money(total);
+
 }
 
-/* =========================================================
-   AUTO TEMPLATE
-   ========================================================= */
 
-function packageChanged(){
-  const pkg=document.getElementById("fPackage").value;
+/* =========================
+   SAVE RESULT
+========================= */
 
-  /*
-    Nominal default hanya sebagai template.
-    Tetap bisa diedit manual sebelum disimpan.
-  */
+function saveResult(){
 
-  document.getElementById("workerInputs").innerHTML="";
-  workerCount=0;
+  const date =
+    document.getElementById("fDate")
+      .value;
 
-  const volume=num(document.getElementById("fVolume").value);
 
-  if(pkg==="Value"){
-    addWorker("", "Worker Utama", volume*5000);
-    addWorker("", "Worker Utama", volume*5000);
-    addWorker("", "Worker Utama", volume*5000);
-    addWorker("", "Pemegang Akun", volume*3000);
-  }
-  else if(pkg==="Koin"){
-    addWorker("", "Worker Utama", volume*6000);
-    addWorker("", "Worker Utama", volume*6000);
-    addWorker("", "Worker Utama", volume*6000);
-    addWorker("", "Pemegang Akun", volume*4000);
-  }
-  else if(pkg==="AYCL Hemat"){
-    addWorker("", "Worker Utama", 5000);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Pemegang Akun", 0);
-  }
-  else if(pkg==="AYCL Pro"){
-    addWorker("", "Worker Utama", 20000);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Pemegang Akun", 0);
-  }
-  else if(pkg==="AYCL Premium"){
-    addWorker("", "Worker Utama", 20000);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Worker Utama", 0);
-    addWorker("", "Pemegang Akun", 0);
-  }
-  else{
-    addWorker("", "Worker Utama", volume*4000);
-    addWorker("", "Worker Utama", volume*4000);
-    addWorker("", "Worker Utama", volume*4000);
-    addWorker("", "Pemegang Akun", volume*4000);
-  }
+  const team =
+    document.getElementById("fTeam")
+      .value;
 
-  updateWorkerTotal();
-}
 
-/* =========================================================
-   SAVE ORDER
-   ========================================================= */
+  const pj =
+    document.getElementById("fPJ")
+      .value.trim();
 
-function saveOrder(){
 
-  const date=document.getElementById("fDate").value;
-  const customer=document.getElementById("fCustomer").value.trim();
-  const pkg=document.getElementById("fPackage").value;
-  const volume=num(document.getElementById("fVolume").value);
-  const unit=document.getElementById("fUnit").value;
-  const team=document.getElementById("fTeam").value.trim();
-  const status=document.getElementById("fStatus").value;
-  const note=document.getElementById("fNote").value.trim();
-  const workers=getInputWorkers();
+  const customers =
+    num(
+      document.getElementById("fCustomers")
+        .value
+    );
+
+
+  const volume =
+    num(
+      document.getElementById("fVolume")
+        .value
+    );
+
+
+  const rate =
+    num(
+      document.getElementById("fRate")
+        .value
+    );
+
+
+  const status =
+    document.getElementById("fStatus")
+      .value;
+
+
+  const note =
+    document.getElementById("fNote")
+      .value.trim();
+
 
   if(!date){
-    showToast("Tanggal belum diisi");
+
+    showToast(
+      "Tanggal belum diisi"
+    );
+
     return;
+
   }
 
-  if(!customer){
-    showToast("ID Customer belum diisi");
-    return;
-  }
-
-  if(!pkg){
-    showToast("Paket belum dipilih");
-    return;
-  }
 
   if(!team){
-    showToast("Nama tim belum diisi");
+
+    showToast(
+      "Tim belum dipilih"
+    );
+
     return;
+
   }
 
-  if(!workers.length){
-    showToast("Minimal 1 worker");
+
+  if(!pj){
+
+    showToast(
+      "Nama PJ belum diisi"
+    );
+
     return;
+
   }
 
-  const duplicate=orders.find(o=>
-    o.customer===customer &&
-    o.date===date &&
-    o.id!==editId
-  );
 
-  if(duplicate){
-    showToast("ID + tanggal sudah ada. Gunakan Edit.");
+  if(customers <= 0){
+
+    showToast(
+      "Jumlah customer belum diisi"
+    );
+
     return;
+
   }
 
-  const obj={
-    id:editId || crypto.randomUUID(),
+
+  if(volume <= 0){
+
+    showToast(
+      "Total M belum diisi"
+    );
+
+    return;
+
+  }
+
+
+  if(rate <= 0){
+
+    showToast(
+      "Rate bagian belum diisi"
+    );
+
+    return;
+
+  }
+
+
+  const total =
+    volume * rate;
+
+
+  const obj = {
+
+    id:
+      editId ||
+      crypto.randomUUID(),
+
     date,
-    customer,
-    package:pkg,
-    volume,
-    unit,
+
     team,
+
+    pj,
+
+    customers,
+
+    volume,
+
+    rate,
+
+    total,
+
     status,
+
     note,
-    workers,
-    createdAt:new Date().toISOString()
+
+    createdAt:
+      new Date().toISOString()
+
   };
+
 
   if(editId){
-    const idx=orders.findIndex(o=>o.id===editId);
-    if(idx>=0) orders[idx]=obj;
-    showToast("Order berhasil diperbarui");
+
+    const index =
+      results.findIndex(
+        x => x.id === editId
+      );
+
+
+    if(index >= 0){
+
+      results[index] =
+        obj;
+
+    }
+
+
+    showToast(
+      "Hasil berhasil diperbarui"
+    );
+
   }else{
-    orders.push(obj);
-    showToast("Hasil kerja berhasil disimpan");
+
+    results.push(obj);
+
+    showToast(
+      "Hasil tim berhasil disimpan"
+    );
+
   }
 
+
   saveStorage();
+
   resetForm();
+
   renderAll();
-  showTabById("orders");
+
+  showTabById("history");
+
 }
 
-function showTabById(id){
-  const btn=[...document.querySelectorAll(".nav button")]
-    .find(b=>b.getAttribute("onclick")?.includes("'"+id+"'"));
-  if(btn) showTab(id,btn);
-}
+
+/* =========================
+   RESET
+========================= */
 
 function resetForm(){
-  editId=null;
 
-  document.getElementById("fDate").value=today();
-  document.getElementById("fCustomer").value="";
-  document.getElementById("fPackage").value="Mandor";
-  document.getElementById("fVolume").value="";
-  document.getElementById("fUnit").value="M";
-  document.getElementById("fTeam").value="";
-  document.getElementById("fStatus").value="Selesai";
-  document.getElementById("fNote").value="";
+  editId = null;
 
-  document.getElementById("workerInputs").innerHTML="";
-  workerCount=0;
-  addWorker();
-  addWorker();
-  addWorker();
-  addWorker();
-  updateWorkerTotal();
+
+  document.getElementById("fDate")
+    .value = today();
+
+
+  document.getElementById("fTeam")
+    .value = "";
+
+
+  document.getElementById("fPJ")
+    .value = "";
+
+
+  document.getElementById("fCustomers")
+    .value = "";
+
+
+  document.getElementById("fVolume")
+    .value = "";
+
+
+  document.getElementById("fRate")
+    .value = 14000;
+
+
+  document.getElementById("fStatus")
+    .value = "Selesai";
+
+
+  document.getElementById("fNote")
+    .value = "";
+
+
+  updateCalculation();
+
 }
 
-/* =========================================================
+
+/* =========================
+   SHOW TAB BY ID
+========================= */
+
+function showTabById(id){
+
+  const btn =
+    [
+      ...document.querySelectorAll(
+        ".nav button"
+      )
+    ]
+    .find(
+      b =>
+        b.getAttribute("onclick")
+        ?.includes(
+          "'" + id + "'"
+        )
+    );
+
+
+  if(btn){
+
+    showTab(
+      id,
+      btn
+    );
+
+  }
+
+}
+
+
+/* =========================
    EDIT
-   ========================================================= */
+========================= */
 
-function editOrder(id){
-  const o=orders.find(x=>x.id===id);
-  if(!o)return;
+function editResult(id){
 
-  editId=id;
+  const r =
+    results.find(
+      x => x.id === id
+    );
 
-  document.getElementById("fDate").value=o.date;
-  document.getElementById("fCustomer").value=o.customer;
-  document.getElementById("fPackage").value=o.package;
-  document.getElementById("fVolume").value=o.volume;
-  document.getElementById("fUnit").value=o.unit;
-  document.getElementById("fTeam").value=o.team;
-  document.getElementById("fStatus").value=o.status;
-  document.getElementById("fNote").value=o.note || "";
 
-  document.getElementById("workerInputs").innerHTML="";
-  workerCount=0;
+  if(!r)return;
 
-  o.workers.forEach(w=>addWorker(w.name,w.role,w.salary));
 
-  const btn=[...document.querySelectorAll(".nav button")]
-    .find(b=>b.getAttribute("onclick")?.includes("'input'"));
+  editId = id;
 
-  if(btn)showTab("input",btn);
 
-  window.scrollTo({top:0,behavior:"smooth"});
-  showToast("Mode edit aktif");
+  document.getElementById("fDate")
+    .value = r.date;
+
+
+  document.getElementById("fTeam")
+    .value = r.team;
+
+
+  document.getElementById("fPJ")
+    .value = r.pj;
+
+
+  document.getElementById("fCustomers")
+    .value = r.customers;
+
+
+  document.getElementById("fVolume")
+    .value = r.volume;
+
+
+  document.getElementById("fRate")
+    .value = r.rate;
+
+
+  document.getElementById("fStatus")
+    .value = r.status;
+
+
+  document.getElementById("fNote")
+    .value = r.note || "";
+
+
+  updateCalculation();
+
+
+  showTabById("input");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  showToast(
+    "Mode edit aktif"
+  );
+
 }
 
-function deleteOrder(id){
-  const o=orders.find(x=>x.id===id);
-  if(!o)return;
 
-  if(!confirm(`Hapus order ${o.customer} tanggal ${o.date}?`))return;
+/* =========================
+   DELETE
+========================= */
 
-  orders=orders.filter(x=>x.id!==id);
+function deleteResult(id){
+
+  const r =
+    results.find(
+      x => x.id === id
+    );
+
+
+  if(!r)return;
+
+
+  if(
+    !confirm(
+      `Hapus hasil Tim ${r.team} tanggal ${r.date}?`
+    )
+  ){
+
+    return;
+
+  }
+
+
+  results =
+    results.filter(
+      x => x.id !== id
+    );
+
+
   saveStorage();
+
   renderAll();
-  showToast("Order dihapus");
+
+  showToast(
+    "Hasil berhasil dihapus"
+  );
+
 }
+
+
+/* =========================
+   DETAIL
+========================= */
 
 function openDetail(id){
-  const o=orders.find(x=>x.id===id);
-  if(!o)return;
 
-  document.getElementById("editContent").innerHTML=`
+  const r =
+    results.find(
+      x => x.id === id
+    );
+
+
+  if(!r)return;
+
+
+  document.getElementById(
+    "detailContent"
+  ).innerHTML = `
+
     <div class="grid grid-2">
-      <div><small>Tanggal</small><b>${esc(o.date)}</b></div>
-      <div><small>ID Customer</small><b>${esc(o.customer)}</b></div>
-      <div><small>Paket</small><b>${esc(o.package)}</b></div>
-      <div><small>Tim</small><b>${esc(o.team)}</b></div>
-      <div><small>Volume</small><b>${esc(o.volume)} ${esc(o.unit)}</b></div>
-      <div><small>Status</small><b>${esc(o.status)}</b></div>
-    </div>
 
-    <div class="section-title">
       <div>
-        <h2 style="font-size:16px">Pembagian Worker</h2>
+        <small>Tanggal</small>
+        <br>
+        <b>${esc(r.date)}</b>
       </div>
+
+      <div>
+        <small>Tim</small>
+        <br>
+        <b>${esc(r.team)}</b>
+      </div>
+
+      <div>
+        <small>PJ</small>
+        <br>
+        <b>${esc(r.pj)}</b>
+      </div>
+
+      <div>
+        <small>Customer</small>
+        <br>
+        <b>${r.customers.toLocaleString("id-ID")}</b>
+      </div>
+
+      <div>
+        <small>Total M</small>
+        <br>
+        <b>${r.volume.toLocaleString("id-ID")} M</b>
+      </div>
+
+      <div>
+        <small>Rate</small>
+        <br>
+        <b>${money(r.rate)} / M</b>
+      </div>
+
+      <div>
+        <small>Status</small>
+        <br>
+        <b>${esc(r.status)}</b>
+      </div>
+
+      <div>
+        <small>Catatan</small>
+        <br>
+        <b>${esc(r.note || "-")}</b>
+      </div>
+
     </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Worker</th>
-            <th>Peran</th>
-            <th>Gaji</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${o.workers.map(w=>`
-            <tr>
-              <td>${esc(w.name)}</td>
-              <td>${esc(w.role)}</td>
-              <td class="money">${money(w.salary)}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
+
+    <div class="calc-box">
+
+      <div class="calc-row calc-main">
+
+        <span>
+          TOTAL BAGIAN TIM
+        </span>
+
+        <span class="money">
+          ${money(r.total)}
+        </span>
+
+      </div>
+
     </div>
 
-    <div class="worker-total">
-      <span>Total Gaji</span>
-      <span>${money(orderSalary(o))}</span>
-    </div>
 
     <div class="actions">
-      <button class="btn btn-dark" onclick="closeModal();editOrder('${o.id}')">Edit</button>
-      <button class="btn btn-red" onclick="closeModal();deleteOrder('${o.id}')">Hapus</button>
+
+      <button
+        class="btn btn-dark"
+        onclick="
+          closeModal();
+          editResult('${r.id}')
+        "
+      >
+        Edit
+      </button>
+
+
+      <button
+        class="btn btn-red"
+        onclick="
+          closeModal();
+          deleteResult('${r.id}')
+        "
+      >
+        Hapus
+      </button>
+
     </div>
+
   `;
 
-  document.getElementById("editModal").classList.add("show");
+
+  document.getElementById(
+    "detailModal"
+  ).classList.add("show");
+
 }
+
 
 function closeModal(){
-  document.getElementById("editModal").classList.remove("show");
+
+  document.getElementById(
+    "detailModal"
+  ).classList.remove("show");
+
 }
 
-/* =========================================================
-   CALC
-   ========================================================= */
 
-function orderSalary(o){
-  return o.workers.reduce((a,b)=>a+num(b.salary),0);
+/* =========================
+   MONTH FILTER
+========================= */
+
+function monthFilter(
+  data,
+  month
+){
+
+  if(!month)return data;
+
+  return data.filter(
+    x =>
+      x.date.startsWith(month)
+  );
+
 }
 
-function monthFilter(arr,month){
-  if(!month)return arr;
-  return arr.filter(o=>o.date.startsWith(month));
-}
 
-function volumeText(o){
-  return `${Number(o.volume).toLocaleString("id-ID")} ${o.unit}`;
-}
-
-function packageClass(pkg){
-  if(pkg.startsWith("AYCL"))return "gold";
-  if(pkg==="Koin")return "green";
-  if(pkg==="Value")return "gold";
-  return "";
-}
-
-/* =========================================================
-   DASHBOARD
-   ========================================================= */
+/* =========================
+   SETUP MONTHS
+========================= */
 
 function setupMonths(){
-  const ids=["dashMonth","orderMonth","workerMonth","teamMonth"];
+
+  const ids = [
+    "dashMonth",
+    "historyMonth",
+    "teamMonth"
+  ];
+
 
   ids.forEach(id=>{
-    const el=document.getElementById(id);
+
+    const el =
+      document.getElementById(id);
+
+
     if(!el)return;
 
-    const old=el.value;
 
-    el.innerHTML=`<option value="">Semua Bulan</option>`;
+    const old =
+      el.value;
 
-    const months=[...new Set(orders.map(o=>o.date.slice(0,7)))]
-      .sort().reverse();
+
+    el.innerHTML =
+      `<option value="">
+        Semua Bulan
+      </option>`;
+
+
+    const months =
+      [
+        ...new Set(
+          results.map(
+            x =>
+              x.date.slice(0,7)
+          )
+        )
+      ]
+      .sort()
+      .reverse();
+
 
     months.forEach(m=>{
-      const op=document.createElement("option");
-      op.value=m;
-      op.textContent=new Date(m+"-01").toLocaleDateString("id-ID",{
-        month:"long",
-        year:"numeric"
-      });
+
+      const op =
+        document.createElement(
+          "option"
+        );
+
+
+      op.value = m;
+
+
+      op.textContent =
+        new Date(
+          m + "-01"
+        ).toLocaleDateString(
+          "id-ID",
+          {
+            month:"long",
+            year:"numeric"
+          }
+        );
+
+
       el.appendChild(op);
+
     });
 
-    if(old)el.value=old;
+
+    if(old){
+
+      el.value = old;
+
+    }
+
   });
+
 }
+
+
+/* =========================
+   DASHBOARD
+========================= */
 
 function renderDashboard(){
-  const month=document.getElementById("dashMonth").value;
-  const data=monthFilter(orders,month);
 
-  document.getElementById("dOrders").textContent=data.length;
-  document.getElementById("dSalary").textContent=money(
-    data.reduce((a,o)=>a+orderSalary(o),0)
-  );
-  document.getElementById("dVolume").textContent=
-    data.reduce((a,o)=>a+num(o.volume),0).toLocaleString("id-ID");
+  const month =
+    document.getElementById(
+      "dashMonth"
+    ).value;
 
-  document.getElementById("dTeams").textContent=
-    new Set(data.map(o=>o.team).filter(Boolean)).size;
 
-  const ps={};
+  const data =
+    monthFilter(
+      results,
+      month
+    );
 
-  PACKAGES.forEach(p=>{
-    ps[p]={orders:0,volume:0,salary:0};
+
+  const totalCustomers =
+    data.reduce(
+      (a,r) =>
+        a + num(r.customers),
+      0
+    );
+
+
+  const totalVolume =
+    data.reduce(
+      (a,r) =>
+        a + num(r.volume),
+      0
+    );
+
+
+  const totalSalary =
+    data.reduce(
+      (a,r) =>
+        a + num(r.total),
+      0
+    );
+
+
+  document.getElementById(
+    "dEntries"
+  ).textContent =
+    data.length;
+
+
+  document.getElementById(
+    "dCustomers"
+  ).textContent =
+    totalCustomers.toLocaleString(
+      "id-ID"
+    );
+
+
+  document.getElementById(
+    "dVolume"
+  ).textContent =
+    totalVolume.toLocaleString(
+      "id-ID"
+    );
+
+
+  document.getElementById(
+    "dSalary"
+  ).textContent =
+    money(totalSalary);
+
+
+  const map = {};
+
+
+  data.forEach(r=>{
+
+    if(!map[r.team]){
+
+      map[r.team] = {
+
+        pj:r.pj,
+
+        entries:0,
+
+        customers:0,
+
+        volume:0,
+
+        total:0
+
+      };
+
+    }
+
+
+    map[r.team].entries++;
+
+    map[r.team].customers +=
+      num(r.customers);
+
+    map[r.team].volume +=
+      num(r.volume);
+
+    map[r.team].total +=
+      num(r.total);
+
   });
 
-  data.forEach(o=>{
-    if(!ps[o.package])ps[o.package]={orders:0,volume:0,salary:0};
-    ps[o.package].orders++;
-    ps[o.package].volume+=num(o.volume);
-    ps[o.package].salary+=orderSalary(o);
-  });
 
-  document.getElementById("packageStats").innerHTML=PACKAGES.map(p=>`
-    <div class="card">
-      <div class="stat-label">${esc(p).toUpperCase()}</div>
-      <div class="stat-value">${ps[p].volume.toLocaleString("id-ID")}</div>
-      <div class="stat-sub">
-        ${ps[p].orders} order • ${money(ps[p].salary)}
-      </div>
-    </div>
-  `).join("");
+  const cards =
+    Object.entries(map)
+      .sort(
+        (a,b) =>
+          b[1].total -
+          a[1].total
+      );
 
-  const map={};
 
-  data.forEach(o=>{
-    o.workers.forEach(w=>{
-      if(!map[w.name]){
-        map[w.name]={orders:0,volume:0,salary:0};
-      }
-      map[w.name].orders++;
-      map[w.name].volume+=num(o.volume);
-      map[w.name].salary+=num(w.salary);
-    });
-  });
+  document.getElementById(
+    "dashboardTeams"
+  ).innerHTML =
 
-  const rows=Object.entries(map)
-    .sort((a,b)=>b[1].salary-a[1].salary);
+    cards.length
 
-  document.getElementById("dashWorkers").innerHTML=
-    rows.length ? rows.map(([name,x])=>`
-      <tr>
-        <td><b>${esc(name)}</b></td>
-        <td>${x.orders}</td>
-        <td>${x.volume.toLocaleString("id-ID")}</td>
-        <td class="money">${money(x.salary)}</td>
-      </tr>
-    `).join("") :
-    `<tr><td colspan="4"><div class="empty">Belum ada data.</div></td></tr>`;
-}
+      ?
 
-/* =========================================================
-   ORDERS
-   ========================================================= */
+      cards.map(
+        ([name,x]) => `
 
-function renderOrders(){
-  const month=document.getElementById("orderMonth").value;
-  const pkg=document.getElementById("orderPackage").value;
+          <div class="card team-card">
 
-  let data=monthFilter(orders,month);
+            <div class="team-head">
 
-  if(pkg)data=data.filter(o=>o.package===pkg);
+              <div>
 
-  data=[...data].sort((a,b)=>b.date.localeCompare(a.date));
+                <div class="team-name">
+                  ${esc(name)}
+                </div>
 
-  document.getElementById("ordersTable").innerHTML=
-    data.length ? data.map(o=>`
-      <tr>
-        <td>${esc(o.date)}</td>
-        <td><b>${esc(o.customer)}</b></td>
-        <td><span class="pill ${packageClass(o.package)}">${esc(o.package)}</span></td>
-        <td>${volumeText(o)}</td>
-        <td>${esc(o.team)}</td>
-        <td>${o.workers.length}</td>
-        <td class="money">${money(orderSalary(o))}</td>
-        <td>
-          <span class="pill ${o.status==="Selesai"?"green":o.status==="Batal"?"red":""}">
-            ${esc(o.status)}
-          </span>
-        </td>
-        <td>
-          <div style="display:flex;gap:5px">
-            <button class="btn btn-light" onclick="openDetail('${o.id}')">Detail</button>
+                <div class="team-pj">
+                  PJ: ${esc(x.pj || "-")}
+                </div>
+
+              </div>
+
+
+              <div class="team-total">
+                ${money(x.total)}
+              </div>
+
+            </div>
+
+
+            <div class="team-mini">
+
+              <div>
+                <span>Hasil</span>
+                <b>${x.entries}</b>
+              </div>
+
+              <div>
+                <span>Customer</span>
+                <b>${x.customers}</b>
+              </div>
+
+              <div>
+                <span>Total M</span>
+                <b>${x.volume}</b>
+              </div>
+
+            </div>
+
           </div>
-        </td>
-      </tr>
-    `).join("") :
-    `<tr><td colspan="9"><div class="empty">Belum ada order.</div></td></tr>`;
+
+        `
+      ).join("")
+
+      :
+
+      `<div class="card">
+        <div class="empty">
+          Belum ada hasil kerja.
+        </div>
+      </div>`;
+
 }
 
-/* =========================================================
-   WORKERS
-   ========================================================= */
 
-function getWorkerMap(data){
-  const map={};
+/* =========================
+   HISTORY
+========================= */
 
-  data.forEach(o=>{
-    o.workers.forEach(w=>{
-      if(!map[w.name]){
-        map[w.name]={
-          orders:0,
-          volume:0,
-          salary:0,
-          Mandor:0,
-          Value:0,
-          Koin:0,
-          AYCL:0
-        };
-      }
+function renderHistory(){
 
-      map[w.name].orders++;
-      map[w.name].volume+=num(o.volume);
-      map[w.name].salary+=num(w.salary);
+  const month =
+    document.getElementById(
+      "historyMonth"
+    ).value;
 
-      if(o.package==="Mandor")map[w.name].Mandor+=num(w.salary);
-      else if(o.package==="Value")map[w.name].Value+=num(w.salary);
-      else if(o.package==="Koin")map[w.name].Koin+=num(w.salary);
-      else if(o.package.startsWith("AYCL"))map[w.name].AYCL+=num(w.salary);
-    });
+
+  const team =
+    document.getElementById(
+      "historyTeam"
+    ).value;
+
+
+  let data =
+    monthFilter(
+      results,
+      month
+    );
+
+
+  if(team){
+
+    data =
+      data.filter(
+        r =>
+          r.team === team
+      );
+
+  }
+
+
+  data =
+    [...data].sort(
+      (a,b) =>
+        b.date.localeCompare(
+          a.date
+        )
+    );
+
+
+  document.getElementById(
+    "historyTable"
+  ).innerHTML =
+
+    data.length
+
+      ?
+
+      data.map(r=>`
+
+        <tr>
+
+          <td>
+            ${esc(r.date)}
+          </td>
+
+          <td>
+            <b>${esc(r.team)}</b>
+          </td>
+
+          <td>
+            ${esc(r.pj)}
+          </td>
+
+          <td>
+            ${r.customers.toLocaleString("id-ID")}
+          </td>
+
+          <td>
+            ${r.volume.toLocaleString("id-ID")} M
+          </td>
+
+          <td>
+            ${money(r.rate)}
+          </td>
+
+          <td class="money">
+            ${money(r.total)}
+          </td>
+
+          <td>
+
+            <span
+              class="pill
+              ${
+                r.status === "Selesai"
+                  ? "green"
+                  : r.status === "Batal"
+                    ? "red"
+                    : "blue"
+              }"
+            >
+              ${esc(r.status)}
+            </span>
+
+          </td>
+
+          <td>
+
+            <div
+              style="
+                display:flex;
+                gap:5px;
+              "
+            >
+
+              <button
+                class="btn btn-light"
+                onclick="
+                  openDetail('${r.id}')
+                "
+              >
+                Detail
+              </button>
+
+            </div>
+
+          </td>
+
+        </tr>
+
+      `).join("")
+
+      :
+
+      `<tr>
+
+        <td colspan="9">
+
+          <div class="empty">
+            Belum ada hasil kerja.
+          </div>
+
+        </td>
+
+      </tr>`;
+
+}
+
+
+/* =========================
+   TEAM RECAP
+========================= */
+
+function getTeamMap(data){
+
+  const map = {};
+
+
+  data.forEach(r=>{
+
+    if(!map[r.team]){
+
+      map[r.team] = {
+
+        pj:r.pj,
+
+        entries:0,
+
+        customers:0,
+
+        volume:0,
+
+        total:0
+
+      };
+
+    }
+
+
+    map[r.team].entries++;
+
+    map[r.team].customers +=
+      num(r.customers);
+
+    map[r.team].volume +=
+      num(r.volume);
+
+    map[r.team].total +=
+      num(r.total);
+
+
+    /*
+      Gunakan PJ terbaru yang
+      tercatat pada hasil terakhir.
+    */
+
+    if(r.pj){
+
+      map[r.team].pj =
+        r.pj;
+
+    }
+
   });
+
 
   return map;
+
 }
 
-function renderWorkers(){
-  const month=document.getElementById("workerMonth").value;
-  const data=monthFilter(orders,month);
-  const map=getWorkerMap(data);
-
-  document.getElementById("workersTable").innerHTML=
-    Object.entries(map)
-      .sort((a,b)=>b[1].salary-a[1].salary)
-      .map(([name,x])=>`
-        <tr>
-          <td><b>${esc(name)}</b></td>
-          <td>${x.orders}</td>
-          <td>${x.volume.toLocaleString("id-ID")}</td>
-          <td class="money">${money(x.Mandor)}</td>
-          <td class="money">${money(x.Value)}</td>
-          <td class="money">${money(x.Koin)}</td>
-          <td class="money">${money(x.AYCL)}</td>
-          <td class="money">${money(x.salary)}</td>
-        </tr>
-      `).join("") ||
-    `<tr><td colspan="8"><div class="empty">Belum ada worker.</div></td></tr>`;
-
-  const names=Object.keys(map).sort();
-
-  const select=document.getElementById("workerSelect");
-  const old=select.value;
-
-  select.innerHTML=`<option value="">Pilih worker</option>`+
-    names.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("");
-
-  if(names.includes(old))select.value=old;
-
-  renderWorkerDetail();
-}
-
-function renderWorkerDetail(){
-  const name=document.getElementById("workerSelect").value;
-  const month=document.getElementById("workerMonth").value;
-
-  if(!name){
-    document.getElementById("workerDetail").innerHTML=
-      `<tr><td colspan="6"><div class="empty">Pilih worker.</div></td></tr>`;
-    return;
-  }
-
-  const data=monthFilter(orders,month)
-    .filter(o=>o.workers.some(w=>w.name===name))
-    .sort((a,b)=>b.date.localeCompare(a.date));
-
-  document.getElementById("workerDetail").innerHTML=
-    data.map(o=>{
-      const w=o.workers.find(x=>x.name===name);
-
-      return `
-        <tr>
-          <td>${esc(o.date)}</td>
-          <td>${esc(o.customer)}</td>
-          <td>${esc(o.package)}</td>
-          <td>${esc(o.team)}</td>
-          <td>${volumeText(o)}</td>
-          <td class="money">${money(w.salary)}</td>
-        </tr>
-      `;
-    }).join("") ||
-    `<tr><td colspan="6"><div class="empty">Tidak ada hasil kerja.</div></td></tr>`;
-}
-
-/* =========================================================
-   TEAMS
-   ========================================================= */
 
 function renderTeams(){
-  const month=document.getElementById("teamMonth").value;
-  const data=monthFilter(orders,month);
 
-  const map={};
+  const month =
+    document.getElementById(
+      "teamMonth"
+    ).value;
 
-  data.forEach(o=>{
-    const t=o.team || "Tanpa Tim";
 
-    if(!map[t]){
-      map[t]={
-        orders:0,
-        volume:0,
-        salary:0,
-        workers:new Set()
-      };
-    }
+  const data =
+    monthFilter(
+      results,
+      month
+    );
 
-    map[t].orders++;
-    map[t].volume+=num(o.volume);
-    map[t].salary+=orderSalary(o);
 
-    o.workers.forEach(w=>map[t].workers.add(w.name));
-  });
+  const map =
+    getTeamMap(data);
 
-  document.getElementById("teamsTable").innerHTML=
+
+  const sorted =
     Object.entries(map)
-      .sort((a,b)=>b[1].salary-a[1].salary)
-      .map(([name,x])=>`
-        <tr>
-          <td><b>${esc(name)}</b></td>
-          <td>${x.orders}</td>
-          <td>${x.volume.toLocaleString("id-ID")}</td>
-          <td>${x.workers.size}</td>
-          <td class="money">${money(x.salary)}</td>
-        </tr>
-      `).join("") ||
-    `<tr><td colspan="5"><div class="empty">Belum ada tim.</div></td></tr>`;
+      .sort(
+        (a,b) =>
+          b[1].total -
+          a[1].total
+      );
+
+
+  document.getElementById(
+    "teamCards"
+  ).innerHTML =
+
+    sorted.length
+
+      ?
+
+      sorted.map(
+        ([name,x]) => `
+
+          <div class="card team-card">
+
+            <div class="team-head">
+
+              <div>
+
+                <div class="team-name">
+                  ${esc(name)}
+                </div>
+
+                <div class="team-pj">
+                  Penanggung Jawab:
+                  ${esc(x.pj || "-")}
+                </div>
+
+              </div>
+
+
+              <div class="team-total">
+                ${money(x.total)}
+              </div>
+
+            </div>
+
+
+            <div class="team-mini">
+
+              <div>
+                <span>Hasil</span>
+                <b>${x.entries}</b>
+              </div>
+
+              <div>
+                <span>Customer</span>
+                <b>
+                  ${x.customers.toLocaleString("id-ID")}
+                </b>
+              </div>
+
+              <div>
+                <span>Total M</span>
+                <b>
+                  ${x.volume.toLocaleString("id-ID")}
+                </b>
+              </div>
+
+            </div>
+
+          </div>
+
+        `
+      ).join("")
+
+      :
+
+      `<div class="card">
+
+        <div class="empty">
+          Belum ada data tim.
+        </div>
+
+      </div>`;
+
+
+  document.getElementById(
+    "teamsTable"
+  ).innerHTML =
+
+    sorted.length
+
+      ?
+
+      sorted.map(
+        ([name,x]) => `
+
+          <tr>
+
+            <td>
+              <b>${esc(name)}</b>
+            </td>
+
+            <td>
+              ${esc(x.pj || "-")}
+            </td>
+
+            <td>
+              ${x.entries}
+            </td>
+
+            <td>
+              ${x.customers.toLocaleString("id-ID")}
+            </td>
+
+            <td>
+              ${x.volume.toLocaleString("id-ID")} M
+            </td>
+
+            <td class="money">
+              ${money(x.total)}
+            </td>
+
+          </tr>
+
+        `
+      ).join("")
+
+      :
+
+      `<tr>
+
+        <td colspan="6">
+
+          <div class="empty">
+            Belum ada data tim.
+          </div>
+
+        </td>
+
+      </tr>`;
+
 }
 
-/* =========================================================
+
+/* =========================
    BACKUP
-   ========================================================= */
+========================= */
 
 function backupData(){
-  const payload={
-    app:"EGA Worker Result FINAL",
-    version:1,
-    exportedAt:new Date().toISOString(),
-    orders
+
+  const payload = {
+
+    app:
+      "SIJE Worker Result Team System",
+
+    version:
+      1,
+
+    exportedAt:
+      new Date().toISOString(),
+
+    teams,
+
+    results
+
   };
 
-  const blob=new Blob(
-    [JSON.stringify(payload,null,2)],
-    {type:"application/json"}
-  );
 
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
+  const blob =
+    new Blob(
+      [
+        JSON.stringify(
+          payload,
+          null,
+          2
+        )
+      ],
+      {
+        type:
+          "application/json"
+      }
+    );
 
-  a.href=url;
-  a.download=
-    "EGA-Worker-Backup-"+new Date().toISOString().slice(0,10)+".json";
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const a =
+    document.createElement(
+      "a"
+    );
+
+
+  a.href = url;
+
+
+  a.download =
+    "SIJE-Worker-Backup-" +
+    today() +
+    ".json";
+
 
   a.click();
+
+
   URL.revokeObjectURL(url);
 
-  showToast("Backup berhasil dibuat");
+
+  showToast(
+    "Backup berhasil dibuat"
+  );
+
 }
+
+
+/* =========================
+   RESTORE
+========================= */
 
 function restoreData(){
-  const input=document.getElementById("restoreFile");
-  const file=input.files[0];
+
+  const input =
+    document.getElementById(
+      "restoreFile"
+    );
+
+
+  const file =
+    input.files[0];
+
 
   if(!file){
-    showToast("Pilih file backup dulu");
+
+    showToast(
+      "Pilih file backup dulu"
+    );
+
     return;
+
   }
 
-  const reader=new FileReader();
 
-  reader.onload=function(e){
-    try{
-      const data=JSON.parse(e.target.result);
+  const reader =
+    new FileReader();
 
-      if(!Array.isArray(data.orders)){
-        throw new Error("Format backup tidak valid");
+
+  reader.onload =
+    function(e){
+
+      try{
+
+        const data =
+          JSON.parse(
+            e.target.result
+          );
+
+
+        if(
+          !Array.isArray(
+            data.results
+          )
+        ){
+
+          throw new Error(
+            "Invalid backup"
+          );
+
+        }
+
+
+        if(
+          !confirm(
+            "Restore akan mengganti data yang ada. Lanjut?"
+          )
+        ){
+
+          return;
+
+        }
+
+
+        results =
+          data.results;
+
+
+        if(
+          Array.isArray(
+            data.teams
+          )
+        ){
+
+          teams =
+            data.teams;
+
+          saveTeams();
+
+        }
+
+
+        saveStorage();
+
+        renderAll();
+
+        input.value = "";
+
+
+        showToast(
+          "Data berhasil direstore"
+        );
+
+
+      }catch(err){
+
+        alert(
+          "File backup tidak valid."
+        );
+
       }
 
-      if(!confirm(
-        "Restore akan mengganti data yang ada sekarang. Lanjut?"
-      ))return;
+    };
 
-      orders=data.orders;
-      saveStorage();
-      renderAll();
-
-      showToast("Data berhasil direstore");
-      input.value="";
-    }catch(err){
-      alert("File backup tidak valid.");
-    }
-  };
 
   reader.readAsText(file);
+
 }
+
+
+/* =========================
+   CSV
+========================= */
 
 function exportCSV(){
 
-  const rows=[
+  const rows = [
+
     [
       "Tanggal",
-      "ID Customer",
-      "Paket",
-      "Volume",
-      "Satuan",
       "Tim",
-      "Worker",
-      "Peran",
-      "Gaji Worker",
+      "PJ",
+      "Jumlah Customer",
+      "Total M",
+      "Rate / M",
+      "Total Bagian",
       "Status",
       "Catatan"
     ]
+
   ];
 
-  orders.forEach(o=>{
-    o.workers.forEach(w=>{
-      rows.push([
-        o.date,
-        o.customer,
-        o.package,
-        o.volume,
-        o.unit,
-        o.team,
-        w.name,
-        w.role,
-        w.salary,
-        o.status,
-        o.note || ""
-      ]);
-    });
+
+  results.forEach(r=>{
+
+    rows.push([
+
+      r.date,
+
+      r.team,
+
+      r.pj,
+
+      r.customers,
+
+      r.volume,
+
+      r.rate,
+
+      r.total,
+
+      r.status,
+
+      r.note || ""
+
+    ]);
+
   });
 
-  const csv=rows.map(row=>
-    row.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(",")
-  ).join("\n");
 
-  const blob=new Blob(["\ufeff"+csv],{
-    type:"text/csv;charset=utf-8"
-  });
+  const csv =
+    rows
+      .map(
+        row =>
+          row
+            .map(
+              x =>
+                `"${String(x)
+                  .replace(
+                    /"/g,
+                    '""'
+                  )}"`
+            )
+            .join(",")
+      )
+      .join("\n");
 
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
 
-  a.href=url;
-  a.download=
-    "EGA-Worker-Result-"+new Date().toISOString().slice(0,10)+".csv";
+  const blob =
+    new Blob(
+      [
+        "\ufeff" +
+        csv
+      ],
+      {
+        type:
+          "text/csv;charset=utf-8"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const a =
+    document.createElement(
+      "a"
+    );
+
+
+  a.href = url;
+
+
+  a.download =
+    "SIJE-Worker-Result-" +
+    today() +
+    ".csv";
+
 
   a.click();
+
+
   URL.revokeObjectURL(url);
 
-  showToast("CSV berhasil dibuat");
+
+  showToast(
+    "CSV berhasil dibuat"
+  );
+
 }
 
-/* =========================================================
+
+/* =========================
    RENDER ALL
-   ========================================================= */
+========================= */
 
 function renderAll(){
+
+  renderTeamSelects();
+
   setupMonths();
+
   renderDashboard();
-  renderOrders();
-  renderWorkers();
+
+  renderHistory();
+
   renderTeams();
 
-  document.getElementById("backupCount").textContent=orders.length;
+  document.getElementById(
+    "backupCount"
+  ).textContent =
+    results.length;
+
 }
 
-/* =========================================================
+
+/* =========================
+   MODAL CLICK
+========================= */
+
+document
+  .getElementById("detailModal")
+  .addEventListener(
+    "click",
+    e => {
+
+      if(
+        e.target.id ===
+        "detailModal"
+      ){
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+/* =========================
    INIT
-   ========================================================= */
+========================= */
 
-document.getElementById("fDate").value=today();
+document.getElementById(
+  "fDate"
+).value = today();
 
-document.getElementById("fVolume").addEventListener("input",()=>{
-  const pkg=document.getElementById("fPackage").value;
 
-  /*
-    Update template Value/Koin berdasarkan volume.
-    Tidak mengubah nama worker yang sudah dimasukkan.
-  */
-  if(pkg!=="Value" && pkg!=="Koin")return;
-
-  const rows=[...document.querySelectorAll("#workerInputs .worker-row")];
-
-  if(rows.length<4)return;
-
-  const v=num(document.getElementById("fVolume").value);
-
-  const values=
-    pkg==="Value"
-    ? [v*5000,v*5000,v*5000,v*3000]
-    : [v*6000,v*6000,v*6000,v*4000];
-
-  rows.slice(0,4).forEach((row,i)=>{
-    row.querySelector(".w-salary").value=values[i];
-  });
-
-  updateWorkerTotal();
-});
-
-document.getElementById("editModal").addEventListener("click",e=>{
-  if(e.target.id==="editModal")closeModal();
-});
-
-resetForm();
 renderAll();
+
+updateCalculation();
 
 </script>
 
