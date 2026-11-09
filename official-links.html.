@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>SIJE STORE | Official Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #d8b66a;
+  --gold-light: #f3d99b;
+  --black: #080808;
+  --panel: #121210;
+  --muted: #aaa69b;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #49371b 0%, transparent 42%),
+    var(--black);
+  color: #f5f1e8;
+  font-family: 'Inter', sans-serif;
+  padding: 25px 16px 40px;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 30px 10px 25px;
+}
+
+.logo {
+  width: 76px;
+  height: 76px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  color: var(--gold-light);
+  font: 700 29px 'Cinzel', serif;
+  box-shadow: 0 0 35px #d8b66a22;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+.header h1 {
+  font: 600 clamp(30px, 8vw, 43px) 'Cinzel', serif;
+  letter-spacing: 3px;
+  margin: 12px 0;
+}
+
+.header p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  margin: 10px 0 28px;
+}
+
+/* MAIN BUTTONS */
+
+.main-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.main-btn {
+  min-height: 58px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .25s;
+}
+
+.main-btn:hover,
+.order-btn:hover {
+  transform: translateY(-3px);
+}
+
+.donate {
+  background: linear-gradient(135deg, #f0d89c, #b88b3f);
+  color: #17120a;
+}
+
+.whatsapp {
+  background: #102018;
+  border: 1px solid #4b8b62;
+  color: #b9edc8;
+}
+
+/* PRICE LIST */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.section-title h2 {
+  font: 600 19px 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.section-title span {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.category {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin: 23px 3px 11px;
+}
+
+.package {
+  background: linear-gradient(145deg, #191916, #0e0e0d);
+  border: 1px solid #3a3324;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 11px;
+  transition: .25s;
+}
+
+.package:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.package-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.package-name {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .6px;
+}
+
+.price {
+  color: var(--gold-light);
+  font: 700 16px 'Cinzel', serif;
+  white-space: nowrap;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 10px 0 14px;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: var(--gold);
+  color: #17120a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .25s;
+}
+
+/* FOOTER */
+
+.note {
+  color: #888276;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.8;
+  margin: 27px 10px;
+}
+
+.footer {
+  text-align: center;
+  color: #625d52;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 30px;
+}
+
+@media(max-width: 390px) {
+  .main-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .package-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <div class="logo">S</div>
+
+    <div class="eyebrow">OFFICIAL STORE</div>
+
+    <h1>SIJE STORE</h1>
+
+    <p>
+      Trusted Service for Arena Breakout<br>
+      Support • Order • Play
+    </p>
+  </header>
+
+  <div class="line"></div>
+
+  <!-- OFFICIAL LINKS -->
+
+  <div class="main-buttons">
+
+    <a class="main-btn donate"
+       href="https://sociabuzz.com/ega100619"
+       target="_blank">
+       ♡ SUPPORT / DONATE
+    </a>
+
+    <a class="main-btn whatsapp"
+       href="https://wa.me/628597377197?text=Halo%20Admin%20SIJE%20Store%2C%20saya%20ingin%20bertanya%20tentang%20paket%20joki."
+       target="_blank">
+       ☎ WHATSAPP ADMIN
+    </a>
+
+  </div>
+
+  <!-- PRICE LIST -->
+
+  <div class="section-title">
+    <h2>Joki Packages</h2>
+    <span>PRICE LIST</span>
+  </div>
+
+  <div class="category">PAKET VALUE</div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">MANDOR</div>
+      <div class="price">Rp20.000 / 1M</div>
+    </div>
+
+    <p class="description">
+      Paket joki Mandor berdasarkan target value.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20paket%20Mandor."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">VALUE</div>
+      <div class="price">Rp25.000 / M</div>
+    </div>
+
+    <p class="description">
+      Paket peningkatan value sesuai kebutuhan akun.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20paket%20Value."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">KOIN</div>
+      <div class="price">Rp30.000 / M</div>
+    </div>
+
+    <p class="description">
+      Paket farming koin sesuai target pesanan.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20paket%20Koin."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <div class="category">AYCL • PER MATCH</div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">AYCL HEMAT</div>
+      <div class="price">Rp35.000 / Match</div>
+    </div>
+
+    <p class="description">
+      Map: Forbid TV Armory<br>
+      Garansi loot 1,5M.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20AYCL%20Hemat."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">AYCL PRO</div>
+      <div class="price">Rp90.000 / Match</div>
+    </div>
+
+    <p class="description">
+      Map: Farmland<br>
+      Garansi Thermal dan loot 3M.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20AYCL%20Pro."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <div class="package">
+    <div class="package-top">
+      <div class="package-name">AYCL PREMIUM / EVENT ARMORY</div>
+      <div class="price">Rp60.000 / Match</div>
+    </div>
+
+    <p class="description">
+      Paket AYCL Premium untuk match Event Armory.
+    </p>
+
+    <a class="order-btn"
+       href="https://wa.me/628597377197?text=Halo%20Admin%2C%20saya%20mau%20order%20AYCL%20Premium%20Event%20Armory."
+       target="_blank">
+       ORDER VIA WHATSAPP ↗
+    </a>
+  </div>
+
+  <p class="note">
+    Untuk cek slot, detail order, dan ketentuan layanan,
+    silakan hubungi admin terlebih dahulu.<br>
+    Harga mengikuti daftar terbaru SIJE Store.
+  </p>
+
+  <footer class="footer">
+    © SIJE STORE · OFFICIAL LINKS
+  </footer>
+
+</div>
+
+</body>
+</html>
